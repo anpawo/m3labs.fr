@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>M3 Labs | Custom software, reconciliation and automation</title>
+<meta name="description" content="M3 Labs builds reconciliation engines, finance ledgers, automations and AI integrations for teams that still do it by hand. Freelance software engineer in Aix-en-Provence, France.">
+<meta property="og:title" content="M3 Labs | Less manual work. Fewer errors.">
+<meta property="og:description" content="Reconciliation engines, finance ledgers, automation and AI integration, built for your team.">
+<meta property="og:url" content="https://m3labs.fr/">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preload" href="fonts/mona-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#top" aria-label="M3 Labs, home">
+      <span class="logo" aria-hidden="true">
+        <svg viewBox="32 22 168 206"><path d="M48 84 C48 54 82 34 118 34 C148 34 166 50 166 72 C166 94 146 108 126 111 C106 114 92 110 88 108 Q84 107 84 116 C84 156 81 190 72 216"/><path d="M141 108 C141 142 146 170 157 192"/><path d="M130 212 L154 212 C170 212 182 206 184 190"/></svg>
+      </span>
+      M3 Labs
+    </a>
+    <nav class="links" aria-label="Main">
+      <a href="#build">What I build</a>
+      <a href="#finance">Finance</a>
+      <a href="#work">Work</a>
+      <a href="#process">How we work</a>
+    </nav>
+    <div class="actions">
+      <a class="btn btn-tint" href="mailto:contact@m3labs.fr">Email me</a>
+      <a class="btn btn-primary" href="mailto:contact@m3labs.fr?subject=A%2030-minute%20call">Book a call</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <h1>Less manual work.<br><span class="blue">Fewer errors.</span></h1>
+      <p class="lead">Tell me what your team does <strong>by hand</strong>. I build the <strong>software</strong> that does it for you, and you keep <strong>the code</strong>.</p>
+
+      <form class="ask" id="ask">
+        <label class="ask-field">
+          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <span class="sr">What do you do by hand?</span>
+          <input id="ask-input" name="task" autocomplete="off" placeholder="Checking positions against our broker in Excel">
+        </label>
+        <button class="btn btn-primary btn-wide" type="submit">Tell me what to automate</button>
+      </form>
+      <p class="examples">For example: <a href="#" data-example="Our positions, trades and cash are checked against our prime broker by hand every morning.">Daily reconciliation against your prime broker</a><br>or <a href="#" data-example="A weekly report is rebuilt by hand from several Excel files.">A weekly Excel report turned into a dashboard</a></p>
+      <p class="fine">Freelance software engineer in Aix-en-Provence, France.</p>
+    </div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="panel">
+        <div class="app">
+          <aside class="app-side">
+            <div class="app-brand"><span class="logo logo-sm"><svg viewBox="32 22 168 206"><path d="M48 84 C48 54 82 34 118 34 C148 34 166 50 166 72 C166 94 146 108 126 111 C106 114 92 110 88 108 Q84 107 84 116 C84 156 81 190 72 216"/><path d="M141 108 C141 142 146 170 157 192"/><path d="M130 212 L154 212 C170 212 182 206 184 190"/></svg></span>M3 Labs</div>
+            <p class="app-group">Reconcile</p>
+            <span class="app-item">Overview</span>
+            <span class="app-item on">Positions</span>
+            <span class="app-item">Cash</span>
+            <span class="app-item">Trades</span>
+            <p class="app-group">Ledger</p>
+            <span class="app-item">Journal</span>
+            <span class="app-item">Balances</span>
+            <p class="app-group">Alerts</p>
+            <span class="app-item">Breaks <b class="pill pill-red">2</b></span>
+            <span class="app-item">Reports <b class="pill pill-green">1</b></span>
+          </aside>
+          <div class="app-main">
+            <div class="app-title"><span class="sq"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>Daily reconciliation</div>
+            <div class="app-query"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Fund A against Prime broker, 23 Oct</div>
+            <div class="chips">
+              <span class="chip">Fund <b>A</b> ×</span>
+              <span class="chip">Against <b>Prime broker</b> ×</span>
+              <span class="chip">Date <b>23 Oct</b> ×</span>
+            </div>
+            <p class="app-count">1,284 positions</p>
+            <p class="app-sub">1,282 matched, 2 breaks</p>
+            <table>
+              <thead><tr><th>Instrument</th><th>Fund</th><th>Broker</th><th>Status</th></tr></thead>
+              <tbody>
+                <tr><td>ROG SW</td><td>12,400</td><td>12,400</td><td><span class="st ok">Matched</span></td></tr>
+                <tr><td>INGA NA</td><td>8,150</td><td>8,150</td><td><span class="st ok">Matched</span></td></tr>
+                <tr><td>BMW GY</td><td>3,020</td><td>3,000</td><td><span class="st ko">Break −20</span></td></tr>
+                <tr><td>VOW3 GY</td><td>21,700</td><td>21,700</td><td><span class="st ok">Matched</span></td></tr>
+                <tr><td>NOKIA FH</td><td>−5,600</td><td>−5,600</td><td><span class="st ok">Matched</span></td></tr>
+                <tr><td>EUR cash</td><td>1.42M</td><td>1.39M</td><td><span class="st ko">Break</span></td></tr>
+                <tr><td>ERICB SS</td><td>4,480</td><td>4,480</td><td><span class="st ok">Matched</span></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="toast">
+        <span class="toast-ico"><svg viewBox="0 0 24 24"><path d="M12 3v10M12 17v.5"/></svg></span>
+        <div>
+          <p class="toast-title">Break explained</p>
+          <p class="toast-meta">BMW GY, fund against broker, 4 min ago</p>
+          <p class="toast-body">“20 shares booked a day late by the broker. Clears tomorrow.”</p>
+        </div>
+        <span class="dot"></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="build">
+  <div class="wrap">
+    <p class="eyebrow">What I build</p>
+    <h2>Software for the work you repeat.</h2>
+    <p class="section-lead">Six kinds of things I know well and can build for you, end to end: from the data model to the screen your team uses.</p>
+    <div class="cards">
+      <article class="card">
+        <span class="badge b-indigo"><svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h10M4 17h16"/><path d="m16 10 2 2 3-3"/></svg></span>
+        <h3>Reconciliation engines</h3>
+        <p>Positions, trades and cash checked against your brokers', custodian's and administrator's files every day. It starts when the files land, explains each break and alerts you.</p>
+      </article>
+      <article class="card">
+        <span class="badge b-teal"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M10 4v16"/></svg></span>
+        <h3>Finance ledgers</h3>
+        <p>Trades, positions and cash in one place, every change kept, every number traceable to the file it came from.</p>
+      </article>
+      <article class="card">
+        <span class="badge b-purple"><svg viewBox="0 0 24 24"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><circle cx="12" cy="12" r="5"/></svg></span>
+        <h3>Automation</h3>
+        <p>File feeds, mail, reports and the web tasks you copy and paste today: scheduled, logged and checked, so nobody has to watch them.</p>
+      </article>
+      <article class="card">
+        <span class="badge b-emerald"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5.5L20 11l-5.5 2.5L12 19l-2.5-5.5L4 11l5.5-2.5z"/></svg></span>
+        <h3>AI integration</h3>
+        <p>Language models wired into your tools with the guardrails in code: structured outputs, validation, and only the data you choose ever sent out.</p>
+      </article>
+      <article class="card">
+        <span class="badge b-amber"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 15v-3M12 15V9M17 15v-5"/></svg></span>
+        <h3>Dashboards and internal tools</h3>
+        <p>Web apps that replace the shared spreadsheet, in Next.js, Django or Odoo, built so your team can keep them up to date.</p>
+      </article>
+      <article class="card">
+        <span class="badge b-blue"><svg viewBox="0 0 24 24"><path d="m8 8-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14"/></svg></span>
+        <h3>Native apps and engines</h3>
+        <p>macOS apps in Swift, Android in Kotlin, and C++ when speed matters, down to a Vulkan rendering engine and a compiler written from scratch.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section ink" id="finance">
+  <div class="wrap finance-grid">
+    <div>
+      <p class="eyebrow eyebrow-ink">For finance teams</p>
+      <h2>Middle office, without the spreadsheet.</h2>
+      <p class="section-lead">Many hedge funds and asset managers still check their books against their counterparties by hand every morning. I do that job today, in a hedge fund's middle office, and I build the software that takes it over.</p>
+      <ul class="proof">
+        <li>Reconciling the firm's portfolios daily against counterparties, in the middle office.</li>
+        <li>Building an automated reconciliation engine with a dashboard and alerts.</li>
+        <li>Working on the firm's finance ledger.</li>
+      </ul>
+    </div>
+    <div class="ink-cards">
+      <div class="ink-card">
+        <h3>Reconciliation</h3>
+        <p>Positions, trades and cash against prime brokers, custodians and administrators. Breaks grouped, explained and sent to you each morning.</p>
+      </div>
+      <div class="ink-card">
+        <h3>Ledger</h3>
+        <p>Trades, positions and cash booked once and read everywhere, with the history behind every balance.</p>
+      </div>
+      <div class="ink-card">
+        <h3>Feeds</h3>
+        <p>Your portfolio system's exports and your counterparties' files, read the moment they arrive, by SFTP, mail or portal.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="work">
+  <div class="wrap">
+    <p class="eyebrow">Work</p>
+    <h2>Selected work.</h2>
+    <div class="cards">
+      <article class="card work">
+        <p class="when">2026 · hedge fund</p>
+        <h3>Reconciliation engine</h3>
+        <p>In progress: an automated reconciliation engine with a dashboard and alerts.</p>
+      </article>
+      <article class="card work">
+        <p class="when">2026 · personal</p>
+        <h3>Auto-Mail</h3>
+        <p>LLM inbox triage: one batched call scores every mail, and plain code, not the model, decides what may be deleted. About $0.05 a month to run.</p>
+        <p class="stack"><span>Node.js</span><span>Kotlin</span><span>GitHub Actions</span></p>
+      </article>
+      <article class="card work">
+        <p class="when">2026 · personal</p>
+        <h3>Fleet</h3>
+        <p>A macOS app that shows the state of every AI agent session at a glance and brings back the matching terminal in one click.</p>
+        <p class="stack"><span>Swift</span><span>AppKit</span><span>Claude Code</span></p>
+      </article>
+      <article class="card work">
+        <p class="when">2024 to now · Epitech</p>
+        <h3>Video-Code</h3>
+        <p>A rendering engine where scenes are programs: shapes declared and animated in Python, rendered frame by frame to video.</p>
+        <p class="stack"><span>C++</span><span>Vulkan</span><span>FFmpeg</span><span>Qt6</span></p>
+      </article>
+      <article class="card work">
+        <p class="when">2024 to 2025 · team of 5</p>
+        <h3>Mary</h3>
+        <p>A programming language with its own compiler and virtual machine, written from scratch. Released as v1.0.0 with a manual and a VS Code extension.</p>
+        <p class="stack"><span>Haskell</span><span>Compilers</span><span>Bytecode VM</span></p>
+      </article>
+      <article class="card work">
+        <p class="when">2023 · Eiffage Énergie Systèmes</p>
+        <h3>Vehicle-fleet management</h3>
+        <p>The internal fleet site rebuilt from the ground up, replacing spreadsheet tracking. Sole developer, from the data model to the interface.</p>
+        <p class="stack"><span>Next.js</span></p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="process">
+  <div class="wrap">
+    <p class="eyebrow">How we work</p>
+    <h2>Three steps, no surprises.</h2>
+    <div class="steps">
+      <article class="card step">
+        <span class="num">1</span>
+        <h3>A free 30-minute call</h3>
+        <p>You show me the task and where its data lives. I tell you whether software is the right fix, and what it would take.</p>
+      </article>
+      <article class="card step">
+        <span class="num">2</span>
+        <h3>A written quote</h3>
+        <p>Scope, price and delivery date agreed in writing before any work starts.</p>
+      </article>
+      <article class="card step">
+        <span class="num">3</span>
+        <h3>Weekly demos, code you own</h3>
+        <p>You see it run on your own data every week. At the end, the code, the documentation and the access are yours.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="wrap cta-inner">
+    <h2>What does your team do by hand every week?</h2>
+    <p>Write to me, or ask for the free 30-minute call.</p>
+    <div class="cta-actions">
+      <a class="btn btn-primary btn-lg" href="mailto:contact@m3labs.fr">contact@m3labs.fr</a>
+      <a class="btn btn-tint btn-lg" href="https://www.linkedin.com/in/mariusrousset">LinkedIn</a>
+      <a class="btn btn-tint btn-lg" href="https://github.com/anpawo">GitHub</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-inner">
+    <span>© 2026 M3 Labs, Marius ROUSSET EI</span>
+    <a href="legal.html">Legal notice</a>
+  </div>
+</footer>
+
+<script>
+const input = document.getElementById('ask-input');
+document.querySelectorAll('[data-example]').forEach(a => a.addEventListener('click', e => {
+  e.preventDefault();
+  input.value = a.dataset.example;
+  input.focus();
+}));
+document.getElementById('ask').addEventListener('submit', e => {
+  e.preventDefault();
+  const task = input.value.trim() || input.placeholder;
+  location.href = 'mailto:contact@m3labs.fr?subject=' + encodeURIComponent('What to automate') + '&body=' + encodeURIComponent(task + '\n\n');
+});
+</script>
+</body>
+</html>
