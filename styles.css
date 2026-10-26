@@ -104,11 +104,12 @@ h1 { font-size: clamp(44px, 4.5vw, 66px); line-height: 1.02; font-weight: 750; f
   background: linear-gradient(150deg, oklch(60% .2 268), var(--primary) 55%, oklch(46% .23 265));
   background-image: radial-gradient(oklch(100% 0 0 / .14) 1px, transparent 1.3px), linear-gradient(150deg, oklch(60% .2 268), var(--primary) 55%, oklch(46% .23 265));
   background-size: 24px 24px, auto; }
-.app { display: flex; width: 880px; height: 640px; border-radius: 16px 0 0 0; overflow: hidden; background: var(--sheet); box-shadow: var(--shadow-ink); }
+.app { display: flex; width: 880px; height: 640px; border-radius: 16px; overflow: hidden; background: var(--sheet); box-shadow: var(--shadow-ink); }
 .app-side { width: 230px; flex: none; background: var(--ink); color: var(--ink-text); padding: 20px 12px; display: flex; flex-direction: column; gap: 2px; font-size: 14px; }
 .app-brand { display: flex; align-items: center; gap: 10px; color: #fff; font-weight: 650; font-size: 17px; padding: 0 8px 18px; }
 .app-item { display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; border-radius: 8px; color: #fff; font-weight: 500; }
 .app-item.on { background: var(--sheet); color: var(--foreground); margin-right: -12px; border-radius: 10px 0 0 10px; }
+.app-item.grp { margin-top: 14px; }
 .app-main { flex: 1; padding: 26px 26px 0; font-size: 14px; }
 .app-title { display: flex; align-items: center; gap: 12px; font-size: 26px; font-weight: 650; letter-spacing: -.02em; }
 .sq { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; background: var(--brand-tint); color: var(--primary); }
