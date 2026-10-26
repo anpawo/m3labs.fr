@@ -192,9 +192,9 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 .legal p { margin-top: 12px; font-size: 17px; line-height: 1.7; color: var(--muted-foreground); }
 .legal p strong { color: var(--foreground); font-weight: 600; }
 
-/* Intro: a glossy cube turns into an isometric pose, then flies onto the nav logo while its M is drawn.
-   Sizes are the nav logo's times 8 (tile 48px, mark 28px), so the last frame matches the logo exactly.
-   The cube is a little wider than the M's edges so the thick stroke sits inside its silhouette. */
+/* Intro: a glossy cube turns slowly into an isometric pose while four of its edges light up into an M,
+   then it flies onto the nav logo. Sizes are the nav logo's times 8 (tile 48px, mark 28px, cube outline),
+   so the last frame matches the logo exactly. */
 .intro { display: none; }
 .intro-on .intro { display: block; position: fixed; inset: 0; z-index: 50; pointer-events: none; background: var(--background); }
 .intro-on .nav .logo { opacity: 0; }
@@ -202,28 +202,36 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 .intro-mark > * { grid-area: 1 / 1; }
 .intro-tile { width: 100%; height: 100%; border-radius: 96px; opacity: 0;
   background: linear-gradient(160deg, oklch(60% .22 265), var(--primary)); box-shadow: inset 0 -16px 0 var(--primary-edge); }
-.cube { position: relative; width: 146px; height: 146px; transform-style: preserve-3d; transform: rotateX(-18deg) rotateY(12deg); }
-.cube i { position: absolute; inset: 0; box-shadow: inset 0 0 0 1.5px oklch(100% 0 0 / .35);
+.cube { position: relative; width: 120px; height: 120px; transform-style: preserve-3d; transform: rotateX(-18deg) rotateY(12deg); }
+.cube i { position: absolute; inset: 0; box-shadow: inset 0 0 0 1px oklch(100% 0 0 / .3);
   background: linear-gradient(115deg, transparent 38%, oklch(100% 0 0 / .55) 50%, transparent 62%) 100% 0 / 300% 100% no-repeat, var(--face); }
-.cube .t { --face: linear-gradient(135deg, oklch(80% .11 262), oklch(66% .19 265)); transform: rotateX(90deg) translateZ(73px); }
-.cube .l { --face: linear-gradient(180deg, oklch(60% .22 265), oklch(52% .24 265)); transform: rotateY(-90deg) translateZ(73px); }
-.cube .f { --face: linear-gradient(180deg, oklch(47% .22 266), oklch(38% .19 267)); transform: translateZ(73px); }
-.intro-mark svg { position: relative; width: 224px; height: 224px; color: #fff; }
-.intro-m { stroke-dasharray: 1; stroke-dashoffset: 1; }
-.intro-faint { opacity: 0; }
-.intro-go .intro { animation: intro-out .4s 1.25s both; }
-.intro-go .intro-mark { animation: intro-fly .9s .7s cubic-bezier(.65, 0, .25, 1) both; }
+.cube .t { --face: linear-gradient(135deg, oklch(80% .11 262), oklch(66% .19 265)); transform: rotateX(90deg) translateZ(60px); }
+.cube .l { --face: linear-gradient(180deg, oklch(60% .22 265), oklch(52% .24 265)); transform: rotateY(-90deg) translateZ(60px); }
+.cube .f { --face: linear-gradient(180deg, oklch(47% .22 266), oklch(38% .19 267)); transform: translateZ(60px); }
+/* the M's edges, in drawing order: left face's back edge up, its top edge, the front face's top edge, its right edge down.
+   Each line sits 1px inside its face, so the silhouette edges read on blue rather than on the pale page. */
+.cube .l::before, .cube .l::after, .cube .f::before, .cube .f::after { content: ""; position: absolute; background: oklch(100% 0 0 / .85); }
+.cube .l::before { left: 1px; top: 1px; bottom: 1px; width: 2px; transform-origin: bottom; }
+.cube .l::after { left: 1px; right: 1px; top: 1px; height: 2px; transform-origin: left; }
+.cube .f::before { left: 1px; right: 1px; top: 1px; height: 2px; transform-origin: left; }
+.cube .f::after { right: 1px; top: 1px; bottom: 1px; width: 2px; transform-origin: top; }
+.intro-mark svg { position: relative; width: 224px; height: 224px; color: #fff; opacity: 0; }
+.intro-go .intro { animation: intro-out .4s 1.5s both; }
+.intro-go .intro-mark { animation: intro-fly .9s 1s cubic-bezier(.65, 0, .25, 1) both; }
 /* the fade sits on the faces: an opacity animation on .cube would flatten its 3D */
-.intro-go .cube { animation: intro-turn .8s cubic-bezier(.3, .7, .3, 1) both; }
-.intro-go .cube i { animation: intro-shine 1s .1s ease-in-out both, fade-out .2s 1.4s both; }
-.intro-go .intro-m { animation: draw .6s .7s ease-in-out both; }
-.intro-go .intro-faint { animation: fade-in .3s 1.25s both; }
-.intro-go .intro-tile { animation: fade-in .15s 1.45s both; }
+.intro-go .cube { animation: intro-turn 1.2s cubic-bezier(.4, 0, .25, 1) both; }
+.intro-go .cube i { animation: intro-shine 1.2s .1s ease-in-out both, fade-out .2s 1.7s both; }
+.intro-go .cube .l::before { animation: edge-y .25s .15s linear both; }
+.intro-go .cube .l::after { animation: edge-x .25s .4s linear both; }
+.intro-go .cube .f::before { animation: edge-x .25s .65s linear both; }
+.intro-go .cube .f::after { animation: edge-y .25s .9s linear both; }
+.intro-go .intro-tile, .intro-go .intro-mark svg { animation: fade-in .15s 1.75s both; }
 @keyframes intro-turn { to { transform: rotateX(-35.264deg) rotateY(45deg); } }
 @keyframes intro-shine { to { background-position: 0 0, 0 0; } }
 @keyframes intro-fly { to { transform: translate(var(--dx), var(--dy)) scale(.125); } }
 @keyframes intro-out { to { background-color: transparent; } }
-@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes edge-x { from { transform: scaleX(0); } }
+@keyframes edge-y { from { transform: scaleY(0); } }
 @keyframes fade-in { to { opacity: 1; } }
 @keyframes fade-out { to { opacity: 0; } }
 
