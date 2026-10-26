@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>M3 Labs | Custom software, reconciliation and automation</title>
-<meta name="description" content="M3 Labs builds reconciliation engines, finance ledgers, automations and AI integrations for teams that still do it by hand. Freelance software engineer in Aix-en-Provence, France.">
+<meta name="description" content="M3 Labs builds reconciliation engines, finance ledgers, automations and AI integrations for teams that still do it by hand. Freelance software engineer in Aix-en-Provence and Paris, France.">
 <meta property="og:title" content="M3 Labs | Less manual work. Fewer errors.">
 <meta property="og:description" content="Reconciliation engines, finance ledgers, automation and AI integration, built for your team.">
 <meta property="og:url" content="https://m3labs.fr/">
@@ -12,8 +12,21 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preload" href="fonts/mona-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
+<script>
+if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  document.documentElement.classList.add('intro-on');
+  setTimeout(() => document.documentElement.classList.remove('intro-on'), 3000);
+}
+</script>
 </head>
 <body>
+<div class="intro" aria-hidden="true">
+  <div class="intro-mark">
+    <span class="intro-tile"></span>
+    <div class="cube"><i class="t"></i><i class="l"></i><i class="f"></i></div>
+    <svg viewBox="10 8 44 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path class="intro-faint" d="M14 21.5 L32 11 L50 21.5 M32 32 V53 M14 42.5 L32 53 L50 42.5" stroke-width="2.6" stroke-opacity=".45"/><path class="intro-m" d="M14 42.5 V21.5 L32 32 L50 21.5 V42.5" stroke-width="4.6" pathLength="1"/></svg>
+  </div>
+</div>
 
 <header class="nav">
   <div class="wrap nav-inner">
@@ -52,8 +65,7 @@
         </label>
         <button class="btn btn-primary btn-wide" type="submit">Tell me what to automate</button>
       </form>
-      <p class="examples">For example: <a href="#" data-example="Our positions, trades and cash are checked against our prime broker by hand every morning.">Daily reconciliation against your prime broker</a><br>or <a href="#" data-example="A weekly report is rebuilt by hand from several Excel files.">A weekly Excel report turned into a dashboard</a></p>
-      <p class="fine">Freelance software engineer in Aix-en-Provence, France.</p>
+      <p class="fine">Freelance software engineer in Aix-en-Provence and Paris, France.</p>
     </div>
 
     <div class="hero-visual" aria-hidden="true">
@@ -61,26 +73,16 @@
         <div class="app">
           <aside class="app-side">
             <div class="app-brand"><span class="logo logo-sm"><svg viewBox="10 8 44 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 21.5 L32 11 L50 21.5 M32 32 V53 M14 42.5 L32 53 L50 42.5" stroke-width="2.6" stroke-opacity=".45"/><path d="M14 42.5 V21.5 L32 32 L50 21.5 V42.5" stroke-width="4.6"/></svg></span>M3 Labs</div>
-            <p class="app-group">Reconcile</p>
-            <span class="app-item">Overview</span>
-            <span class="app-item on">Positions</span>
-            <span class="app-item">Cash</span>
-            <span class="app-item">Trades</span>
-            <p class="app-group">Ledger</p>
-            <span class="app-item">Journal</span>
-            <span class="app-item">Balances</span>
-            <p class="app-group">Alerts</p>
-            <span class="app-item">Breaks <b class="pill pill-red">2</b></span>
-            <span class="app-item">Reports <b class="pill pill-green">1</b></span>
+            <span class="app-item on">Reconciliation</span>
+            <span class="app-item">Ledger</span>
+            <span class="app-item">Model website</span>
+            <span class="app-item">Mail automation</span>
+            <span class="app-item">macOS app</span>
+            <span class="app-item">Video engine</span>
           </aside>
           <div class="app-main">
             <div class="app-title"><span class="sq"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>Daily reconciliation</div>
             <div class="app-query"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Fund A against Prime broker, 23 Oct</div>
-            <div class="chips">
-              <span class="chip">Fund <b>A</b> ×</span>
-              <span class="chip">Against <b>Prime broker</b> ×</span>
-              <span class="chip">Date <b>23 Oct</b> ×</span>
-            </div>
             <p class="app-count">1,284 positions</p>
             <p class="app-sub">1,282 matched, 2 breaks</p>
             <table>
@@ -90,22 +92,11 @@
                 <tr><td>INGA NA</td><td>8,150</td><td>8,150</td><td><span class="st ok">Matched</span></td></tr>
                 <tr><td>BMW GY</td><td>3,020</td><td>3,000</td><td><span class="st ko">Break −20</span></td></tr>
                 <tr><td>VOW3 GY</td><td>21,700</td><td>21,700</td><td><span class="st ok">Matched</span></td></tr>
-                <tr><td>NOKIA FH</td><td>−5,600</td><td>−5,600</td><td><span class="st ok">Matched</span></td></tr>
                 <tr><td>EUR cash</td><td>1.42M</td><td>1.39M</td><td><span class="st ko">Break</span></td></tr>
-                <tr><td>ERICB SS</td><td>4,480</td><td>4,480</td><td><span class="st ok">Matched</span></td></tr>
               </tbody>
             </table>
           </div>
         </div>
-      </div>
-      <div class="toast">
-        <span class="toast-ico"><svg viewBox="0 0 24 24"><path d="M12 3v10M12 17v.5"/></svg></span>
-        <div>
-          <p class="toast-title">Break explained</p>
-          <p class="toast-meta">BMW GY, fund against broker, 4 min ago</p>
-          <p class="toast-body">“20 shares booked a day late by the broker. Clears tomorrow.”</p>
-        </div>
-        <span class="dot"></span>
       </div>
     </div>
   </div>
@@ -187,6 +178,11 @@
     <div class="cards">
       <article class="card work">
         <p class="when">2026 · hedge fund</p>
+        <h3>Finance ledger</h3>
+        <p>In progress: working on the firm's finance ledger.</p>
+      </article>
+      <article class="card work">
+        <p class="when">2026 · hedge fund</p>
         <h3>Reconciliation engine</h3>
         <p>In progress: an automated reconciliation engine with a dashboard and alerts.</p>
       </article>
@@ -210,15 +206,9 @@
       </article>
       <article class="card work">
         <p class="when">2024 to 2025 · team of 5</p>
-        <h3>Mary</h3>
+        <h3>GLaDOS</h3>
         <p>A programming language with its own compiler and virtual machine, written from scratch. Released as v1.0.0 with a manual and a VS Code extension.</p>
         <p class="stack"><span>Haskell</span><span>Compilers</span><span>Bytecode VM</span></p>
-      </article>
-      <article class="card work">
-        <p class="when">2023 · Eiffage Énergie Systèmes</p>
-        <h3>Vehicle-fleet management</h3>
-        <p>The internal fleet site rebuilt from the ground up, replacing spreadsheet tracking. Sole developer, from the data model to the interface.</p>
-        <p class="stack"><span>Next.js</span></p>
       </article>
     </div>
   </div>
@@ -270,12 +260,15 @@
 </footer>
 
 <script>
+const intro = document.querySelector('.intro');
+if (document.documentElement.classList.contains('intro-on')) {
+  const to = document.querySelector('.nav .logo').getBoundingClientRect(), from = intro.firstElementChild.getBoundingClientRect();
+  intro.style.setProperty('--dx', to.left + to.width / 2 - (from.left + from.width / 2) + 'px');
+  intro.style.setProperty('--dy', to.top + to.height / 2 - (from.top + from.height / 2) + 'px');
+  intro.addEventListener('animationend', e => { if (e.animationName === 'intro-out') document.documentElement.classList.remove('intro-on', 'intro-go'); });
+  document.documentElement.classList.add('intro-go');
+}
 const input = document.getElementById('ask-input');
-document.querySelectorAll('[data-example]').forEach(a => a.addEventListener('click', e => {
-  e.preventDefault();
-  input.value = a.dataset.example;
-  input.focus();
-}));
 document.getElementById('ask').addEventListener('submit', e => {
   e.preventDefault();
   const task = input.value.trim() || input.placeholder;
