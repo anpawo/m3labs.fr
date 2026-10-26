@@ -91,6 +91,12 @@ h1 { font-size: clamp(44px, 4.5vw, 66px); line-height: 1.02; font-weight: 750; f
 .ask-field { display: flex; align-items: center; gap: 14px; padding: 6px 4px 18px; }
 .ask-field .ico { width: 26px; height: 26px; color: var(--primary); flex: none; }
 .ask-field input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; font: 400 19px var(--font); color: var(--foreground); }
+/* the cube's shine, swept across on hover and back on leave; z-index -1 keeps it under the label */
+.ask .btn { position: relative; overflow: hidden; isolation: isolate; }
+.ask .btn::after { content: ""; position: absolute; inset: 0; z-index: -1; transition: background-position .7s ease-in-out;
+  background: linear-gradient(115deg, transparent 38%, oklch(100% 0 0 / .55) 50%, transparent 62%) 100% 0 / 300% 100% no-repeat; }
+.ask .btn:hover::after { background-position: 0 0; }
+@media (prefers-reduced-motion: reduce) { .ask .btn::after { transition: none; } }
 .fine { margin-top: 26px; font-size: 17px; color: var(--muted-foreground); }
 
 .hero-visual { position: relative; align-self: stretch; min-height: 640px; }
