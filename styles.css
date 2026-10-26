@@ -202,12 +202,12 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 .intro-mark > * { grid-area: 1 / 1; }
 .intro-tile { width: 100%; height: 100%; border-radius: 96px; opacity: 0;
   background: linear-gradient(160deg, oklch(60% .22 265), var(--primary)); box-shadow: inset 0 -16px 0 var(--primary-edge); }
-.cube { position: relative; width: 134px; height: 134px; transform-style: preserve-3d; transform: rotateX(-18deg) rotateY(12deg); }
+.cube { position: relative; width: 146px; height: 146px; transform-style: preserve-3d; transform: rotateX(-18deg) rotateY(12deg); }
 .cube i { position: absolute; inset: 0; box-shadow: inset 0 0 0 1.5px oklch(100% 0 0 / .35);
   background: linear-gradient(115deg, transparent 38%, oklch(100% 0 0 / .55) 50%, transparent 62%) 100% 0 / 300% 100% no-repeat, var(--face); }
-.cube .t { --face: linear-gradient(135deg, oklch(80% .11 262), oklch(66% .19 265)); transform: rotateX(90deg) translateZ(67px); }
-.cube .l { --face: linear-gradient(180deg, oklch(60% .22 265), oklch(52% .24 265)); transform: rotateY(-90deg) translateZ(67px); }
-.cube .f { --face: linear-gradient(180deg, oklch(47% .22 266), oklch(38% .19 267)); transform: translateZ(67px); }
+.cube .t { --face: linear-gradient(135deg, oklch(80% .11 262), oklch(66% .19 265)); transform: rotateX(90deg) translateZ(73px); }
+.cube .l { --face: linear-gradient(180deg, oklch(60% .22 265), oklch(52% .24 265)); transform: rotateY(-90deg) translateZ(73px); }
+.cube .f { --face: linear-gradient(180deg, oklch(47% .22 266), oklch(38% .19 267)); transform: translateZ(73px); }
 .intro-mark svg { position: relative; width: 224px; height: 224px; color: #fff; }
 .intro-m { stroke-dasharray: 1; stroke-dashoffset: 1; }
 .intro-faint { opacity: 0; }
