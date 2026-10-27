@@ -85,8 +85,8 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
 /* Hero */
 .hero { position: relative; overflow: hidden; padding: 90px 0 110px;
   background-image: radial-gradient(oklch(52.5% .241 265.2 / .10) 1px, transparent 1.2px); background-size: 24px 24px; }
-.hero-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 48px; align-items: center; }
-h1 { font-size: clamp(44px, 4.5vw, 66px); line-height: 1.02; font-weight: 750; font-stretch: 110%; letter-spacing: -.05em; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+h1 { font-size: clamp(44px, 4.5vw, 62px); line-height: 1.02; font-weight: 750; font-stretch: 110%; letter-spacing: -.05em; }
 /* the title, its lead and the ask box start a little under the blue panel's top; the fine print sits at its bottom, 40px under the row */
 .hero-text { align-self: stretch; display: flex; flex-direction: column; justify-content: space-between; gap: 30px; padding: 44px 0 20px; margin-bottom: -40px; }
 .blue { color: var(--primary); }
