@@ -278,11 +278,11 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 .intro-go .intro { animation: intro-out .5s 2.15s both; }
 .intro-go .intro-mark { animation: intro-fly 1s 1.65s cubic-bezier(.65, 0, .25, 1) both; }
 .intro-go .cube { animation: intro-turn 1.25s cubic-bezier(.35, .15, .45, 1) both; }
-/* the shine (the script's, from .1 to .9 s), then the M drawn edge by edge from .6 s as the band leaves; at 1.25 s the turn and the M end together, the full M
-   holds still for .4 s, then the cube flies to the nav without turning */
-.intro-go .cube .l path { animation: draw .35s .6s linear both; }
-.intro-go .cube .t path { animation: draw .35s .75s linear both; }
-.intro-go .cube .f path { animation: draw .35s .9s linear both; }
+/* the shine (the script's, from .1 to .9 s), then the M drawn edge by edge from .5 s as the band leaves, whole at 1.15 s; the turn ends at 1.25 s, the full M
+   holds still until 1.65 s, then the cube flies to the nav without turning */
+.intro-go .cube .l path { animation: draw .35s .5s linear both; }
+.intro-go .cube .t path { animation: draw .35s .65s linear both; }
+.intro-go .cube .f path { animation: draw .35s .8s linear both; }
 /* 180 degrees, half a turn, which still shows every side face on the way */
 @keyframes intro-turn { from { transform: rotateX(-15deg) rotateY(225deg); } }
 @keyframes intro-fly { to { transform: translate(var(--dx), var(--dy)) scale(var(--mark-scale)); } }
