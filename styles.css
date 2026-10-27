@@ -81,13 +81,12 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
   background-image: radial-gradient(oklch(52.5% .241 265.2 / .10) 1px, transparent 1.2px); background-size: 24px 24px; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 48px; align-items: center; }
 h1 { font-size: clamp(44px, 4.5vw, 66px); line-height: 1.02; font-weight: 750; font-stretch: 110%; letter-spacing: -.05em; }
-/* the title, its lead and the ask box start just under the blue panel's top, evenly spaced; the fine print sits at its bottom, 40px under the row */
-.hero-text { align-self: stretch; display: flex; flex-direction: column; justify-content: space-between; gap: 30px; padding: 20px 0; margin-bottom: -40px; }
+/* the title, its lead and the ask box start a little under the blue panel's top; the fine print sits at its bottom, 40px under the row */
+.hero-text { align-self: stretch; display: flex; flex-direction: column; justify-content: space-between; gap: 30px; padding: 44px 0 20px; margin-bottom: -40px; }
 .blue { color: var(--primary); }
 .lead { margin-top: 26px; font-size: 21px; line-height: 1.6; color: var(--muted-foreground); max-width: 40ch; }
 .lead strong { color: var(--foreground); font-weight: 600; }
-/* 38px, not 26: the lead's last line leaves less room under its ink than the title does */
-.ask { margin-top: 38px; padding: 22px; background: var(--sheet); border: 2px solid var(--primary); border-radius: 16px;
+.ask { margin-top: 50px; padding: 22px; background: var(--sheet); border: 2px solid var(--primary); border-radius: 16px;
   box-shadow: 0 18px 40px -22px oklch(52.5% .241 265.2 / .45); }
 .ask .ico { width: 24px; height: 24px; flex: none; }
 /* the cube's shine, swept across on hover and back on leave; z-index -1 keeps it under the label. At 93% and 7% the
@@ -99,7 +98,8 @@ h1 { font-size: clamp(44px, 4.5vw, 66px); line-height: 1.02; font-weight: 750; f
 @media (prefers-reduced-motion: reduce) { .ask .btn::after { transition: none; } }
 .fine { font-size: 17px; color: var(--muted-foreground); }
 
-.hero-visual { position: relative; align-self: stretch; min-height: 640px; }
+/* the panel takes what the screen leaves under the nav, so the fine print at its bottom stays above the fold */
+.hero-visual { position: relative; align-self: stretch; min-height: clamp(500px, 100svh - var(--nav-h) - 160px, 640px); }
 .panel { position: absolute; left: 0; top: 0; bottom: -40px; width: calc(100% + 30vw); border-radius: 28px 0 0 28px; padding: 60px 0 0 60px;
   background: linear-gradient(150deg, oklch(60% .2 268), var(--primary) 55%, oklch(46% .23 265));
   background-image: radial-gradient(oklch(100% 0 0 / .14) 1px, transparent 1.3px), linear-gradient(150deg, oklch(60% .2 268), var(--primary) 55%, oklch(46% .23 265));
@@ -140,6 +140,13 @@ td:first-child { font-weight: 600; }
 .alerts { list-style: none; width: 300px; margin: 16px 0 0; padding: 0; display: grid; gap: 8px; }
 .alerts li { display: grid; gap: 2px; padding: 10px 14px; border-radius: 10px; font-size: 13px; }
 .alerts b { font-size: 14px; font-weight: 600; }
+/* the model website's portfolio: a figure on a studio backdrop in each frame, nobody's photo */
+.shots { list-style: none; width: 308px; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px 10px; font-size: 12px; font-weight: 600; }
+.shots li::before { content: ""; display: block; aspect-ratio: 3 / 4; margin-bottom: 6px; border-radius: 10px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 80' fill='white' fill-opacity='.7'%3E%3Ccircle cx='30' cy='31' r='11'/%3E%3Cpath d='M7 80c0-16 10-27 23-27s23 11 23 27z'/%3E%3C/svg%3E") center bottom / 78% no-repeat, linear-gradient(170deg, var(--a), var(--b)); }
+.shots li:nth-child(3n+1) { --a: oklch(91% .02 265); --b: oklch(77% .035 265); }
+.shots li:nth-child(3n+2) { --a: oklch(92% .02 70); --b: oklch(80% .03 60); }
+.shots li:nth-child(3n) { --a: oklch(88% .008 250); --b: oklch(70% .012 250); }
 .st.new { background: var(--brand-tint); color: var(--brand-tint-fg); }
 
 /* Sections */
@@ -170,12 +177,13 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 .stack span { padding: 3px 9px; border-radius: 6px; background: oklch(94.2% .015 265); color: oklch(42% .04 265); font-size: 13px; font-weight: 500; }
 
 /* Ink band (Work) */
-.ink { background: var(--ink); color: #fff;
-  background-image: radial-gradient(oklch(100% 0 0 / .06) 1px, transparent 1.3px); background-size: 24px 24px; }
+/* the hero panel's blue, softer than the navy it had */
+.ink { color: #fff; background-image: radial-gradient(oklch(100% 0 0 / .14) 1px, transparent 1.3px), linear-gradient(150deg, oklch(60% .2 268), var(--primary) 55%, oklch(46% .23 265));
+  background-size: 24px 24px, auto; }
 .ink .section-lead { color: var(--ink-text); }
-.eyebrow-ink { color: var(--ink-link); }
+.eyebrow-ink { color: oklch(100% 0 0 / .75); }
 /* white cards on the band, as on the rest of the page, read better than pale text on navy */
-.ink .card { color: var(--foreground); border: 0; }
+.ink .card { color: var(--foreground); border: 0; box-shadow: var(--shadow-ink); }
 
 /* Steps */
 .steps { margin-top: 28px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
