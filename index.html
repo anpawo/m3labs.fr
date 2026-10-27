@@ -28,7 +28,7 @@
 }
 </script>
 <link rel="preload" href="fonts/mona-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=3789c66">
+<link rel="stylesheet" href="styles.css?v=0ada405">
 <script>
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.documentElement.classList.add('intro-on');
@@ -380,12 +380,12 @@ items.forEach((el, i) => {
 cycle();
 // the line above the button types an idea, holds it, erases it and moves on; with reduced motion the first one stays
 const ideas = [
-  'Read, sort and answer my emails for me',
-  'Build me a dashboard made for my business',
-  'Create my invoices and chase the unpaid ones',
-  'Plan my week ahead in my calendar',
-  'Track my spending and get my books ready for the accountant',
-  'Sort my photos into albums for me',
+  'Read, sort and answer my emails for me.',
+  'Build me a dashboard made for my business.',
+  'Create my invoices and chase the unpaid ones.',
+  'Plan my week ahead in my calendar.',
+  'Track my spending and get my books ready for the accountant.',
+  'Sort my photos into albums for me.',
 ];
 const idea = document.querySelector('.ask-idea');
 if (matchMedia('(prefers-reduced-motion: reduce)').matches) idea.textContent = ideas[0];
