@@ -68,7 +68,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
 .nav { position: sticky; top: 0; z-index: 10; background: var(--sheet); border-bottom: 1px solid var(--border); }
 .nav-inner { display: flex; align-items: center; gap: 40px; height: 88px; }
 .brand { display: flex; align-items: center; gap: 14px; font-weight: 650; font-size: 21px; text-decoration: none; letter-spacing: -.01em; }
-.logo { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 12px; color: #fff;
+.logo, .mark { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 12px; color: #fff;
   background: linear-gradient(160deg, oklch(60% .22 265), var(--primary)); box-shadow: inset 0 -2px 0 var(--primary-edge); }
 .logo svg { width: 28px; height: 28px; stroke-width: 15; }
 .logo-sm { width: 30px; height: 30px; border-radius: 8px; }
@@ -83,19 +83,22 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
   background-image: radial-gradient(oklch(52.5% .241 265.2 / .10) 1px, transparent 1.2px); background-size: 24px 24px; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr); gap: 48px; align-items: center; }
 h1 { font-size: clamp(44px, 4.5vw, 66px); line-height: 1.02; font-weight: 750; font-stretch: 110%; letter-spacing: -.05em; }
+/* the title starts just under the blue panel's top and the rest spreads evenly down to its bottom, 40px under the row */
+.hero-text { align-self: stretch; display: flex; flex-direction: column; justify-content: space-between; gap: 30px; padding: 20px 0; margin-bottom: -40px; }
 .blue { color: var(--primary); }
-.lead { margin-top: 30px; font-size: 21px; line-height: 1.6; color: var(--muted-foreground); max-width: 40ch; }
+.lead { font-size: 21px; line-height: 1.6; color: var(--muted-foreground); max-width: 40ch; }
 .lead strong { color: var(--foreground); font-weight: 600; }
-.ask { margin-top: 40px; padding: 22px; background: var(--sheet); border: 2px solid var(--primary); border-radius: 16px;
+.ask { padding: 22px; background: var(--sheet); border: 2px solid var(--primary); border-radius: 16px;
   box-shadow: 0 18px 40px -22px oklch(52.5% .241 265.2 / .45); }
 .ask .ico { width: 24px; height: 24px; flex: none; }
-/* the cube's shine, swept across on hover and back on leave; z-index -1 keeps it under the label */
+/* the cube's shine, swept across on hover and back on leave; z-index -1 keeps it under the label. At 93% and 7% the
+   band just touches the button's left and right edges, so it is on the button from the first frame */
 .ask .btn { position: relative; overflow: hidden; isolation: isolate; gap: 12px; }
-.ask .btn::after { content: ""; position: absolute; inset: 0; z-index: -1; transition: background-position .7s ease-in-out;
-  background: linear-gradient(115deg, transparent 38%, oklch(100% 0 0 / .55) 50%, transparent 62%) 100% 0 / 300% 100% no-repeat; }
-.ask .btn:hover::after { background-position: 0 0; }
+.ask .btn::after { content: ""; position: absolute; inset: 0; z-index: -1; transition: background-position .6s ease-out;
+  background: linear-gradient(115deg, transparent 38%, oklch(100% 0 0 / .55) 50%, transparent 62%) 93% 0 / 300% 100% no-repeat; }
+.ask .btn:hover::after { background-position: 7% 0; }
 @media (prefers-reduced-motion: reduce) { .ask .btn::after { transition: none; } }
-.fine { margin-top: 26px; font-size: 17px; color: var(--muted-foreground); }
+.fine { font-size: 17px; color: var(--muted-foreground); }
 
 .hero-visual { position: relative; align-self: stretch; min-height: 640px; }
 .panel { position: absolute; left: 0; top: 0; bottom: -40px; width: calc(100% + 30vw); border-radius: 28px 0 0 28px; padding: 60px 0 0 60px;
@@ -108,7 +111,10 @@ h1 { font-size: clamp(44px, 4.5vw, 66px); line-height: 1.02; font-weight: 750; f
 .app-item { display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; border-radius: 8px; color: #fff; font-weight: 500; transition: background-color .25s, color .25s; }
 .app-item.on { background: var(--sheet); color: var(--foreground); margin-right: -12px; border-radius: 10px 0 0 10px; }
 .app-item.grp { margin-top: 14px; }
-.app-main { flex: 1; padding: 26px 26px 0; font-size: 14px; }
+.app-main { flex: 1; padding: 26px 26px 0; font-size: 14px; display: grid; align-content: start; }
+/* one view per sidebar item, stacked; the selected one fades in as the other fades out */
+.view { grid-area: 1 / 1; opacity: 0; translate: 0 8px; transition: opacity .35s, translate .35s; }
+.view.on { opacity: 1; translate: none; }
 .app-title { display: flex; align-items: center; gap: 12px; font-size: 26px; font-weight: 650; letter-spacing: -.02em; }
 .sq { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 9px; background: var(--brand-tint); color: var(--primary); }
 .sq svg { width: 18px; height: 18px; }
@@ -123,6 +129,7 @@ td:first-child { font-weight: 600; }
 .st { padding: 3px 8px; border-radius: 6px; font-size: 12px; font-weight: 600; white-space: nowrap; }
 .st.ok { background: oklch(94.7% .02 164.6); color: oklch(42.8% .087 163.8); }
 .st.ko { background: oklch(95.2% .024 14.4); color: oklch(44.8% .16 22.7); }
+.st.new { background: var(--brand-tint); color: var(--brand-tint-fg); }
 
 /* Sections */
 /* each nav target fills the screen under the sticky nav */
@@ -191,15 +198,18 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 .legal p { margin-top: 12px; font-size: 17px; line-height: 1.7; color: var(--muted-foreground); }
 .legal p strong { color: var(--foreground); font-weight: 600; }
 
-/* The nav logo is a CSS cube whose M is four of its edges drawn as lines. The intro plays that same cube large,
-   turning the whole way while it flies, and lands it on the nav's cube at the same pose and scale, so nothing
-   swaps when the overlay goes. Sizes are the intro's; the nav shows the cube at .15. */
-.mark { position: relative; width: 48px; height: 48px; }
-.mark .cube { position: absolute; left: 50%; top: 50%; margin: -80px 0 0 -80px; scale: .15; }
+/* The nav logo is the blue tile holding a CSS cube whose M is four of its edges lit up. The intro plays that same
+   cube large, turning the whole way while it flies, grows the tile around it on the way and lands both on the nav's
+   logo at the same pose and scale, so nothing swaps when the overlay goes. Sizes are the intro's, 8 times the nav's. */
+.mark { position: relative; }
+.mark .cube { position: absolute; left: 50%; top: 50%; margin: -80px 0 0 -80px; scale: .125; }
 .intro { display: none; }
 .intro-on .intro { display: block; position: fixed; inset: 0; z-index: 50; pointer-events: none; background: var(--background); }
 .intro-on .nav .mark { opacity: 0; }
-.intro-mark { position: absolute; left: 50%; top: 50%; width: 160px; height: 160px; margin: -80px 0 0 -80px; }
+.intro-mark { position: absolute; left: 50%; top: 50%; width: 384px; height: 384px; margin: -192px 0 0 -192px; display: grid; place-items: center; }
+.intro-mark > * { grid-area: 1 / 1; }
+.intro-tile { width: 100%; height: 100%; border-radius: 96px; opacity: 0;
+  background: linear-gradient(160deg, oklch(60% .22 265), var(--primary)); box-shadow: inset 0 -16px 0 var(--primary-edge); }
 .cube { position: relative; display: block; width: 160px; height: 160px; transform-style: preserve-3d; transform: rotateX(-35.264deg) rotateY(45deg); }
 .cube i { position: absolute; inset: 0; background: var(--face); box-shadow: inset 0 0 0 1px oklch(100% 0 0 / .3); }
 /* the shine sits above the M so it glints across the line too */
@@ -216,6 +226,7 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 .cube path { stroke-dasharray: 1; stroke: #fff; stroke-width: 12; filter: drop-shadow(0 0 3px #fff) drop-shadow(0 0 10px oklch(68% .2 258)); }
 .intro-go .intro { animation: intro-out .5s 1.5s both; }
 .intro-go .intro-mark { animation: intro-fly 1s 1s cubic-bezier(.65, 0, .25, 1) both; }
+.intro-go .intro-tile { animation: fade-in .4s 1.3s both; }
 .intro-go .cube { animation: intro-turn 2s cubic-bezier(.35, .15, .45, 1) both; }
 .intro-go .cube i::after { animation: intro-shine 1.1s .9s ease-in-out both; }
 .intro-go .cube .l path { animation: draw .5s .35s linear both; }
@@ -223,7 +234,8 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 .intro-go .cube .f path { animation: draw .5s .85s linear both; }
 @keyframes intro-turn { from { transform: rotateX(-15deg) rotateY(135deg); } }
 @keyframes intro-shine { from { background-position: 100% 0; } }
-@keyframes intro-fly { to { transform: translate(var(--dx), var(--dy)) scale(.15); } }
+@keyframes intro-fly { to { transform: translate(var(--dx), var(--dy)) scale(.125); } }
+@keyframes fade-in { to { opacity: 1; } }
 @keyframes intro-out { to { background-color: transparent; } }
 @keyframes draw { from { stroke-dashoffset: 1; } }
 
@@ -239,6 +251,7 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 @media (max-width: 1080px) {
   .links { display: none; }
   .hero-grid { grid-template-columns: 1fr; }
+  .hero-text { padding: 0; margin-bottom: 0; }
   .hero-visual { min-height: 560px; }
   .cards, .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
