@@ -38,13 +38,13 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
 </head>
 <body>
 <div class="intro" aria-hidden="true">
-  <div class="intro-mark"><span class="cube"><i class="t"></i><i class="l"><svg viewBox="0 0 160 160"><path d="M16 160V16H160" pathLength="1"/><path d="M16 154V16H160" pathLength="1"/></svg></i><i class="f"><svg viewBox="0 0 160 160"><path d="M0 16H144V160" pathLength="1"/><path d="M0 16H144V154" pathLength="1"/></svg></i><i class="b"></i></span></div>
+  <div class="intro-mark"><span class="cube"><i class="t"><svg viewBox="0 0 160 160"><path d="M0 0V160H160" pathLength="1"/></svg></i><i class="l"><svg viewBox="0 0 160 160"><path d="M0 160V0H160" pathLength="1"/></svg></i><i class="f"><svg viewBox="0 0 160 160"><path d="M0 0H160V160" pathLength="1"/></svg></i><i class="b"></i></span></div>
 </div>
 
 <header class="nav">
   <div class="wrap nav-inner">
     <a class="brand" href="#top" aria-label="M3 Labs, home">
-      <span class="mark" aria-hidden="true"><span class="cube"><i class="t"></i><i class="l"><svg viewBox="0 0 160 160"><path d="M16 160V16H160" pathLength="1"/><path d="M16 154V16H160" pathLength="1"/></svg></i><i class="f"><svg viewBox="0 0 160 160"><path d="M0 16H144V160" pathLength="1"/><path d="M0 16H144V154" pathLength="1"/></svg></i><i class="b"></i></span></span>
+      <span class="mark" aria-hidden="true"><span class="cube"><i class="t"><svg viewBox="0 0 160 160"><path d="M0 0V160H160" pathLength="1"/></svg></i><i class="l"><svg viewBox="0 0 160 160"><path d="M0 160V0H160" pathLength="1"/></svg></i><i class="f"><svg viewBox="0 0 160 160"><path d="M0 0H160V160" pathLength="1"/></svg></i><i class="b"></i></span></span>
       M3 Labs
     </a>
     <nav class="links" aria-label="Main">
@@ -67,14 +67,9 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
       <h1>Less manual work.<br><span class="blue">Fewer errors.</span></h1>
       <p class="lead">Tell me what your team does <strong>by hand</strong>. I build the <strong>software</strong> that does it for you, and you keep <strong>the code</strong>.</p>
 
-      <form class="ask" id="ask">
-        <label class="ask-field">
-          <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-          <span class="sr">What do you do by hand?</span>
-          <input id="ask-input" name="task" autocomplete="off">
-        </label>
-        <button class="btn btn-primary btn-wide" type="submit">Tell me what to automate</button>
-      </form>
+      <div class="ask">
+        <a class="btn btn-primary btn-wide" href="mailto:contact@m3labs.fr?subject=What%20to%20automate"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Tell me what to automate</a>
+      </div>
       <p class="fine">Freelance software engineer in Aix-en-Provence and Paris, France.</p>
     </div>
 
@@ -85,9 +80,9 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
             <div class="app-brand"><span class="logo logo-sm"><svg viewBox="10 8 44 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 21.5 L32 11 L50 21.5 M32 32 V53 M14 42.5 L32 53 L50 42.5" stroke-width="2.6" stroke-opacity=".45"/><path d="M14 42.5 V21.5 L32 32 L50 21.5 V42.5" stroke-width="4.6"/></svg></span>M3 Labs</div>
             <span class="app-item on">Reconciliation</span>
             <span class="app-item">Ledger</span>
-            <span class="app-item">Custom dashboard</span>
+            <span class="app-item grp">Dashboard</span>
             <span class="app-item grp">Mail automation</span>
-            <span class="app-item">macOS app</span>
+            <span class="app-item grp">macOS app</span>
             <span class="app-item grp">Model website</span>
           </aside>
           <div class="app-main">
@@ -249,12 +244,16 @@ if (document.documentElement.classList.contains('intro-on')) {
   intro.addEventListener('animationend', e => { if (e.animationName === 'intro-out') document.documentElement.classList.remove('intro-on', 'intro-go'); });
   document.documentElement.classList.add('intro-go');
 }
-const input = document.getElementById('ask-input');
-document.getElementById('ask').addEventListener('submit', e => {
-  e.preventDefault();
-  const task = input.value.trim();
-  location.href = 'mailto:contact@m3labs.fr?subject=' + encodeURIComponent('What to automate') + '&body=' + encodeURIComponent(task + '\n\n');
+// the sidebar's selection moves on every 5 s, and to whichever item the pointer is on
+const items = [...document.querySelectorAll('.app-item')];
+let on = 0, timer;
+const pick = i => { items[on].classList.remove('on'); items[on = i].classList.add('on'); };
+const cycle = () => { clearInterval(timer); if (!matchMedia('(prefers-reduced-motion: reduce)').matches) timer = setInterval(() => pick((on + 1) % items.length), 5000); };
+items.forEach((el, i) => {
+  el.addEventListener('mouseenter', () => { clearInterval(timer); pick(i); });
+  el.addEventListener('mouseleave', cycle);
 });
+cycle();
 </script>
 </body>
 </html>
