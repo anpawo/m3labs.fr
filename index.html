@@ -28,7 +28,7 @@
 }
 </script>
 <link rel="preload" href="fonts/mona-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=eb185ab">
+<link rel="stylesheet" href="styles.css?v=246e473">
 <script>
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.documentElement.classList.add('intro-on');
@@ -54,6 +54,10 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
       <a href="#pricing">Pricing</a>
     </nav>
     <div class="actions">
+      <div class="lang" role="group" aria-label="Language">
+        <button type="button" data-lang="fr" aria-pressed="false"><svg class="flag" viewBox="0 0 3 2" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path fill="#002395" d="M0 0h1v2H0z"/><path fill="#fff" d="M1 0h1v2H1z"/><path fill="#ed2939" d="M2 0h1v2H2z"/></svg><span>FR</span></button>
+        <button type="button" data-lang="en" aria-pressed="true"><svg class="flag" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><clipPath id="uk-x"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><path fill="#012169" d="M0 0h60v30H0z"/><path stroke="#fff" stroke-width="6" d="m0 0 60 30m0-30L0 30"/><path stroke="#c8102e" stroke-width="4" clip-path="url(#uk-x)" d="m0 0 60 30m0-30L0 30"/><path stroke="#fff" stroke-width="10" d="M30 0v30M0 15h60"/><path stroke="#c8102e" stroke-width="6" d="M30 0v30M0 15h60"/></svg><span>EN</span></button>
+      </div>
       <a class="btn btn-tint" href="mailto:contact@m3labs.fr">Email me</a>
       <a class="btn btn-primary" href="mailto:contact@m3labs.fr?subject=A%2030-minute%20call">Book a call</a>
     </div>
@@ -341,6 +345,7 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   </div>
 </footer>
 
+<script src="lang.js?v=246e473"></script>
 <script>
 const intro = document.querySelector('.intro');
 if (document.documentElement.classList.contains('intro-on')) {
@@ -397,22 +402,28 @@ const play = async (id, n, typed) => {
   for (;; n = (n + 1) % ideas.length, typed = false) {
     if (!typed) {
       shown = n;
-      for (const c of ideas[n]) { if (id !== run) return; idea.textContent += c; await wait(45); }
+      for (const c of t(ideas[n])) { if (id !== run) return; idea.textContent += c; await wait(45); }
       await wait(2000);
     }
     while (idea.textContent) { if (id !== run) return; idea.textContent = idea.textContent.slice(0, -1); await wait(18); }
     await wait(400);
   }
 };
-if (still) idea.textContent = ideas[0];
-else wait(document.documentElement.classList.contains('intro-on') ? 3000 : 0).then(() => play(run, 0, false));
+if (still) idea.textContent = t(ideas[0]);
+else wait(document.documentElement.classList.contains('intro-on') ? 3000 : 0).then(() => run || play(0, 0, false));
 for (const b of document.querySelectorAll('.ask-eg button')) b.addEventListener('click', () => {
   const n = +b.dataset.idea;
-  run++; idea.textContent = ideas[shown = n]; clearTimeout(resume);
+  run++; idea.textContent = t(ideas[shown = n]); clearTimeout(resume);
   if (!still) resume = setTimeout(() => play(++run, n, true), 10000);
 });
+// a change of language types the idea on the line again, in the new one
+document.addEventListener('langchange', () => {
+  run++; clearTimeout(resume);
+  if (still) idea.textContent = t(ideas[shown]);
+  else { idea.textContent = ''; play(run, shown, false); }
+});
 document.querySelector('.ask .btn').addEventListener('click', e => {
-  e.currentTarget.href = 'mailto:contact@m3labs.fr?subject=' + encodeURIComponent('What to automate') + '&body=' + encodeURIComponent(ideas[shown] + '\n\n');
+  e.currentTarget.href = 'mailto:contact@m3labs.fr?subject=' + encodeURIComponent(t('What to automate')) + '&body=' + encodeURIComponent(t(ideas[shown]) + '\n\n');
 });
 // Boost shows each plan's prices and delays at half the time; the cards hold both and CSS shows one
 const speed = [...document.querySelectorAll('.speed button')];
