@@ -28,7 +28,7 @@
 }
 </script>
 <link rel="preload" href="fonts/mona-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=02d2925">
+<link rel="stylesheet" href="styles.css?v=eb185ab">
 <script>
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.documentElement.classList.add('intro-on');
@@ -381,53 +381,38 @@ items.forEach((el, i) => {
 cycle();
 // the line above the button types an idea, holds it, erases it and moves on; with reduced motion the first one stays.
 // An example under the box stops it on that example for 10 s, and the button mails whichever idea is on the line.
-// [name] puts that icon before the word it names; each run of the loop has an id, and a newer one stops it
-const icons = {
-  mail: '<rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>',
-  dashboard: '<rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/>',
-  invoice: '<path d="M4 2v20l2-1 2 1 2-1 2 1 2-1 2 1 2-1 2 1V2l-2 1-2-1-2 1-2-1-2 1-2-1-2 1Z"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 17.5v-11"/>',
-  calendar: '<path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/>',
-  wallet: '<path d="M19 7V4a1 1 0 0 0-1-1H5a2 2 0 0 0 0 4h15a1 1 0 0 1 1 1v4h-3a2 2 0 0 0 0 4h3a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1"/><path d="M3 5v14a2 2 0 0 0 2 2h15a1 1 0 0 0 1-1v-4"/>',
-  photo: '<rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/>',
-};
+// Each run of the loop has an id, and a newer one stops it
 const ideas = [
-  'Read, sort and answer my [mail]emails for me.',
-  'Build me a [dashboard]dashboard made for my business.',
-  'Create my [invoice]invoices and chase the unpaid ones.',
-  'Plan my week ahead in my [calendar]calendar.',
-  'Track my [wallet]spending and get my books ready for the accountant.',
-  'Sort my [photo]photos into albums for me.',
+  'Read, sort and answer my emails for me.',
+  'Build me a dashboard made for my business.',
+  'Create my invoices and chase the unpaid ones.',
+  'Plan my week ahead in my calendar.',
+  'Track my spending and get my books ready for the accountant.',
+  'Sort my photos into albums for me.',
 ];
-const icon = name => { const t = document.createElement('template'); t.innerHTML = `<svg class="ico" viewBox="0 0 24 24" aria-hidden="true">${icons[name]}</svg>`; return t.content.firstChild; };
-const units = ideas.map(s => s.split(/\[(\w+)\]/).flatMap((p, i) => i % 2 ? [icon(p)] : [...p].map(c => document.createTextNode(c))));
-const plain = ideas.map(s => s.replace(/\[\w+\]/g, ''));
 const idea = document.querySelector('.ask-idea'), still = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const wait = ms => new Promise(r => setTimeout(r, ms));
-const show = n => idea.replaceChildren(...units[n].map(u => u.cloneNode(true)));
 let shown = 0, run = 0, resume;
 const play = async (id, n, typed) => {
   for (;; n = (n + 1) % ideas.length, typed = false) {
     if (!typed) {
       shown = n;
-      for (const u of units[n]) { if (id !== run) return; idea.append(u.cloneNode(true)); await wait(45); }
+      for (const c of ideas[n]) { if (id !== run) return; idea.textContent += c; await wait(45); }
       await wait(2000);
     }
-    while (idea.lastChild) { if (id !== run) return; idea.lastChild.remove(); await wait(18); }
+    while (idea.textContent) { if (id !== run) return; idea.textContent = idea.textContent.slice(0, -1); await wait(18); }
     await wait(400);
   }
 };
-if (still) show(0);
+if (still) idea.textContent = ideas[0];
 else wait(document.documentElement.classList.contains('intro-on') ? 3000 : 0).then(() => play(run, 0, false));
-for (const b of document.querySelectorAll('.ask-eg button')) {
+for (const b of document.querySelectorAll('.ask-eg button')) b.addEventListener('click', () => {
   const n = +b.dataset.idea;
-  b.prepend(icon(ideas[n].match(/\[(\w+)\]/)[1]));
-  b.addEventListener('click', () => {
-    run++; show(shown = n); clearTimeout(resume);
-    if (!still) resume = setTimeout(() => play(++run, n, true), 10000);
-  });
-}
+  run++; idea.textContent = ideas[shown = n]; clearTimeout(resume);
+  if (!still) resume = setTimeout(() => play(++run, n, true), 10000);
+});
 document.querySelector('.ask .btn').addEventListener('click', e => {
-  e.currentTarget.href = 'mailto:contact@m3labs.fr?subject=' + encodeURIComponent('What to automate') + '&body=' + encodeURIComponent(plain[shown] + '\n\n');
+  e.currentTarget.href = 'mailto:contact@m3labs.fr?subject=' + encodeURIComponent('What to automate') + '&body=' + encodeURIComponent(ideas[shown] + '\n\n');
 });
 // Boost shows each plan's prices and delays at half the time; the cards hold both and CSS shows one
 const speed = [...document.querySelectorAll('.speed button')];
