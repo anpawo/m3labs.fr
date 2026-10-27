@@ -12,7 +12,7 @@ const FR = {
   'Email me': 'Email',
   'Book a call': 'Réserver un appel',
 
-  'Stop renting software.<br><span class="blue">Start owning it.</span>': 'Ne louez plus d’outils.<br><span class="blue">Possédez les vôtres.</span>',
+  'Stop renting software.<br><span class="blue">Start owning it.</span>': 'Ne louez plus d’outils.<br><span class="blue">Possédez-les.</span>',
   'Tell me what your team does <strong>by hand</strong>. I build the <strong>software</strong> that does it for you, and you keep <strong>the code</strong>.':
     'Dites-moi ce que votre équipe fait <strong>à la main</strong>. Je crée le <strong>logiciel</strong> qui s’en charge, et <strong>le code</strong> est à vous.',
   'Let\'s get started': 'Commencer mon projet',
