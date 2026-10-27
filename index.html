@@ -28,7 +28,7 @@
 }
 </script>
 <link rel="preload" href="fonts/mona-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=e8f7842">
+<link rel="stylesheet" href="styles.css?v=a893427">
 <script>
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.documentElement.classList.add('intro-on');
@@ -38,14 +38,13 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
 </head>
 <body>
 <div class="intro" aria-hidden="true">
-  <span class="intro-tile mark"></span>
-  <div class="intro-mark"><span class="cube"><i class="t"><svg viewBox="0 0 160 160"><path d="M0 0V160H160" pathLength="1"/></svg></i><i class="l"><svg viewBox="0 0 160 160"><path d="M0 160V0H160" pathLength="1"/></svg></i><i class="f"><svg viewBox="0 0 160 160"><path d="M0 0H160V160" pathLength="1"/></svg></i><i class="b"></i></span></div>
+  <div class="intro-mark"><span class="cube"><i class="t"><svg viewBox="0 0 160 160"><path d="M0 0V160H160" pathLength="1"/></svg></i><i class="l"><svg viewBox="0 0 160 160"><path d="M0 160V0H160" pathLength="1"/></svg></i><i class="f"><svg viewBox="0 0 160 160"><path d="M0 0H160V160" pathLength="1"/></svg></i><i class="b"></i><i class="r"></i></span></div>
 </div>
 
 <header class="nav">
   <div class="wrap nav-inner">
     <a class="brand" href="#top" aria-label="M3 Labs, home">
-      <span class="mark" aria-hidden="true"><span class="cube"><i class="t"><svg viewBox="0 0 160 160"><path d="M0 0V160H160" pathLength="1"/></svg></i><i class="l"><svg viewBox="0 0 160 160"><path d="M0 160V0H160" pathLength="1"/></svg></i><i class="f"><svg viewBox="0 0 160 160"><path d="M0 0H160V160" pathLength="1"/></svg></i><i class="b"></i></span></span>
+      <span class="mark" aria-hidden="true"><span class="cube"><i class="t"><svg viewBox="0 0 160 160"><path d="M0 0V160H160" pathLength="1"/></svg></i><i class="l"><svg viewBox="0 0 160 160"><path d="M0 160V0H160" pathLength="1"/></svg></i><i class="f"><svg viewBox="0 0 160 160"><path d="M0 0H160V160" pathLength="1"/></svg></i><i class="b"></i><i class="r"></i></span></span>
       M3 Labs
     </a>
     <nav class="links" aria-label="Main">
@@ -65,13 +64,13 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-text">
-      <hgroup>
+      <div>
       <h1>Less manual work.<br><span class="blue">Fewer errors.</span></h1>
       <p class="lead">Tell me what your team does <strong>by hand</strong>. I build the <strong>software</strong> that does it for you, and you keep <strong>the code</strong>.</p>
-      </hgroup>
 
       <div class="ask">
         <a class="btn btn-primary btn-wide" href="mailto:contact@m3labs.fr?subject=What%20to%20automate"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Tell me what to automate</a>
+      </div>
       </div>
       <p class="fine">Freelance software engineer in Aix-en-Provence and Paris, France.</p>
     </div>
@@ -324,7 +323,6 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
 const intro = document.querySelector('.intro');
 if (document.documentElement.classList.contains('intro-on')) {
   const to = document.querySelector('.nav .mark').getBoundingClientRect(), from = intro.querySelector('.intro-mark').getBoundingClientRect();
-  Object.assign(intro.querySelector('.intro-tile').style, { left: to.left + 'px', top: to.top + 'px' });
   intro.style.setProperty('--dx', to.left + to.width / 2 - (from.left + from.width / 2) + 'px');
   intro.style.setProperty('--dy', to.top + to.height / 2 - (from.top + from.height / 2) + 'px');
   intro.addEventListener('animationend', e => { if (e.animationName === 'intro-out') document.documentElement.classList.remove('intro-on', 'intro-go'); });
