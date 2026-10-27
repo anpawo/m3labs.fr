@@ -38,7 +38,8 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
 </head>
 <body>
 <div class="intro" aria-hidden="true">
-  <div class="intro-mark"><span class="intro-tile"></span><span class="cube"><i class="t"><svg viewBox="0 0 160 160"><path d="M0 0V160H160" pathLength="1"/></svg></i><i class="l"><svg viewBox="0 0 160 160"><path d="M0 160V0H160" pathLength="1"/></svg></i><i class="f"><svg viewBox="0 0 160 160"><path d="M0 0H160V160" pathLength="1"/></svg></i><i class="b"></i></span></div>
+  <span class="intro-tile mark"></span>
+  <div class="intro-mark"><span class="cube"><i class="t"><svg viewBox="0 0 160 160"><path d="M0 0V160H160" pathLength="1"/></svg></i><i class="l"><svg viewBox="0 0 160 160"><path d="M0 160V0H160" pathLength="1"/></svg></i><i class="f"><svg viewBox="0 0 160 160"><path d="M0 0H160V160" pathLength="1"/></svg></i><i class="b"></i></span></div>
 </div>
 
 <header class="nav">
@@ -49,7 +50,7 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
     </a>
     <nav class="links" aria-label="Main">
       <a href="#build">What I build</a>
-      <a href="#work">Work</a>
+      <a href="#work">My work</a>
       <a href="#process">How we work</a>
     </nav>
     <div class="actions">
@@ -320,7 +321,8 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
 <script>
 const intro = document.querySelector('.intro');
 if (document.documentElement.classList.contains('intro-on')) {
-  const to = document.querySelector('.nav .mark').getBoundingClientRect(), from = intro.firstElementChild.getBoundingClientRect();
+  const to = document.querySelector('.nav .mark').getBoundingClientRect(), from = intro.querySelector('.intro-mark').getBoundingClientRect();
+  Object.assign(intro.querySelector('.intro-tile').style, { left: to.left + 'px', top: to.top + 'px' });
   intro.style.setProperty('--dx', to.left + to.width / 2 - (from.left + from.width / 2) + 'px');
   intro.style.setProperty('--dy', to.top + to.height / 2 - (from.top + from.height / 2) + 'px');
   intro.addEventListener('animationend', e => { if (e.animationName === 'intro-out') document.documentElement.classList.remove('intro-on', 'intro-go'); });
