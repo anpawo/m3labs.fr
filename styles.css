@@ -177,8 +177,11 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 .b-amber { background: oklch(96.2% .038 83.8); color: oklch(49.2% .11 66); }
 .b-blue { background: oklch(95.1% .017 250.8); color: oklch(51.6% .163 254.7); }
 
-.work .when { margin: 0; font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--brand-tint-fg); }
-.work h3 { margin-top: 8px; }
+.work .when, .plan .when { margin: 0; font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--brand-tint-fg); }
+.work h3, .plan h3 { margin-top: 8px; }
+.plan ul { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 8px; font-size: 15px; font-weight: 500; }
+.plan li { display: flex; gap: 8px; }
+.plan li::before { content: "✓"; color: var(--primary); font-weight: 700; }
 .stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px !important; }
 .stack span { padding: 3px 9px; border-radius: 6px; background: oklch(94.2% .015 265); color: oklch(42% .04 265); font-size: 13px; font-weight: 500; }
 
