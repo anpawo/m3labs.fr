@@ -69,14 +69,14 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
 
 /* Nav */
 .nav { position: sticky; top: 0; z-index: 10; background: var(--sheet); border-bottom: 1px solid var(--border); }
-.nav-inner { display: flex; align-items: center; gap: 40px; height: 58px; }
+.nav-inner { display: flex; align-items: center; gap: clamp(20px, 2.8vw, 40px); height: 58px; }
 .brand { display: flex; align-items: center; gap: 14px; font-weight: 650; font-size: 16px; text-decoration: none; letter-spacing: -.01em; }
 .logo, .mark { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 10px; color: #fff;
   background: linear-gradient(160deg, oklch(60% .22 265), var(--primary)); box-shadow: inset 0 -2px 0 var(--primary-edge); }
 .logo svg { width: 28px; height: 28px; stroke-width: 15; }
 .logo-sm { width: 30px; height: 30px; border-radius: 8px; }
 .logo-sm svg { width: 18px; height: 18px; }
-.links { display: flex; gap: 36px; font-weight: 500; font-size: 13.5px; }
+.links { display: flex; gap: clamp(16px, 2.5vw, 36px); font-weight: 500; font-size: 13.5px; }
 .links a { text-decoration: none; }
 .links a:hover { color: var(--primary); }
 .actions { margin-left: auto; display: flex; gap: 10px; }
@@ -99,10 +99,6 @@ h1 { font-size: clamp(44px, 4.5vw, 62px); line-height: 1.02; font-weight: 750; f
 .lead strong { color: var(--foreground); font-weight: 600; }
 .ask { margin-top: 50px; padding: 22px; background: var(--sheet); border: 2px solid var(--primary); border-radius: 16px;
   box-shadow: 0 18px 40px -22px oklch(52.5% .241 265.2 / .45); }
-.ask .ico { width: 24px; height: 24px; flex: none; }
-.ask-line { display: flex; gap: 10px; margin: 0 4px 16px; }
-.ask-line .ico { width: 22px; height: 22px; margin-top: 2px; color: var(--primary); }
-.ask-idea { min-height: 1.5em; font-size: 17px; line-height: 1.5; color: var(--muted-foreground); }
 .ask-idea::after { content: ""; display: inline-block; width: 2px; height: 1.1em; margin-left: 2px; vertical-align: -.2em;
   background: var(--primary); animation: blink 1s step-end infinite; }
 @keyframes blink { 50% { opacity: 0; } }
@@ -114,13 +110,10 @@ h1 { font-size: clamp(44px, 4.5vw, 62px); line-height: 1.02; font-weight: 750; f
   background: linear-gradient(115deg, transparent 38%, oklch(100% 0 0 / .55) 50%, transparent 62%) 93% 0 / 300% 100% no-repeat; }
 .ask .btn:hover::after { background-position: 7% 0; }
 @media (prefers-reduced-motion: reduce) { .ask .btn::after { transition: none; } }
-/* the examples under the box, as findmylead.fr lays its own out */
-.ask-eg { margin-top: 14px; font-size: 15px; font-weight: 500; line-height: 1.5; color: var(--muted-foreground); }
-.ask-eg > span { display: flex; align-items: baseline; gap: 6px; }
-.ask-eg span span { flex: none; }
-.ask-eg button { padding: 0; border: 0; background: none; font: inherit; font-weight: 600; color: var(--foreground); text-align: left;
-  text-decoration: underline oklch(52.5% .241 265.2 / .45); text-decoration-skip-ink: none; text-decoration-thickness: 1px; text-underline-offset: 3px; cursor: pointer; }
-.ask-eg button:hover { color: var(--primary); }
+/* the example typed under the box, as findmylead.fr lays its own out */
+.ask-eg { display: flex; align-items: baseline; gap: 6px; margin-top: 14px; font-size: 15px; font-weight: 500; line-height: 1.5; color: var(--muted-foreground); }
+.ask-eg > span:first-child { flex: none; }
+.ask-idea { min-height: 1.5em; font-weight: 600; color: var(--foreground); }
 .fine { font-size: 17px; color: var(--muted-foreground); }
 
 /* the panel takes what the screen leaves under the nav, so the fine print at its bottom stays above the fold */
@@ -191,7 +184,7 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 
 .work .when { margin: 0; font-size: 13px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--brand-tint-fg); }
 .work h3 { margin-top: 8px; }
-.stack { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px !important; }
+.stack { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 16px !important; }
 .stack span { padding: 3px 9px; border-radius: 6px; background: oklch(94.2% .015 265); color: oklch(42% .04 265); font-size: 13px; font-weight: 500; }
 
 /* Work: the cards on a blue stage inside the page's margins, as findmylead.fr stages its app */
@@ -264,7 +257,7 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 /* Legal page */
 .legal { padding: 80px 0 120px; }
 .legal .wrap { max-width: 760px; }
-.legal h1 { font-size: 48px; }
+.legal h1 { font-size: min(48px, 10.5vw); }
 .legal h2 { margin-top: 44px; font-size: 24px; letter-spacing: -.02em; }
 .legal p { margin-top: 12px; font-size: 17px; line-height: 1.7; color: var(--muted-foreground); }
 .legal p strong { color: var(--foreground); font-weight: 600; }
@@ -317,9 +310,11 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
   #build .card p { margin-top: 8px; }
 }
 @media (max-width: 1386px) { .app { --z: .75; } }
+@media (max-width: 980px) {
+  .links { display: none; }
+}
 @media (max-width: 1080px) {
   .app { --z: 1; }
-  .links { display: none; }
   .hero-grid { grid-template-columns: 1fr; }
   .hero-text { padding: 0; margin-bottom: 0; }
   .hero-visual { min-height: 560px; }
