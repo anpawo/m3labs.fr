@@ -28,7 +28,7 @@
 }
 </script>
 <link rel="preload" href="fonts/mona-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=40f0391">
+<link rel="stylesheet" href="styles.css?v=d98937e">
 <script>
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.documentElement.classList.add('intro-on');
@@ -353,6 +353,25 @@ if (document.documentElement.classList.contains('intro-on')) {
   intro.style.setProperty('--dy', to.top + to.height / 2 - (from.top + from.height / 2) + 'px');
   intro.addEventListener('animationend', e => { if (e.animationName === 'intro-out') document.documentElement.classList.remove('intro-on', 'intro-go'); });
   document.documentElement.classList.add('intro-go');
+  // the shine: one band of light crossing the turning cube left to right on screen, tilted as the buttons' is.
+  // Where a face's point lands along the band's direction is linear in the face's own coordinates (A, B per px,
+  // C at its centre), so on each face the band is a linear gradient, redrawn every frame from the cube's matrix
+  const cube = intro.querySelector('.cube'), turn = cube.getAnimations()[0];
+  const faces = { t: (X, Y, Z) => [X, Z, -80 * Y], l: (X, Y, Z) => [Z, Y, -80 * X], f: (X, Y, Z) => [X, Y, 80 * Z],
+    b: (X, Y, Z) => [-X, Y, -80 * Z], r: (X, Y, Z) => [-Z, Y, 80 * X] };
+  const shine = () => {
+    const k = (turn.currentTime - 100) / 800;
+    if (k > 1) { for (const i of cube.children) i.style.removeProperty('--shine'); return; }
+    const e = k < .5 ? 4 * k ** 3 : 1 - (2 - 2 * k) ** 3 / 2, p = 380 * Math.max(0, e) - 190;
+    const m = new DOMMatrix(getComputedStyle(cube).transform);
+    const X = .906 * m.m11 + .423 * m.m12, Y = .906 * m.m21 + .423 * m.m22, Z = .906 * m.m31 + .423 * m.m32;
+    for (const i of cube.children) {
+      const [A, B, C] = faces[i.className](X, Y, Z), g = Math.hypot(A, B), t = (p - C) / g + 80 * (Math.abs(A) + Math.abs(B)) / g, h = 45 / g;
+      i.style.setProperty('--shine', g < .05 ? 'none' : `linear-gradient(${Math.atan2(A, -B)}rad, transparent ${t - h}px, oklch(100% 0 0 / .55) ${t}px, transparent ${t + h}px)`);
+    }
+    requestAnimationFrame(shine);
+  };
+  shine();
 }
 // the sidebar's selection, and the view beside it, move on every 5 s, and to whichever item the pointer is on
 const items = [...document.querySelectorAll('.app-item')], views = [...document.querySelectorAll('.view')];
