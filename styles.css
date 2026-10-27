@@ -95,6 +95,11 @@ h1 { font-size: clamp(44px, 4.5vw, 62px); line-height: 1.02; font-weight: 750; f
 .ask { margin-top: 50px; padding: 22px; background: var(--sheet); border: 2px solid var(--primary); border-radius: 16px;
   box-shadow: 0 18px 40px -22px oklch(52.5% .241 265.2 / .45); }
 .ask .ico { width: 24px; height: 24px; flex: none; }
+.ask-idea { min-height: 1.5em; margin: 0 4px 16px; font-size: 17px; line-height: 1.5; color: var(--muted-foreground); }
+.ask-idea::after { content: ""; display: inline-block; width: 2px; height: 1.1em; margin-left: 2px; vertical-align: -.2em;
+  background: var(--primary); animation: blink 1s step-end infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .ask-idea::after { display: none; } }
 /* the cube's shine, swept across on hover and back on leave; z-index -1 keeps it under the label. At 93% and 7% the
    band just touches the button's left and right edges, so it is on the button from the first frame */
 .ask .btn { position: relative; overflow: hidden; isolation: isolate; gap: 12px; }
@@ -310,6 +315,7 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
   .actions .btn-tint { display: none; }
   .hero { padding: 64px 0 80px; }
   .lead { font-size: 19px; }
+  .ask-idea { min-height: 3em; }
   .hero-visual { min-height: 480px; }
   .panel { padding: 32px 0 0 32px; }
   .cards, .steps { grid-template-columns: 1fr; }
