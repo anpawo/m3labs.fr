@@ -11,9 +11,8 @@ const FR = {
   'Pricing': 'Tarifs',
   'Email me': 'Email',
   'Book a call': 'Réserver un appel',
-  'A 30-minute call': 'Appel de 30 minutes',
 
-  'Stop renting software.<br><span class="blue">Start owning it.</span>': 'Ne louez plus d’outils externes.<br><span class="blue">Possédez les vôtres.</span>',
+  'Stop renting software.<br><span class="blue">Start owning it.</span>': 'Ne louez plus d’outils.<br><span class="blue">Possédez les vôtres.</span>',
   'Tell me what your team does <strong>by hand</strong>. I build the <strong>software</strong> that does it for you, and you keep <strong>the code</strong>.':
     'Dites-moi ce que votre équipe fait <strong>à la main</strong>. Je crée le <strong>logiciel</strong> qui s’en charge, et <strong>le code</strong> est à vous.',
   'Let\'s get started': 'Commencer mon projet',
@@ -182,7 +181,7 @@ const FR = {
   'Apps that <b>feed each other</b>': 'Des apps <b>qui se parlent</b>',
 
   'What does your team do by hand every week?': 'Que faites-vous à la main chaque semaine ?',
-  'Write me, or ask for the free 30-minute call.': 'Écrivez-moi, ou demandez l’appel gratuit de 30 min.',
+  'Write me, or book the free 30-minute call.': 'Écrivez-moi, ou réservez l’appel gratuit de 30 min.',
   'Legal notice': 'Mentions légales',
   'Home': 'Retour',
 
@@ -195,8 +194,8 @@ const FR = {
   'GitHub, Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States. Phone +1 415 857 5430. https://github.com':
     'GitHub, Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis. Téléphone +1 415 857 5430. https://github.com',
   'Personal data': 'Données personnelles',
-  'This site sets no cookies and runs no analytics. The host may log visitors\' IP addresses for security, as described in GitHub\'s privacy statement. A mail you send to contact@m3labs.fr is forwarded to Marius Rousset\'s Gmail mailbox, read by him only and used only to answer you. To have it deleted, write to the same address.':
-    'Aucun cookie ni mesure d’audience sur ce site. L’hébergeur peut enregistrer l’IP des visiteurs par sécurité, selon la politique de confidentialité de GitHub. Un mail que vous envoyez à contact@m3labs.fr arrive dans la boîte Gmail de Marius Rousset, lu par lui seul, pour vous répondre. Pour l’effacer, écrivez à la même adresse.',
+  'This site sets no cookies and runs no analytics. The host may log visitors\' IP addresses for security, as described in GitHub\'s privacy statement. A mail you send to contact@m3labs.fr is forwarded to Marius Rousset\'s Gmail mailbox, read by him only and used only to answer you. A call you book goes through Google Calendar, which passes your name and email to his calendar for that call only. To have either deleted, mail the same address.':
+    'Aucun cookie ni mesure d’audience sur ce site. L’hébergeur peut enregistrer l’IP des visiteurs par sécurité, selon la politique de confidentialité de GitHub. Un mail que vous envoyez à contact@m3labs.fr arrive dans la boîte Gmail de Marius Rousset, lu par lui seul, pour vous répondre. Un appel réservé passe par Google Agenda, qui transmet votre nom et votre mail à son agenda pour cet appel seulement. Pour effacer l’un ou l’autre, écrivez-lui.',
 };
 let lang = 'en';
 const t = s => lang === 'fr' && FR[s] || s;

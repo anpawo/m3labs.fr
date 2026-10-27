@@ -110,7 +110,7 @@ h1 { font-size: clamp(44px, 4.5vw, 62px); line-height: 1.02; font-weight: 750; f
   background: linear-gradient(115deg, transparent 38%, oklch(100% 0 0 / .55) 50%, transparent 62%) 93% 0 / 300% 100% no-repeat; }
 .ask .btn:hover::after { background-position: 7% 0; }
 @media (prefers-reduced-motion: reduce) { .ask .btn::after { transition: none; } }
-/* the example typed under the box, as findmylead.fr lays its own out */
+/* the example typed in the box, under the button */
 .ask-eg { display: flex; align-items: baseline; gap: 6px; margin-top: 14px; font-size: 15px; font-weight: 500; line-height: 1.5; color: var(--muted-foreground); }
 .ask-eg > span:first-child { flex: none; }
 .ask-idea { min-height: 1.5em; font-weight: 600; color: var(--foreground); }
@@ -328,6 +328,7 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
   .nav .btn { padding: 0 12px; }
   .hero { padding: 64px 0 80px; }
   .lead { font-size: 19px; }
+  .ask-eg { flex-direction: column; gap: 0; }
   .ask-idea { min-height: 3em; }
   .hero-visual { min-height: 480px; }
   .panel { padding: 32px 0 0 32px; }
