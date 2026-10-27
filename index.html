@@ -28,7 +28,7 @@
 }
 </script>
 <link rel="preload" href="fonts/mona-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=0ada405">
+<link rel="stylesheet" href="styles.css?v=cbdccb1">
 <script>
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.documentElement.classList.add('intro-on');
@@ -70,9 +70,10 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
       <p class="lead">Tell me what your team does <strong>by hand</strong>. I build the <strong>software</strong> that does it for you, and you keep <strong>the code</strong>.</p>
 
       <div class="ask">
-        <p class="ask-idea" aria-hidden="true"></p>
-        <a class="btn btn-primary btn-wide" href="mailto:contact@m3labs.fr?subject=What%20to%20automate"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Tell me what to automate</a>
+        <div class="ask-line"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><p class="ask-idea" aria-hidden="true"></p></div>
+        <a class="btn btn-primary btn-wide" href="mailto:contact@m3labs.fr?subject=What%20to%20automate">I need that</a>
       </div>
+      <p class="ask-eg"><span><span>For example:</span><button type="button">Read, sort and answer my emails for me.</button></span><span><span>or</span><button type="button">Create my invoices and chase the unpaid ones.</button></span></p>
       </div>
       <p class="fine">Freelance software engineer in Aix-en-Provence and Paris, France.</p>
     </div>
@@ -378,7 +379,8 @@ items.forEach((el, i) => {
   el.addEventListener('mouseleave', cycle);
 });
 cycle();
-// the line above the button types an idea, holds it, erases it and moves on; with reduced motion the first one stays
+// the line above the button types an idea, holds it, erases it and moves on; with reduced motion the first one stays.
+// An example under the box stops it on that example, and the button mails whichever idea is on the line
 const ideas = [
   'Read, sort and answer my emails for me.',
   'Build me a dashboard made for my business.',
@@ -388,17 +390,23 @@ const ideas = [
   'Sort my photos into albums for me.',
 ];
 const idea = document.querySelector('.ask-idea');
-if (matchMedia('(prefers-reduced-motion: reduce)').matches) idea.textContent = ideas[0];
+let shown = ideas[0], picked = false;
+if (matchMedia('(prefers-reduced-motion: reduce)').matches) idea.textContent = shown;
 else (async () => {
   const wait = ms => new Promise(r => setTimeout(r, ms));
   if (document.documentElement.classList.contains('intro-on')) await wait(3000);
-  for (let n = 0; ; n = (n + 1) % ideas.length) {
-    for (const c of ideas[n]) { idea.textContent += c; await wait(45); }
+  for (let n = 0; !picked; n = (n + 1) % ideas.length) {
+    shown = ideas[n];
+    for (const c of shown) { if (picked) return; idea.textContent += c; await wait(45); }
     await wait(2000);
-    while (idea.textContent) { idea.textContent = idea.textContent.slice(0, -1); await wait(18); }
+    while (idea.textContent && !picked) { idea.textContent = idea.textContent.slice(0, -1); await wait(18); }
     await wait(400);
   }
 })();
+for (const b of document.querySelectorAll('.ask-eg button')) b.addEventListener('click', () => { picked = true; idea.textContent = shown = b.textContent; });
+document.querySelector('.ask .btn').addEventListener('click', e => {
+  e.currentTarget.href = 'mailto:contact@m3labs.fr?subject=' + encodeURIComponent('What to automate') + '&body=' + encodeURIComponent(shown + '\n\n');
+});
 // Boost shows each plan's prices and delays at half the time; the cards hold both and CSS shows one
 const speed = [...document.querySelectorAll('.speed button')];
 speed.forEach((el, i) => el.addEventListener('click', () => {
