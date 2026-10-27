@@ -28,7 +28,7 @@
 }
 </script>
 <link rel="preload" href="fonts/mona-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=8f6377d">
+<link rel="stylesheet" href="styles.css?v=ac3e0fb">
 <script>
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.documentElement.classList.add('intro-on');
@@ -357,21 +357,27 @@ if (document.documentElement.classList.contains('intro-on')) {
   intro.style.setProperty('--dy', to.top + to.height / 2 - (from.top + from.height / 2) + 'px');
   intro.addEventListener('animationend', e => { if (e.animationName === 'intro-out') document.documentElement.classList.remove('intro-on', 'intro-go'); });
   document.documentElement.classList.add('intro-go');
-  // the shine: one band of light crossing the turning cube left to right on screen, tilted as the buttons' is.
-  // Where a face's point lands along the band's direction is linear in the face's own coordinates (A, B per px,
-  // C at its centre), so on each face the band is a linear gradient, redrawn every frame from the cube's matrix
+  // the shine: a beam from the cube's top corner (where it is at rest) that sweeps from the bottom left to the bottom
+  // right on screen while the cube turns. A face maps to the screen by a linear map (no perspective), so on each face
+  // the beam is a wedge from that corner's point in the face's plane: a conic gradient, redrawn every frame
   const cube = intro.querySelector('.cube'), turn = cube.getAnimations()[0];
-  const faces = { t: (X, Y, Z) => [X, Z, -80 * Y], l: (X, Y, Z) => [Z, Y, -80 * X], f: (X, Y, Z) => [X, Y, 80 * Z],
-    b: (X, Y, Z) => [-X, Y, -80 * Z], r: (X, Y, Z) => [-Z, Y, 80 * X] };
+  const faces = { t: [[0, -80, 0], [1, 0, 0], [0, 0, 1]], l: [[-80, 0, 0], [0, 0, 1], [0, 1, 0]], f: [[0, 0, 80], [1, 0, 0], [0, 1, 0]],
+    b: [[0, 0, -80], [-1, 0, 0], [0, 1, 0]], r: [[80, 0, 0], [0, 0, -1], [0, 1, 0]] };
   const shine = () => {
     const k = (turn.currentTime - 100) / 800;
     if (k > 1) { for (const i of cube.children) i.style.removeProperty('--shine'); return; }
-    const e = k < .5 ? 4 * k ** 3 : 1 - (2 - 2 * k) ** 3 / 2, p = 380 * Math.max(0, e) - 190;
-    const m = new DOMMatrix(getComputedStyle(cube).transform);
-    const X = .906 * m.m11 + .423 * m.m12, Y = .906 * m.m21 + .423 * m.m22, Z = .906 * m.m31 + .423 * m.m32;
+    const e = k < .5 ? 4 * k ** 3 : 1 - (2 - 2 * k) ** 3 / 2, beam = (150 * Math.max(0, e) - 75) * Math.PI / 180, w = .2;
+    const m = new DOMMatrix(getComputedStyle(cube).transform), P = ([x, y, z]) => [m.m11 * x + m.m21 * y + m.m31 * z, m.m12 * x + m.m22 * y + m.m32 * z];
     for (const i of cube.children) {
-      const [A, B, C] = faces[i.className](X, Y, Z), g = Math.hypot(A, B), t = (p - C) / g + 80 * (Math.abs(A) + Math.abs(B)) / g, h = 45 / g;
-      i.style.setProperty('--shine', g < .05 ? 'none' : `linear-gradient(${Math.atan2(A, -B)}rad, transparent ${t - h}px, oklch(100% 0 0 / .55) ${t}px, transparent ${t + h}px)`);
+      const [O, U, V] = faces[i.className].map(P), det = U[0] * V[1] - V[0] * U[1];
+      if (Math.abs(det) < .02) { i.style.setProperty('--shine', 'none'); continue; }
+      const local = ([x, y]) => [(V[1] * x - V[0] * y) / det, (U[0] * y - U[1] * x) / det];
+      // the corner sits 131px over the cube's centre: the top of its outline at rest
+      const [qu, qv] = local([-O[0], -131 - O[1]]);
+      const ang = a => { const [du, dv] = local([Math.sin(a), Math.cos(a)]); return Math.atan2(du, -dv); };
+      const a0 = ang(beam), rel = a => (ang(a) - a0 + 3 * Math.PI) % (2 * Math.PI) - Math.PI;
+      const r1 = rel(beam - w), r2 = rel(beam + w);
+      i.style.setProperty('--shine', `conic-gradient(from ${a0}rad at ${qu + 80}px ${qv + 80}px, oklch(100% 0 0 / .55), transparent ${Math.max(r1, r2)}rad, transparent ${2 * Math.PI + Math.min(r1, r2)}rad, oklch(100% 0 0 / .55))`);
     }
     requestAnimationFrame(shine);
   };
