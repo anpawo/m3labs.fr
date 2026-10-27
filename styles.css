@@ -189,6 +189,13 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 .ink .card { border: 0; box-shadow: var(--shadow-ink); }
 
 /* Steps */
+.speed { display: inline-flex; gap: 4px; margin-top: 24px; padding: 4px; border-radius: 12px; background: var(--sheet); border: 1px solid var(--border); }
+.speed button { display: inline-flex; align-items: center; gap: 6px; height: 36px; padding: 0 14px; border: 0; border-radius: 8px; background: none;
+  font: 600 15px/1 var(--font); color: var(--muted-foreground); cursor: pointer; transition: background .15s, color .15s; }
+.speed button[aria-pressed="true"] { background: var(--brand-tint); color: var(--brand-tint-fg); }
+.speed svg { width: 16px; height: 16px; color: oklch(71.4% .16 65.2); }
+.speed + .cards { margin-top: 20px; }
+#pricing:not(.boost) .fast, #pricing.boost .std { display: none; }
 /* findmylead.fr/pricing's cards: the first on a blue with a dot grid, the others white */
 .plan { display: flex; flex-direction: column; gap: 16px; padding: 24px; border-radius: 16px; background: var(--sheet); border: 1px solid var(--border); }
 .plan-hot { color: #fff; border-color: transparent; box-shadow: 0 30px 60px -30px oklch(52.5% .241 265.2 / .8);
@@ -198,14 +205,14 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 .plan h3 { font-size: 22px; font-weight: 650; letter-spacing: -.02em; line-height: 1.1; }
 .pick { margin: -4px 0 -4px auto; padding: 4px 10px; white-space: nowrap; border-radius: 999px; background: oklch(88.3% .165 92.2); color: oklch(29.6% .061 86.2); font-size: 13px; font-weight: 600; line-height: 1.4; }
 .slogan { margin-top: -10px; font-size: 15px; color: var(--muted-foreground); }
-.price { display: grid; gap: 8px; }
-.price p:first-child { display: flex; align-items: baseline; gap: 8px; font-size: 15px; font-weight: 500; color: var(--muted-foreground); }
-.price b { font-size: clamp(40px, 5.4vw, 54px); font-weight: 720; font-stretch: 108%; letter-spacing: -.032em; line-height: 1.02; color: var(--foreground); }
+.price { display: grid; gap: 6px; }
+.price b { font-size: clamp(32px, 3.4vw, 46px); font-weight: 720; font-stretch: 108%; letter-spacing: -.032em; line-height: 1.02; color: var(--foreground); }
 .price strong { font-weight: 650; }
+.rate { font-size: 13px; color: var(--muted-foreground); }
 .plan .btn { width: 100%; font-size: 15px; }
 .plan-hot .btn { background: #fff; color: var(--primary); }
 .plan-hot .btn:hover { background: oklch(95% .03 265); }
-.plan-hot .slogan, .plan-hot .price p:first-child { color: oklch(100% 0 0 / .8); }
+.plan-hot .slogan, .plan-hot .rate { color: oklch(100% 0 0 / .8); }
 .plan-hot .price b { color: #fff; }
 .feats { flex: 1; display: grid; align-content: start; gap: 20px; padding-top: 20px; border-top: 1px solid var(--border); }
 .feats h4 { margin: 0; font-size: 13px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--muted-foreground); }
