@@ -146,16 +146,8 @@ td:first-child { font-weight: 600; }
 .alerts { list-style: none; width: 300px; margin: 16px 0 0; padding: 0; display: grid; gap: 8px; }
 .alerts li { display: grid; gap: 2px; padding: 10px 14px; border-radius: 10px; font-size: 13px; }
 .alerts b { font-size: 14px; font-weight: 600; }
-/* the model website's portfolio: its main photo, one crop per frame, blurred in the file itself so the sharp one is never published */
-.shots { list-style: none; width: 308px; margin: 16px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px 10px; font-size: 12px; font-weight: 600; }
-.shots li::before { content: ""; display: block; aspect-ratio: 3 / 4; margin-bottom: 6px; border-radius: 10px;
-  background: url("img/model.jpg") var(--at) / auto var(--zoom) no-repeat oklch(80% .03 60); }
-.shots li:nth-child(1) { --at: 82% 0; --zoom: 100%; }
-.shots li:nth-child(2) { --at: 72% 0; --zoom: 260%; }
-.shots li:nth-child(3) { --at: 80% 100%; --zoom: 160%; }
-.shots li:nth-child(4) { --at: 90% 40%; --zoom: 130%; }
-.shots li:nth-child(5) { --at: 85% 5%; --zoom: 220%; }
-.shots li:nth-child(6) { --at: 75% 10%; --zoom: 170%; }
+/* the model website's portfolio: the model site's main photo, blurred in the file itself so the sharp one is never published */
+.shot { margin-top: 14px; border-radius: 10px; }
 .st.new { background: var(--brand-tint); color: var(--brand-tint-fg); }
 
 /* Sections */
@@ -290,8 +282,8 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 .intro-go .cube .l path { animation: draw .45s .6s linear both; }
 .intro-go .cube .t path { animation: draw .45s .8s linear both; }
 .intro-go .cube .f path { animation: draw .45s 1s linear both; }
-/* 270 degrees, three quarters of a turn, so every side face still shows on the way */
-@keyframes intro-turn { from { transform: rotateX(-15deg) rotateY(315deg); } }
+/* 180 degrees, half a turn, which still shows every side face on the way */
+@keyframes intro-turn { from { transform: rotateX(-15deg) rotateY(225deg); } }
 @keyframes intro-fly { to { transform: translate(var(--dx), var(--dy)) scale(var(--mark-scale)); } }
 @keyframes intro-out { to { background-color: transparent; } }
 @keyframes draw { from { stroke-dashoffset: 1; } }
