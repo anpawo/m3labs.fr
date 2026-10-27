@@ -147,8 +147,6 @@ td:first-child { font-weight: 600; }
 .alerts { list-style: none; width: 300px; margin: 16px 0 0; padding: 0; display: grid; gap: 8px; }
 .alerts li { display: grid; gap: 2px; padding: 10px 14px; border-radius: 10px; font-size: 13px; }
 .alerts b { font-size: 14px; font-weight: 600; }
-/* the model website's portfolio: the model site's main photo, blurred in the file itself so the sharp one is never published */
-.shot { margin-top: 14px; border-radius: 10px; }
 .st.new { background: var(--brand-tint); color: var(--brand-tint-fg); }
 
 /* Sections */
