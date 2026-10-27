@@ -112,7 +112,8 @@ h1 { font-size: clamp(44px, 4.5vw, 62px); line-height: 1.02; font-weight: 750; f
   background-size: 24px 24px, auto; }
 /* framed as findmylead.fr frames its own app: a 1px light ring, the white page rounded over the sidebar, and the
    sidebar curving into the selected tab above and below it */
-.app { display: flex; width: 880px; height: 640px; border-radius: 16px; overflow: hidden; background: var(--ink); box-shadow: 0 0 0 1px var(--border), var(--shadow-ink); }
+/* scaled down so its widest table ends inside the screen; the height makes up for it, so it still runs past the panel */
+.app { --z: .86; zoom: var(--z); display: flex; width: 880px; height: calc(640px / var(--z)); border-radius: 16px; overflow: hidden; background: var(--ink); box-shadow: 0 0 0 1px var(--border), var(--shadow-ink); }
 .app-side { width: 230px; flex: none; background: var(--ink); color: var(--ink-text); padding: 20px 12px; display: flex; flex-direction: column; gap: 2px; font-size: 14px; }
 .app-brand { display: flex; align-items: center; gap: 10px; color: #fff; font-weight: 650; font-size: 17px; padding: 0 8px 18px; }
 .app-item { position: relative; display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; margin-right: -12px; border-radius: 10px 0 0 10px; color: #fff; font-weight: 500; transition: background-color .25s, color .25s; }
@@ -298,7 +299,9 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
   .card { padding: 16px 20px; }
   #build .card p { margin-top: 8px; }
 }
+@media (max-width: 1386px) { .app { --z: .75; } }
 @media (max-width: 1080px) {
+  .app { --z: 1; }
   .links { display: none; }
   .hero-grid { grid-template-columns: 1fr; }
   .hero-text { padding: 0; margin-bottom: 0; }
