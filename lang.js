@@ -180,7 +180,7 @@ const FR = {
   ', each one quoted first': ', chiffrées tour à tour',
   'Apps that <b>feed each other</b>': 'Des apps <b>qui se parlent</b>',
 
-  'What does your team do by hand every week?': 'Que faites-vous à la main chaque semaine ?',
+  'Let\'s talk about your project.': 'Parlons de votre projet.',
   'Write me, or book the free 30-minute call.': 'Écrivez-moi, ou réservez l’appel gratuit de 30 min.',
   'Legal notice': 'Mentions légales',
   'Home': 'Retour',
