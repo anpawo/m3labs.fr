@@ -121,16 +121,15 @@ h1 { font-size: clamp(44px, 4.5vw, 62px); line-height: 1.02; font-weight: 750; f
 
 /* the panel takes what the screen leaves under the nav, so the fine print at its bottom stays above the fold */
 .hero-visual { position: relative; align-self: stretch; min-height: clamp(500px, var(--screen) - var(--nav-h) - 160px, 640px); }
-/* as wide as the app and as much again of blue on its right as on its left */
-.panel { position: absolute; left: 0; top: 0; bottom: -40px; width: max-content; border-radius: 28px; padding: 60px 60px 0;
+/* the app starts 60px into the blue and runs 60px past its right edge, as it runs past its bottom */
+.panel { position: absolute; left: 0; top: 0; bottom: -40px; width: max-content; border-radius: 28px; padding: 60px 0 0 60px;
   background: linear-gradient(150deg, oklch(60% .2 268), var(--primary) 55%, oklch(46% .23 265));
   background-image: radial-gradient(oklch(100% 0 0 / .14) 1px, transparent 1.3px), linear-gradient(150deg, oklch(60% .2 268), var(--primary) 55%, oklch(46% .23 265));
   background-size: 24px 24px, auto; }
 /* framed as findmylead.fr frames its own app: a 1px light ring, the white page rounded over the sidebar, and the
    sidebar curving into the selected tab above and below it */
-/* scaled so the panel, its blue on both sides, still ends inside his 1470px screen; the height makes up for it, so it
-   still runs past the panel */
-.app { --z: .73; zoom: var(--z); display: flex; width: 620px; height: calc(640px / var(--z)); border-radius: 16px; overflow: hidden; background: var(--ink); box-shadow: 0 0 0 1px var(--border), var(--shadow-ink); }
+/* scaled so it still ends inside his 1470px screen; the height makes up for it, so it still runs past the panel */
+.app { --z: .82; zoom: var(--z); display: flex; width: 620px; margin-right: calc(-60px / var(--z)); height: calc(640px / var(--z)); border-radius: 16px; overflow: hidden; background: var(--ink); box-shadow: 0 0 0 1px var(--border), var(--shadow-ink); }
 .app-side { width: 170px; flex: none; background: var(--ink); color: var(--ink-text); padding: 20px 12px; display: flex; flex-direction: column; gap: 2px; font-size: 14px; }
 .app-brand { display: flex; align-items: center; gap: 10px; color: #fff; font-weight: 650; font-size: 17px; padding: 0 8px 18px; }
 .app-item { position: relative; display: flex; align-items: center; justify-content: space-between; padding: 8px 12px; margin-right: -12px; border-radius: 10px 0 0 10px; color: #fff; font-weight: 500; transition: background-color .25s, color .25s; }
