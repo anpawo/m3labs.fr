@@ -25,6 +25,9 @@
   --shadow-ink: 0 14px 34px -12px oklch(22.6% .09 267.5 / .5);
   --font: "Mona Sans", system-ui, -apple-system, sans-serif;
   --nav-h: 59px;
+  /* the screen-tall parts stop at the height Marius's MacBook Air gives the page in Firefox (1470×811), so a taller
+     screen keeps the spacing he sees */
+  --screen: min(100svh, 811px);
   /* the nav draws the 160px cube at this scale; the intro lands it at the same one */
   --mark-scale: calc(40 / 384);
 }
@@ -117,7 +120,7 @@ h1 { font-size: clamp(44px, 4.5vw, 62px); line-height: 1.02; font-weight: 750; f
 .fine { font-size: 17px; color: var(--muted-foreground); }
 
 /* the panel takes what the screen leaves under the nav, so the fine print at its bottom stays above the fold */
-.hero-visual { position: relative; align-self: stretch; min-height: clamp(500px, 100svh - var(--nav-h) - 160px, 640px); }
+.hero-visual { position: relative; align-self: stretch; min-height: clamp(500px, var(--screen) - var(--nav-h) - 160px, 640px); }
 .panel { position: absolute; left: 0; top: 0; bottom: -40px; width: calc(100% + 30vw); border-radius: 28px 0 0 28px; padding: 60px 0 0 60px;
   background: linear-gradient(150deg, oklch(60% .2 268), var(--primary) 55%, oklch(46% .23 265));
   background-image: radial-gradient(oklch(100% 0 0 / .14) 1px, transparent 1.3px), linear-gradient(150deg, oklch(60% .2 268), var(--primary) 55%, oklch(46% .23 265));
@@ -162,8 +165,8 @@ td:first-child { font-weight: 600; }
 .st.new { background: var(--brand-tint); color: var(--brand-tint-fg); }
 
 /* Sections */
-/* each nav target fills the screen under the sticky nav */
-.section { min-height: calc(100svh - var(--nav-h)); padding: clamp(24px, 4.5svh, 72px) 0; display: grid; align-content: center; }
+/* each nav target fills a screen (--screen) under the sticky nav */
+.section { min-height: calc(var(--screen) - var(--nav-h)); padding: clamp(24px, var(--screen) * .045, 72px) 0; display: grid; align-content: center; }
 h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; font-weight: 720; font-stretch: 108%; letter-spacing: -.04em; }
 .section-lead { margin-top: 14px; font-size: 20px; line-height: 1.6; color: var(--muted-foreground); max-width: 58ch; }
 .cards { margin-top: 28px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
@@ -199,9 +202,11 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
   font: 600 15px/1 var(--font); color: var(--muted-foreground); cursor: pointer; transition: background .15s, color .15s; }
 .speed button[aria-pressed="true"] { background: var(--brand-tint); color: var(--brand-tint-fg); }
 .speed svg { width: 16px; height: 16px; color: oklch(71.4% .16 65.2); }
-.speed + .cards { margin-top: 20px; }
+/* the toggle sits beside the title, so the longer plans still fit a screen */
+.price-top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; column-gap: 24px; }
+.price-top + .cards { margin-top: 20px; }
 #pricing:not(.boost) .fast, #pricing.boost .std { display: none; }
-/* findmylead.fr/pricing's cards: the first on a blue with a dot grid, the others white */
+/* findmylead.fr/pricing's cards: the recommended one on a blue with a dot grid, the others white */
 .plan { display: flex; flex-direction: column; gap: 16px; padding: 24px; border-radius: 16px; background: var(--sheet); border: 1px solid var(--border); }
 .plan-hot { color: #fff; border-color: transparent; box-shadow: 0 30px 60px -30px oklch(52.5% .241 265.2 / .8);
   background: radial-gradient(oklch(100% 0 0 / .18) 1px, transparent 1px) 0 0 / 20px 20px,
@@ -218,24 +223,23 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 .plan-hot .btn:hover { background: oklch(95% .03 265); }
 .plan-hot .slogan { color: oklch(100% 0 0 / .8); }
 .plan-hot .price b { color: #fff; }
-.feats { flex: 1; display: grid; align-content: start; gap: 20px; padding-top: 20px; border-top: 1px solid var(--border); }
+.feats { flex: 1; display: grid; align-content: start; gap: 16px; padding-top: 16px; border-top: 1px solid var(--border); }
 .feats h4 { margin: 0; font-size: 13px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--muted-foreground); }
-.feats ul { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 8px; }
+.feats ul { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; }
 .feats li { display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; }
-.feats svg { flex: none; width: 18px; height: 18px; }
-.i-amber { color: oklch(71.4% .16 65.2); }
-.i-purple { color: oklch(57.9% .247 288.2); }
-.i-teal { color: oklch(63.1% .111 181.6); }
-.i-blue { color: var(--primary); }
-.i-orange { color: oklch(56% .143 50.5); }
-.i-pink { color: oklch(63.8% .202 4.5); }
+.feats svg { flex: none; width: 18px; height: 18px; stroke-width: 2.6; }
+/* a tick for what the plan before already has, a plus for what this one adds */
+.i-has { color: oklch(70% .17 50); }
+.i-new { color: oklch(62% .17 150); }
 .plan-hot .feats { border-color: oklch(100% 0 0 / .18); }
-.plan-hot .feats h4, .plan-hot .feats svg { color: #fff; }
+.plan-hot .feats h4 { color: #fff; }
+.plan-hot .i-has { color: oklch(83% .14 60); }
+.plan-hot .i-new { color: oklch(87% .17 150); }
 .steps { margin-top: 28px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
 .num { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--primary); color: var(--primary); font-weight: 650; font-size: 18px; }
 
 /* CTA */
-.cta { min-height: calc(100svh - var(--nav-h)); padding: clamp(24px, 4.5svh, 72px) 0; display: grid; align-content: center; }
+.cta { min-height: calc(var(--screen) - var(--nav-h)); padding: clamp(24px, var(--screen) * .045, 72px) 0; display: grid; align-content: center; }
 .cta-inner { text-align: center; padding: 72px 32px; border-radius: 28px; color: #fff;
   background-image: radial-gradient(oklch(100% 0 0 / .14) 1px, transparent 1.3px), linear-gradient(150deg, oklch(60% .2 268), var(--primary) 55%, oklch(46% .23 265));
   background-size: 24px 24px, auto; }
