@@ -28,7 +28,7 @@
 }
 </script>
 <link rel="preload" href="fonts/mona-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=5d0b5d3">
+<link rel="stylesheet" href="styles.css?v=8580aa1">
 <script>
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.documentElement.classList.add('intro-on');
@@ -97,42 +97,28 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
           </aside>
           <div class="app-main">
             <div class="view on">
-              <div class="app-title"><span class="sq"><svg viewBox="0 0 24 24"><path d="M4 12l5 5L20 6"/></svg></span>Daily reconciliation</div>
-              <div class="app-query"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Fund A against Prime broker, 23 Oct</div>
-              <p class="app-count">1,284 positions</p>
-              <p class="app-sub">1,282 matched, 2 breaks</p>
-              <table>
-                <thead><tr><th>Instrument</th><th>Fund</th><th>Broker</th><th>Status</th></tr></thead>
-                <tbody>
-                  <tr><td>ROG SW</td><td>12,400</td><td>12,400</td><td><span class="st ok">Matched</span></td></tr>
-                  <tr><td>INGA NA</td><td>8,150</td><td>8,150</td><td><span class="st ok">Matched</span></td></tr>
-                  <tr><td>BMW GY</td><td>3,020</td><td>3,000</td><td><span class="st ko">Break −20</span></td></tr>
-                  <tr><td>VOW3 GY</td><td>21,700</td><td>21,700</td><td><span class="st ok">Matched</span></td></tr>
-                  <tr><td>EUR cash</td><td>1.42M</td><td>1.39M</td><td><span class="st ko">Break</span></td></tr>
-                </tbody>
-              </table>
+              <div class="app-bar"><span class="fld"><small>Fund</small>All funds</span><span class="fld"><small>Trade date</small>23 Oct 2026</span><span class="fld"><small>Checked at</small>19:05</span></div>
+              <div class="recon">
+                <div>
+                  <div class="grp"><small>Trades</small><span class="tile red on"><b>3</b> Breaks</span><span class="tile orange"><b>5</b> To book</span><span class="tile green"><b>14</b> Cleaned up</span></div>
+                  <div class="grp"><small>Mails</small><span class="tile orange"><b>3</b> To answer</span><span class="tile blue"><b>12</b> To read</span></div>
+                </div>
+                <div>
+                  <p class="ent">Fund A <span>2</span></p>
+                  <table class="brk"><thead><tr><th>Ticker</th><th class="r">Fund</th><th class="r">Broker</th></tr></thead><tbody><tr><td>BMW GY</td><td class="r">3,020</td><td class="r">3,000</td></tr><tr><td>VOW3 GY</td><td class="r">500</td><td class="r">0</td></tr></tbody></table>
+                  <p class="ent">Fund B <span class="clear"><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>No breaks</span></p>
+                  <p class="ent">Fund C <span>1</span></p>
+                  <table class="brk"><thead><tr><th>Ticker</th><th class="r">Fund</th><th class="r">Broker</th></tr></thead><tbody><tr><td>ROG SW</td><td class="r">1,200</td><td class="r">1,250</td></tr></tbody></table>
+                </div>
+              </div>
             </div>
             <div class="view">
-              <div class="app-title"><span class="sq"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M10 4v16"/></svg></span>Finance ledger</div>
-              <div class="app-query"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Fund A, every entry, 23 Oct</div>
-              <p class="app-count">3,412 entries</p>
-              <p class="app-sub">each one traced to the file it came from</p>
-              <table>
-                <thead><tr><th>Entry</th><th>Amount</th><th>Source</th></tr></thead>
-                <tbody>
-                  <tr><td>Buy ROG SW</td><td>−112,480</td><td><span class="st new">Broker</span></td></tr>
-                  <tr><td>Sell BMW GY</td><td>+98,640</td><td><span class="st new">Broker</span></td></tr>
-                  <tr><td>Dividend INGA</td><td>+4,075</td><td><span class="st new">Custodian</span></td></tr>
-                  <tr><td>Broker fee</td><td>−1,250</td><td><span class="st new">Statement</span></td></tr>
-                  <tr><td>FX forward</td><td>−250,000</td><td><span class="st new">Admin</span></td></tr>
-                </tbody>
-              </table>
+              <div class="app-bar"><span class="fld"><small>Fund</small>Fund A</span><span class="fld"><small>Month</small>October 2026</span></div>
+              <table class="led"><thead><tr><th>Date</th><th>Entry</th><th class="r">Amount</th><th>Source</th></tr></thead><tbody><tr><td>23 Oct</td><td>Buy ROG SW</td><td class="r">−112,480</td><td><span class="st new">Broker</span></td></tr><tr><td>23 Oct</td><td>Sell BMW GY</td><td class="r">+98,640</td><td><span class="st new">Broker</span></td></tr><tr><td>22 Oct</td><td>Dividend INGA</td><td class="r">+4,075</td><td><span class="st new">Custodian</span></td></tr><tr><td>22 Oct</td><td>Broker fee</td><td class="r">−1,250</td><td><span class="st new">Statement</span></td></tr><tr><td>21 Oct</td><td>FX forward</td><td class="r">−250,000</td><td><span class="st new">Admin</span></td></tr><tr><td>21 Oct</td><td>Subscription</td><td class="r">+500,000</td><td><span class="st new">Admin</span></td></tr><tr><td>20 Oct</td><td>Buy INGA NA</td><td class="r">−86,300</td><td><span class="st new">Broker</span></td></tr><tr><td>20 Oct</td><td>Custody fee</td><td class="r">−420</td><td><span class="st new">Statement</span></td></tr></tbody><tfoot><tr><td></td><td>Balance</td><td class="r">2,418,350</td><td></td></tr></tfoot></table>
             </div>
             <div class="view">
-              <div class="app-title"><span class="sq"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 15v-3M12 15V9M17 15v-5"/></svg></span>Firm dashboard</div>
-              <div class="app-query"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Martin &amp; Co accountants, 23 Oct</div>
-              <p class="app-count">4 alerts</p>
-              <p class="app-sub">Bank feeds, inbox and tax dates, every hour</p>
+              <div class="app-bar"><span class="fld"><small>Firm</small>Martin &amp; Co</span><span class="fld"><small>Month</small>October 2026</span></div>
+              <div class="kpis"><div><small>Clients</small><b>14</b></div><div><small>Receipts</small><b>1,126</b></div><div><small>Alerts</small><b class="red">4</b></div></div>
               <ul class="alerts">
                 <li class="ko"><b>2 bank lines match no invoice</b>Dupont SARL, €1,240</li>
                 <li class="warn"><b>6 receipts by mail, 2 unreadable</b>Leroy Bakery</li>
@@ -141,36 +127,26 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
               </ul>
             </div>
             <div class="view">
-              <div class="app-title"><span class="sq"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>Inbox triage</div>
-              <div class="app-query"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Operations inbox, last 24 hours</div>
-              <p class="app-count">214 mails</p>
-              <p class="app-sub">201 filed on their own, 13 left for you</p>
-              <table>
-                <thead><tr><th>From</th><th>Subject</th><th>Status</th></tr></thead>
-                <tbody>
-                  <tr><td>Prime broker</td><td>Daily statement</td><td><span class="st ok">Filed</span></td></tr>
-                  <tr><td>Fund admin</td><td>NAV pack</td><td><span class="st ok">Filed</span></td></tr>
-                  <tr><td>Client</td><td>Fee question</td><td><span class="st new">For you</span></td></tr>
-                  <tr><td>Broker</td><td>Trade confirm</td><td><span class="st ok">Filed</span></td></tr>
-                  <tr><td>Auditor</td><td>Year-end audit</td><td><span class="st new">For you</span></td></tr>
-                </tbody>
-              </table>
+              <div class="tabs"><span class="on">For you <i>13</i></span><span>Filed <i>201</i></span></div>
+              <ul class="rows mails">
+                <li><span class="av">CL</span><b>Client</b><time>09:42</time><span>Fee question</span><span class="st new">Draft ready</span></li>
+                <li><span class="av">AU</span><b>Auditor</b><time>09:10</time><span>Year-end audit</span><span class="st new">Draft ready</span></li>
+                <li><span class="av">PB</span><b>Prime broker</b><time>08:55</time><span>Missing statement</span><span class="st warn">Chased</span></li>
+                <li><span class="av">FA</span><b>Fund admin</b><time>08:30</time><span>NAV pack</span><span class="st new">Draft ready</span></li>
+                <li><span class="av">EB</span><b>Exec broker</b><time>Yesterday</time><span>Trade confirm</span><span class="st ko">Break found</span></li>
+              </ul>
             </div>
             <div class="view">
-              <div class="app-title"><span class="sq"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg></span>Agent sessions</div>
-              <div class="app-query"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>Every session on this Mac</div>
-              <p class="app-count">5 sessions</p>
-              <p class="app-sub">3 working, 2 waiting for you</p>
-              <table>
-                <thead><tr><th>Session</th><th>Last step</th><th>Status</th></tr></thead>
-                <tbody>
-                  <tr><td>recon</td><td>Ran the tests</td><td><span class="st ok">Working</span></td></tr>
-                  <tr><td>ledger</td><td>Booked the trades</td><td><span class="st ok">Working</span></td></tr>
-                  <tr><td>site</td><td>Asked a question</td><td><span class="st new">Waiting</span></td></tr>
-                  <tr><td>mail</td><td>Sorted 40 mails</td><td><span class="st ok">Working</span></td></tr>
-                  <tr><td>release</td><td>Built version 2.1</td><td><span class="st new">Waiting</span></td></tr>
-                </tbody>
-              </table>
+              <div class="tabs"><span class="on">All <i>7</i></span><span>Waiting <i>2</i></span></div>
+              <ul class="rows">
+                <li><b>recon</b><span class="dot ok">Working</span><span>Ran the tests</span><time>now</time></li>
+                <li><b>ledger</b><span class="dot ok">Working</span><span>Booked the trades</span><time>2 min</time></li>
+                <li><b>site</b><span class="dot new">Waiting</span><span>Asked a question</span><time>6 min</time></li>
+                <li><b>mail</b><span class="dot ok">Working</span><span>Sorted 40 mails</span><time>now</time></li>
+                <li><b>release</b><span class="dot new">Waiting</span><span>Built version 2.1</span><time>14 min</time></li>
+                <li><b>invoices</b><span class="dot done">Done</span><span>Chased 3 invoices</span><time>1 h</time></li>
+                <li><b>report</b><span class="dot done">Done</span><span>Sent the PDF</span><time>2 h</time></li>
+              </ul>
             </div>
           </div>
         </div>
@@ -351,7 +327,7 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   </div>
 </footer>
 
-<script src="lang.js?v=5d0b5d3"></script>
+<script src="lang.js?v=8580aa1"></script>
 <script>
 const intro = document.querySelector('.intro');
 if (document.documentElement.classList.contains('intro-on')) {
