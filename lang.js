@@ -62,6 +62,8 @@ const FR = {
   'now': 'à l’instant',
   'Done': 'Terminée',
   'Chased 3 invoices': '3 factures relancées',
+  'Invoices': 'Factures',
+  'Report': 'Rapport',
   'Sent the PDF': 'PDF envoyé',
   'Fund': 'Fonds',
   'Broker': 'Courtier',
