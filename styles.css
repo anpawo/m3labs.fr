@@ -160,18 +160,17 @@ th.r, td.r { text-align: right; }
 .st.ko, .alerts .ko { background: oklch(95.2% .024 14.4); color: oklch(44.8% .16 22.7); }
 .st.warn, .alerts .warn { background: oklch(95.8% .045 80); color: oklch(48% .11 60); }
 .st.new { background: var(--brand-tint); color: var(--brand-tint-fg); }
-/* Reconciliation, after S14's recon summary: the day's counts in grey blocks, the chosen one's breaks beside them */
-.recon { display: grid; grid-template-columns: 146px minmax(0, 1fr); gap: 16px; align-items: start; margin-top: 16px; }
-.grp { display: grid; gap: 6px; padding: 8px; border-radius: 14px; background: oklch(97% .005 265); border: 1px solid var(--border); }
-.grp small { padding: 0 3px; }
+/* Reconciliation, after S14's recon summary: the day's counts in a grey block, the chosen one's breaks under it */
+.grp { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; margin-top: 12px; padding: 8px; border-radius: 14px; background: oklch(97% .005 265); border: 1px solid var(--border); }
+.grp small { grid-column: 1 / -1; padding: 0 3px; }
 .tile { position: relative; padding: 8px 10px; border-radius: 9px; font-size: 13.5px; font-weight: 600; color: oklch(22% .03 265); white-space: nowrap; }
 .tile.red { background: oklch(70% .17 22); }
 .tile.orange { background: oklch(80% .13 66); }
 .tile.green { background: oklch(84% .11 158); }
 .tile b { margin-right: 4px; }
 .tile.on { box-shadow: 0 0 0 3px oklch(70% .17 22 / .25), 0 8px 16px -8px oklch(55% .2 22 / .8); }
-.tile.on::after { content: ""; position: absolute; right: 12px; top: 50%; width: 5px; height: 5px; border: solid currentColor; border-width: 2px 2px 0 0; rotate: 45deg; translate: 0 -50%; }
-.ent { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; font-weight: 650; }
+.tile.on::after { content: ""; position: absolute; right: 12px; top: 50%; width: 5px; height: 5px; border: solid currentColor; border-width: 2px 2px 0 0; rotate: 135deg; translate: 0 -75%; }
+.ent { display: flex; align-items: center; gap: 8px; margin: 16px 0 8px; font-weight: 650; }
 .ent span { color: var(--muted-foreground); font-weight: 500; }
 .brk { width: 100%; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
 .brk th { background: oklch(97% .005 265); }
