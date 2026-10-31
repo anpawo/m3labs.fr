@@ -28,7 +28,7 @@
 }
 </script>
 <link rel="preload" href="fonts/mona-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=9a88d88">
+<link rel="stylesheet" href="styles.css?v=f29ef7a">
 <script>
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.documentElement.classList.add('intro-on');
@@ -307,36 +307,30 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
       <h2 id="talk-h">Let's talk about your project.</h2>
       <div class="reach">
         <a class="reach-row" href="https://www.linkedin.com/in/mariusrousset" target="_blank" rel="noopener">
-          <span class="ico in"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></span>
-          <span><b>Message me on <u>LinkedIn</u></b><small>See my background, then write to me directly</small></span>
+          <span class="ico in"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0zM20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></span>
+          <span><b>Message me on LinkedIn</b></span>
           <svg class="go" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
         </a>
         <button class="reach-row copy" type="button" title="Copy the address">
-          <span class="ico mail"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
-          <span><b>Send me your task by <u>email</u></b><small>contact@m3labs.fr, I answer within a day</small><small hidden>Address copied, paste it in your mail</small></span>
+          <span class="ico mail"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></span>
+          <span><b>Email me at contact@m3labs.fr</b><b hidden>Address copied</b></span>
           <svg class="go" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
         </button>
-      </div>
-      <div class="call">
-        <h3>Book a call</h3>
-        <div class="seg" role="radiogroup" aria-label="Kind of call">
-          <button type="button" role="radio" data-kind="voice" aria-checked="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Audio</button>
-          <button type="button" role="radio" data-kind="video" aria-checked="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m16 13 5.22 3.48a.5.5 0 0 0 .78-.42V7.87a.5.5 0 0 0-.75-.43L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>Video</button>
-        </div>
-        <div class="lens">
-          <button type="button" data-len="5">5 min</button>
-          <button type="button" data-len="15">15 min</button>
-          <button type="button" data-len="30">30 min</button>
-        </div>
+        <button class="reach-row" type="button" data-book>
+          <span class="ico"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg></span>
+          <span><b>Book a call</b></span>
+          <svg class="go" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+        </button>
       </div>
     </div>
     <div class="pane sched" data-pane="book" hidden>
-      <div class="host">
+      <div class="talk-top">
         <button class="talk-back" type="button" aria-label="Back"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
-        <svg class="host-mark" viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#2f4fe0"/><g fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"><path d="M14 21.5 L32 11 L50 21.5 M32 32 V53 M14 42.5 L32 53 L50 42.5" stroke-width="2.6" stroke-opacity=".45"/><path d="M14 42.5 V21.5 L32 32 L50 21.5 V42.5" stroke-width="4.6"/></g></svg>
-        <p class="host-who">Marius Rousset, M3 Labs</p>
-        <h2>A free call about your project</h2>
-        <div class="cal" data-step="time">
+        <h2>Book a call</h2>
+      </div>
+      <button class="pick" type="button" data-row="when" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span></span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+      <div class="when" data-step="when">
+        <div class="cal">
           <div class="cal-head">
             <button class="cal-prev" type="button" aria-label="Previous month"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
             <p class="cal-month"></p>
@@ -344,33 +338,31 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
           </div>
           <div class="cal-grid"></div>
         </div>
-        <ul class="recap" data-step="who" hidden>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><span class="recap-when"></span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span class="recap-len"></span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span class="recap-kind"></span></li>
-        </ul>
-      </div>
-      <div class="side">
-        <ol class="stepper"><li>Choose a time</li><li>Your details</li></ol>
-        <div data-step="time">
-          <h3>Kind of call</h3>
-          <div class="seg" role="radiogroup" aria-label="Kind of call">
-            <button type="button" role="radio" data-kind="voice" aria-checked="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Audio</button>
-            <button type="button" role="radio" data-kind="video" aria-checked="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m16 13 5.22 3.48a.5.5 0 0 0 .78-.42V7.87a.5.5 0 0 0-.75-.43L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>Video</button>
-          </div>
-          <h3>Duration</h3>
-          <div class="lens">
-            <button type="button" data-len="5">5 min</button>
-            <button type="button" data-len="15">15 min</button>
-            <button type="button" data-len="30">30 min</button>
-          </div>
-          <h3>Which time works best?</h3>
+        <div class="day">
           <p class="slots-day"></p>
           <p class="tz"></p>
           <div class="times"></div>
-          <p class="talk-state" aria-live="polite"></p>
         </div>
-        <form class="who" data-step="who" hidden>
+        <p class="talk-state" aria-live="polite"></p>
+      </div>
+      <button class="pick" type="button" data-row="kind" hidden><svg data-for="voice" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><svg data-for="video" viewBox="0 0 24 24" aria-hidden="true"><path d="m16 13 5.22 3.48a.5.5 0 0 0 .78-.42V7.87a.5.5 0 0 0-.75-.43L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg><span></span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+      <div data-step="kind" hidden>
+        <h3>Kind of call</h3>
+        <div class="opts">
+          <button type="button" data-kind="voice"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg><span><b>Audio</b><small>I call you</small></span></button>
+          <button type="button" data-kind="video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m16 13 5.22 3.48a.5.5 0 0 0 .78-.42V7.87a.5.5 0 0 0-.75-.43L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg><span><b>Video</b><small>Google Meet</small></span></button>
+        </div>
+      </div>
+      <button class="pick" type="button" data-row="len" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><span></span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></button>
+      <div data-step="len" hidden>
+        <h3>Duration</h3>
+        <div class="opts">
+          <button type="button" data-len="5">5 min</button>
+          <button type="button" data-len="15">15 min</button>
+          <button type="button" data-len="30">30 min</button>
+        </div>
+      </div>
+      <form class="who" data-step="who" hidden>
         <div class="two">
           <label>Name<input name="name" autocomplete="name" required></label>
           <label>Email<input name="email" type="email" autocomplete="email" required></label>
@@ -380,7 +372,6 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
         <button class="btn btn-primary" type="submit">Book this call</button>
         <p class="talk-state" aria-live="polite"></p>
       </form>
-      </div>
     </div>
     <div class="pane" data-pane="done" hidden>
       <h2>Booked.</h2>
@@ -389,7 +380,7 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   </div>
 </dialog>
 
-<script src="lang.js?v=9a88d88"></script>
+<script src="lang.js?v=f29ef7a"></script>
 <script>
 const intro = document.querySelector('.intro');
 if (document.documentElement.classList.contains('intro-on')) {
@@ -465,21 +456,22 @@ speed.forEach((el, i) => el.addEventListener('click', () => {
   speed.forEach(b => b.setAttribute('aria-pressed', b === el));
   document.getElementById('pricing').classList.toggle('boost', i === 1);
 }));
-// the contact popup, opened by the Let's get started buttons and the plans'. A kind and a length open the booking card
-// on Marius's free times, which API, the Apps Script web app of booking/, gives and books; while it is empty a length
-// opens his Google Calendar booking page instead
+// the contact popup, opened by the Let's get started buttons and the plans'. Book a call opens the booking on Marius's
+// free times, which API, the Apps Script web app of booking/, gives and books; while it is empty the button opens his
+// Google Calendar booking page instead
 const API = 'https://script.google.com/macros/s/AKfycbyW7du4pNVJjG3nECt9Dj5oiOE5KbTq-iaqpHCTQD8r1KRCUfmWOF6qvkF_H2I9Q7o/exec', CAL = 'https://calendar.app.google/a1ZZEqtDEEhwA8Tp7';
 const talk = document.querySelector('.talk'), panes = [...talk.querySelectorAll('.pane')], sched = talk.querySelector('.sched');
-const state = sched.querySelector('[data-step="time"] .talk-state'), wstate = sched.querySelector('.who .talk-state');
+const state = sched.querySelector('[data-step="when"] .talk-state'), wstate = sched.querySelector('.who .talk-state');
 const grid = talk.querySelector('.cal-grid'), times = talk.querySelector('.times'), prev = talk.querySelector('.cal-prev'), next = talk.querySelector('.cal-next');
 const who = talk.querySelector('.who'), field = n => who.querySelector(`[name=${n}]`);
+const rows = Object.fromEntries([...sched.querySelectorAll('[data-row]')].map(r => [r.dataset.row, r]));
 const msg = (en, fr) => lang === 'fr' ? fr : en, loc = () => lang === 'fr' ? 'fr-FR' : 'en-GB';
 const post = body => fetch(API, { method: 'POST', body: JSON.stringify(body) }).then(r => r.json());
-let plan = '', kind = 'voice', len = 0, day = '', at = 0, free = [];
-// every length's free times in one call, asked for as the popup opens, so they are in by the time a length is picked
-// (the web app takes one to five seconds), and again once five minutes old. Not before the popup opens: the privacy
-// page says Google gets the visitor's IP address when the popup asks. slots is undefined until the first answer, null
-// when it failed
+let plan = '', kind = '', len = 0, day = '', at = 0, free = [], cur = 'when';
+// every length's free times in one call, asked for as the popup opens, so they are in by the time Book a call is
+// clicked (the web app takes one to five seconds), and again once five minutes old. Not before the popup opens: the
+// privacy page says Google gets the visitor's IP address when the popup asks. slots is undefined until the first
+// answer, null when it failed
 let slots, asking, asked = 0;
 const ask = () => {
   if (!asking || Date.now() - asked > 3e5) {
@@ -490,51 +482,65 @@ const ask = () => {
   return asking;
 };
 const show = name => { for (const p of panes) p.hidden = p.dataset.pane !== name; talk.classList.toggle('wide', name === 'book'); };
-const step = name => {
-  for (const s of sched.querySelectorAll('[data-step]')) s.hidden = s.dataset.step !== name;
-  sched.querySelectorAll('.stepper li').forEach((li, i) => i === +(name === 'who') ? li.setAttribute('aria-current', 'step') : li.removeAttribute('aria-current'));
-};
-const kinds = () => {
-  for (const b of talk.querySelectorAll('[data-kind]')) b.setAttribute('aria-checked', b.dataset.kind === kind);
-  for (const b of sched.querySelectorAll('[data-len]')) b.setAttribute('aria-pressed', +b.dataset.len === len);
+const dkey = d => d.toLocaleDateString('en-CA'), long = { weekday: 'long', day: 'numeric', month: 'long' }, hm = { hour: '2-digit', minute: '2-digit' };
+// the steps in order: the day and time, the kind of call, its length, then the visitor's details. Each one chosen
+// shrinks to a row at the top, which opens it again in its place; the open step is the row clicked, else the first not
+// chosen yet. The popup keeps its top edge and its height follows
+const chosen = { when: () => at, kind: () => kind, len: () => len };
+const go = name => {
+  const h = sched.hidden ? 0 : talk.offsetHeight, d = new Date(at);
+  cur = name || Object.keys(chosen).find(s => !chosen[s]()) || 'who';
+  for (const s of sched.querySelectorAll('[data-step]')) s.hidden = s.dataset.step !== cur;
+  for (const [s, r] of Object.entries(rows)) r.hidden = s === cur || !chosen[s]();
+  rows.when.querySelector('span').textContent = `${d.toLocaleDateString(loc(), long)}, ${d.toLocaleTimeString(loc(), hm)}`;
+  rows.kind.querySelector('span').textContent = kind === 'voice' ? msg('Audio call, I call you', 'Appel audio, je vous appelle') : msg('Video call on Google Meet', 'Appel vidéo sur Google Meet');
+  for (const i of rows.kind.querySelectorAll('[data-for]')) i.toggleAttribute('hidden', i.dataset.for !== kind); // an svg has no hidden property
+  rows.len.querySelector('span').textContent = `${len} min`;
+  for (const b of sched.querySelectorAll('[data-kind]')) b.setAttribute('aria-pressed', b.dataset.kind === kind);
+  // a time free for a short call may not be for a longer one
+  for (const b of sched.querySelectorAll('[data-len]')) { b.setAttribute('aria-pressed', +b.dataset.len === len); b.disabled = !slots?.[b.dataset.len]?.includes(at); }
+  field('phone').closest('label').hidden = field('phone').disabled = kind !== 'voice';
+  if (cur === 'when') render();
+  if (cur === 'who') { wstate.textContent = ''; if (!field('name').value) field('name').focus(); }
+  if (h && !still) {
+    talk.style.overflow = 'hidden';
+    talk.animate({ height: [h + 'px', talk.offsetHeight + 'px'] }, { duration: 220, easing: 'cubic-bezier(.2, .8, .2, 1)' }).onfinish = () => talk.style.overflow = '';
+  }
 };
 for (const el of document.querySelectorAll('[data-talk]')) el.addEventListener('click', e => {
   e.preventDefault();
   if (el.dataset.plan) plan = el.dataset.plan;
   ask();
   show('start');
-  kinds();
   if (!talk.open) talk.showModal();
 });
 talk.querySelector('.talk-x').addEventListener('click', () => talk.close());
 talk.addEventListener('click', e => { if (e.target === talk) talk.close(); });
-sched.querySelector('.talk-back').addEventListener('click', () => who.hidden ? show('start') : step('time'));
-const copy = talk.querySelector('.copy'), [label, copied] = copy.querySelectorAll('small');
+sched.querySelector('.talk-back').addEventListener('click', () => show('start'));
+const copy = talk.querySelector('.copy'), [label, copied] = copy.querySelectorAll('b');
 copy.addEventListener('click', () => navigator.clipboard?.writeText('contact@m3labs.fr').then(() => {
   label.hidden = !(copied.hidden = false);
   setTimeout(() => label.hidden = !(copied.hidden = true), 1500);
 }));
-for (const b of talk.querySelectorAll('[data-kind]')) b.addEventListener('click', () => { kind = b.dataset.kind; kinds(); });
-for (const b of talk.querySelectorAll('[data-len]')) b.addEventListener('click', () => {
+talk.querySelector('[data-book]').addEventListener('click', () => {
   if (!API) return void open(CAL, '_blank', 'noopener');
-  len = +b.dataset.len;
-  at = 0;
-  kinds();
+  go();
   show('book');
-  step('time');
-  render();
-  ask().then(() => render());
+  ask().then(() => { if (cur === 'when') render(); });
 });
-const dkey = d => d.toLocaleDateString('en-CA'), long = { weekday: 'long', day: 'numeric', month: 'long' }, hm = { hour: '2-digit', minute: '2-digit' };
+for (const [s, r] of Object.entries(rows)) r.addEventListener('click', () => go(s));
+for (const b of sched.querySelectorAll('[data-kind]')) b.addEventListener('click', () => { kind = b.dataset.kind; go(); });
+for (const b of sched.querySelectorAll('[data-len]')) b.addEventListener('click', () => { len = +b.dataset.len; go(); });
 // the visitor's own time zone, which the times are shown in: "Central European Standard Time (GMT+1)"
 const zone = () => {
   const name = style => new Intl.DateTimeFormat(loc(), { timeZoneName: style }).formatToParts(new Date(day + 'T12:00')).find(p => p.type === 'timeZoneName').value;
   return `${name('long')} (${name('shortOffset')})`;
 };
-// the month of the picked day, its free days lit; the arrows go to the first free day of the month before or after
+// the month of the picked day, its free days lit, and that day's times beside it; the arrows go to the first free day of
+// the month before or after. The 5-minute times hold every longer call's, whose lengths the next steps check
 const render = keep => {
   const days = new Map();
-  for (const ms of slots?.[len] || []) { const k = dkey(new Date(ms)); days.set(k, [...days.get(k) || [], ms]); }
+  for (const ms of slots?.[5] || []) { const k = dkey(new Date(ms)); days.set(k, [...days.get(k) || [], ms]); }
   free = [...days.keys()];
   if (!days.has(day)) day = free[0] || '';
   const shown = day ? new Date(day + 'T12:00') : new Date(), y = shown.getFullYear(), m = shown.getMonth(), month = day.slice(0, 7), today = dkey(new Date());
@@ -553,12 +559,12 @@ const render = keep => {
       return b;
     }));
   if (keep) grid.querySelector('[aria-pressed="true"]').focus();
-  talk.querySelector('.slots-day').replaceChildren(...day ? [msg('Showing times for ', 'Affichage des heures pour le '),
-    Object.assign(document.createElement('b'), { textContent: shown.toLocaleDateString(loc(), { ...long, year: 'numeric' }) })] : []);
+  talk.querySelector('.slots-day').textContent = day && shown.toLocaleDateString(loc(), long);
   talk.querySelector('.tz').textContent = day && zone();
   times.replaceChildren(...(days.get(day) || []).map(ms => {
     const b = Object.assign(document.createElement('button'), { type: 'button', textContent: new Date(ms).toLocaleTimeString(loc(), hm) });
-    b.addEventListener('click', () => { at = ms; details(); step('who'); if (!field('name').value) field('name').focus(); });
+    b.setAttribute('aria-pressed', ms === at);
+    b.addEventListener('click', () => { at = ms; if (len && !slots[len].includes(at)) len = 0; go(); });
     return b;
   }));
   state.textContent = slots === undefined ? msg('Loading the free times…', 'Chargement des créneaux libres…')
@@ -567,14 +573,6 @@ const render = keep => {
 };
 prev.addEventListener('click', () => { day = free.find(k => k.slice(0, 7) < day.slice(0, 7)); render(true); });
 next.addEventListener('click', () => { day = free.find(k => k.slice(0, 7) > day.slice(0, 7)); render(true); });
-const details = () => {
-  const d = new Date(at);
-  talk.querySelector('.recap-when').textContent = `${d.toLocaleDateString(loc(), long)}, ${d.toLocaleTimeString(loc(), hm)}`;
-  talk.querySelector('.recap-len').textContent = `${len} min`;
-  talk.querySelector('.recap-kind').textContent = kind === 'voice' ? msg('Audio call, I call you', 'Appel audio, je vous appelle') : msg('Video call on Google Meet', 'Appel vidéo sur Google Meet');
-  field('phone').closest('label').hidden = field('phone').disabled = kind !== 'voice';
-  wstate.textContent = '';
-};
 who.addEventListener('submit', async e => {
   e.preventDefault();
   const f = Object.fromEntries(new FormData(who)), when = at, button = who.querySelector('[type=submit]');
@@ -589,13 +587,14 @@ who.addEventListener('submit', async e => {
       ? msg(`${w}, ${len} minutes: I call you at ${f.phone}. The invite is on its way to ${f.email}.`, `${w}, ${len} minutes : je vous appelle au ${f.phone}. L’invitation part à ${f.email}.`)
       : msg(`${w}, ${len} minutes on Google Meet. The invite, with the link, is on its way to ${f.email}.`, `${w}, ${len} minutes sur Google Meet. L’invitation, avec le lien, part à ${f.email}.`);
     asking = null;
-    at = 0;
+    at = len = 0;
+    kind = '';
     return show('done');
   }
   if (r.error === 'taken') {
     asking = null;
     at = 0;
-    step('time');
+    go();
     await ask();
     render();
     return state.textContent = msg('That time was just taken. Pick another one.', 'Ce créneau vient d’être pris. Choisissez-en un autre.');
@@ -605,9 +604,7 @@ who.addEventListener('submit', async e => {
     : msg('The booking did not go through. Write to me at contact@m3labs.fr.', 'La réservation n’a pas abouti. Écrivez-moi à contact@m3labs.fr.');
 });
 document.addEventListener('langchange', () => {
-  if (!talk.open || sched.hidden) return;
-  render();
-  if (!who.hidden) details();
+  if (talk.open && !sched.hidden) go(cur);
 });
 // findmylead.fr's trial button: the header's button rings on load, and again after each jump to a part of the page
 const cta = document.querySelector('.nav .aura');
