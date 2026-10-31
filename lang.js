@@ -26,7 +26,7 @@ const FR = {
 
   // the app drawn beside the title
   'Reconciliation': 'Réconciliation',
-  'Ledger': 'Journal',
+  'General Ledger': 'Grand livre',
   'Dashboard': 'Dashboard',
   'Mail automation': 'Mails automatisés',
   'Mac OS apps': 'Apps macOS',
@@ -36,7 +36,6 @@ const FR = {
   'Breaks': 'Écarts',
   'To book': 'À saisir',
   'Cleaned up': 'Résolus',
-  'Fund A': 'Fonds A',
   'Side': 'Sens',
   'Buy': 'Achat',
   'Sell': 'Vente',
@@ -200,15 +199,11 @@ const FR = {
   'Privacy': 'Confidentialité',
 
   // the contact popup
-  'Sign in and I write back within a day, or book a call now.': 'Connectez-vous et je vous réponds sous 24 h, ou réservez un appel.',
-  'Continue with Google': 'Continuer avec Google',
-  'Continue with Apple': 'Continuer avec Apple',
-  'Sign-in opens soon. Until then, book a call or write to me.': 'La connexion ouvre bientôt. D’ici là, réservez un appel ou écrivez-moi.',
-  'or': 'ou',
-  'Voice call': 'Appel vocal',
-  '5 to 15 min, I call you': '5 à 15 min, je vous appelle',
-  'Video call': 'Appel vidéo',
-  'Up to 30 min, on Google Meet': 'Jusqu’à 30 min, sur Google Meet',
+  'Message me on LinkedIn': 'M’écrire sur LinkedIn',
+  'Email me at contact@m3labs.fr': 'M’écrire à contact@m3labs.fr',
+  'Address copied': 'Adresse copiée',
+  'Video': 'Vidéo',
+  'Your details': 'Vos coordonnées',
   'Name': 'Nom',
   'Phone': 'Téléphone',
   'What is it about? <small>Optional</small>': 'De quoi s’agit-il ? <small>Facultatif</small>',

@@ -28,7 +28,7 @@
 }
 </script>
 <link rel="preload" href="fonts/mona-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=d0459d3">
+<link rel="stylesheet" href="styles.css?v=0ccaf44">
 <script>
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.documentElement.classList.add('intro-on');
@@ -55,14 +55,13 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
       <a href="#work">My work</a>
       <a href="#process">How we work</a>
       <a href="#pricing">Pricing</a>
-      <a href="#contact" data-talk>Contact</a>
     </nav>
     <div class="actions">
       <div class="lang" role="group" aria-label="Language">
         <button type="button" data-lang="fr" aria-pressed="false"><svg class="flag" viewBox="0 0 3 2" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path fill="#002395" d="M0 0h1v2H0z"/><path fill="#fff" d="M1 0h1v2H1z"/><path fill="#ed2939" d="M2 0h1v2H2z"/></svg><span>FR</span></button>
         <button type="button" data-lang="en" aria-pressed="true"><svg class="flag" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><clipPath id="uk-x"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><path fill="#012169" d="M0 0h60v30H0z"/><path stroke="#fff" stroke-width="6" d="m0 0 60 30m0-30L0 30"/><path stroke="#c8102e" stroke-width="4" clip-path="url(#uk-x)" d="m0 0 60 30m0-30L0 30"/><path stroke="#fff" stroke-width="10" d="M30 0v30M0 15h60"/><path stroke="#c8102e" stroke-width="6" d="M30 0v30M0 15h60"/></svg><span>EN</span></button>
       </div>
-      <a class="btn btn-primary" href="https://calendar.app.google/a1ZZEqtDEEhwA8Tp7" target="_blank" rel="noopener" data-talk="book">Book a call</a>
+      <button class="btn btn-primary aura" type="button" data-talk>Let's get started</button>
     </div>
   </div>
 </header>
@@ -89,7 +88,7 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
         <div class="app">
           <aside class="app-side">
             <div class="app-brand"><span class="logo logo-sm"><svg viewBox="10 8 44 48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M14 21.5 L32 11 L50 21.5 M32 32 V53 M14 42.5 L32 53 L50 42.5" stroke-width="2.6" stroke-opacity=".45"/><path d="M14 42.5 V21.5 L32 32 L50 21.5 V42.5" stroke-width="4.6"/></svg></span>M3 Labs</div>
-            <span class="app-grp"><span class="app-item on">Reconciliation</span><span class="app-item">Ledger</span></span>
+            <span class="app-grp"><span class="app-item on">Reconciliation</span><span class="app-item">General Ledger</span></span>
             <span class="app-item">Dashboard</span>
             <span class="app-item">Mail automation</span>
             <span class="app-item">Mac OS apps</span>
@@ -102,7 +101,7 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
               <table class="brk"><thead><tr><th>Ticker</th><th>Side</th><th class="r">Fund</th><th class="r">Broker</th><th>Break</th></tr></thead><tbody><tr><td>BMW GY</td><td>Buy</td><td class="r">3,020</td><td class="r">3,000</td><td>Quantity</td></tr><tr><td>VOW3 GY</td><td>Sell</td><td class="r">500</td><td class="r">0</td><td>Fund only</td></tr></tbody></table>
             </div>
             <div class="view">
-              <div class="app-bar"><span class="fld"><small>Fund</small>Fund A</span><span class="fld"><small>Month</small>October 2026</span></div>
+              <div class="app-bar"><span class="fld"><small>Fund</small>J.P. Morgan</span><span class="fld"><small>Month</small>October 2026</span></div>
               <table class="led"><thead><tr><th>Date</th><th>Entry</th><th class="r">Amount</th><th>Source</th></tr></thead><tbody><tr><td>23 Oct</td><td>Buy ROG SW</td><td class="r">−112,480</td><td><span class="st new">Broker</span></td></tr><tr><td>23 Oct</td><td>Sell BMW GY</td><td class="r">+98,640</td><td><span class="st new">Broker</span></td></tr><tr><td>22 Oct</td><td>Dividend INGA</td><td class="r">+4,075</td><td><span class="st new">Custodian</span></td></tr><tr><td>22 Oct</td><td>Broker fee</td><td class="r">−1,250</td><td><span class="st new">Statement</span></td></tr><tr><td>21 Oct</td><td>FX forward</td><td class="r">−250,000</td><td><span class="st new">Admin</span></td></tr><tr><td>21 Oct</td><td>Subscription</td><td class="r">+500,000</td><td><span class="st new">Admin</span></td></tr><tr><td>20 Oct</td><td>Buy INGA NA</td><td class="r">−86,300</td><td><span class="st new">Broker</span></td></tr><tr><td>20 Oct</td><td>Custody fee</td><td class="r">−420</td><td><span class="st new">Statement</span></td></tr></tbody><tfoot><tr><td></td><td>Balance</td><td class="r">2,418,350</td><td></td></tr></tfoot></table>
             </div>
             <div class="view">
@@ -129,7 +128,7 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
               <div class="tabs"><span class="on">All <i>7</i></span><span>Waiting <i>2</i></span></div>
               <ul class="rows">
                 <li><b>Recon</b><span class="dot ok">Working</span><span>Ran the tests</span><time>now</time></li>
-                <li><b>Ledger</b><span class="dot ok">Working</span><span>Booked the trades</span><time>2 min</time></li>
+                <li><b>General Ledger</b><span class="dot ok">Working</span><span>Booked the trades</span><time>2 min</time></li>
                 <li><b>Site</b><span class="dot new">Waiting</span><span>Asked a question</span><time>6 min</time></li>
                 <li><b>Mail</b><span class="dot ok">Working</span><span>Sorted 40 mails</span><time>now</time></li>
                 <li><b>Release</b><span class="dot new">Waiting</span><span>Built version 2.1</span><time>14 min</time></li>
@@ -258,8 +257,8 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
       <button type="button" aria-pressed="true">Standard</button>
       <button type="button" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>Boost: half the time</button>
     </div>
-    <div class="every"><h3>Yours on every plan</h3><ul><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg><span><b>The code</b> and its docs</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg><span><b>Every account</b>, in your name</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg><span><b>Your data</b>, under NDA</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg><span><b>3 months</b> of free fixes</span></li></ul></div>
     </div>
+    <div class="every"><h3>Yours on every plan</h3><ul><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg><span><b>The code</b> and its docs</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg><span><b>Every account</b>, in your name</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg><span><b>Your data</b>, under NDA</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg><span><b>3 months</b> of free fixes</span></li></ul></div>
     <div class="cards">
       <article class="plan">
         <div class="plan-head"><h3>Task</h3></div>
@@ -306,29 +305,41 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
     <button class="talk-x" type="button" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
     <div class="pane" data-pane="start">
       <h2 id="talk-h">Let's talk about your project.</h2>
-      <p class="talk-sub">Sign in and I write back within a day, or book a call now.</p>
-      <button class="btn g-btn" type="button" data-sign="google"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 8 3l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 8 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2c-2 1.5-4.5 2.4-7.2 2.4-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>Continue with Google</button>
-      <button class="btn g-btn" type="button" data-sign="apple"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.19-1.73-1.36-.14-2.65.8-3.34.8-.69 0-1.75-.78-2.88-.76-1.48.02-2.85.86-3.61 2.19-1.54 2.67-.39 6.63 1.11 8.8.73 1.06 1.6 2.25 2.75 2.21 1.1-.04 1.52-.71 2.85-.71 1.33 0 1.71.71 2.88.69 1.19-.02 1.94-1.08 2.66-2.15.84-1.23 1.19-2.42 1.21-2.48-.03-.01-2.32-.89-2.34-3.54zM14.18 6.13c.61-.74 1.02-1.76.91-2.78-.88.04-1.94.59-2.57 1.32-.56.65-1.06 1.69-.93 2.69.98.08 1.98-.5 2.59-1.23z"/></svg>Continue with Apple</button>
-      <p class="talk-note" hidden>Sign-in opens soon. Until then, book a call or write to me.</p>
-      <p class="or">or</p>
-      <a class="btn btn-primary" href="https://calendar.app.google/a1ZZEqtDEEhwA8Tp7" target="_blank" rel="noopener" data-talk="book">Book a call</a>
-      <div class="talk-reach">
-        <a class="btn btn-tint" href="https://www.linkedin.com/in/mariusrousset" target="_blank" rel="noopener"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
-        <button class="btn btn-tint copy" type="button" title="Copy the address"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span>contact@m3labs.fr</span></button>
+      <div class="reach">
+        <a class="btn btn-tint" href="https://www.linkedin.com/in/mariusrousset" target="_blank" rel="noopener"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>Message me on LinkedIn</a>
+        <button class="btn btn-tint copy" type="button" title="Copy the address"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><span>Email me at contact@m3labs.fr</span><span hidden>Address copied</span></button>
+      </div>
+      <div class="call">
+        <h3>Book a call</h3>
+        <div class="seg" role="radiogroup" aria-label="Kind of call">
+          <button type="button" role="radio" data-kind="voice" aria-checked="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Audio</button>
+          <button type="button" role="radio" data-kind="video" aria-checked="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m16 13 5.22 3.48a.5.5 0 0 0 .78-.42V7.87a.5.5 0 0 0-.75-.43L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/></svg>Video</button>
+        </div>
+        <div class="lens">
+          <button type="button" data-len="5">5 min</button>
+          <button type="button" data-len="15">15 min</button>
+          <button type="button" data-len="30">30 min</button>
+        </div>
       </div>
     </div>
     <div class="pane" data-pane="book" hidden>
-      <h2>Book a call</h2>
-      <p class="talk-sub hi" hidden></p>
-      <div class="kinds" role="radiogroup" aria-label="Kind of call">
-        <button type="button" role="radio" data-kind="voice" aria-checked="true"><b>Voice call</b><small>5 to 15 min, I call you</small></button>
-        <button type="button" role="radio" data-kind="video" aria-checked="false"><b>Video call</b><small>Up to 30 min, on Google Meet</small></button>
+      <div class="talk-top"><button class="talk-back" type="button" data-back="start" aria-label="Back"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button><h2 class="call-name"></h2></div>
+      <div class="picker" hidden>
+        <div>
+          <p class="cal-month"></p>
+          <div class="cal-grid"></div>
+        </div>
+        <div class="slots">
+          <p class="slots-day"></p>
+          <div class="times"></div>
+        </div>
       </div>
-      <div class="chips lens" role="radiogroup" aria-label="Length"></div>
-      <div class="chips days" role="radiogroup" aria-label="Day"></div>
-      <div class="chips times" role="radiogroup" aria-label="Time"></div>
       <p class="talk-state" aria-live="polite"></p>
-      <form class="who" hidden>
+    </div>
+    <div class="pane" data-pane="who" hidden>
+      <div class="talk-top"><button class="talk-back" type="button" data-back="book" aria-label="Back"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button><h2>Your details</h2></div>
+      <p class="talk-sub when"></p>
+      <form class="who">
         <div class="two">
           <label>Name<input name="name" autocomplete="name" required></label>
           <label>Email<input name="email" type="email" autocomplete="email" required></label>
@@ -337,6 +348,7 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
         <label><span>What is it about? <small>Optional</small></span><textarea name="note" rows="2"></textarea></label>
         <button class="btn btn-primary" type="submit">Book this call</button>
       </form>
+      <p class="talk-state" aria-live="polite"></p>
     </div>
     <div class="pane" data-pane="done" hidden>
       <h2>Booked.</h2>
@@ -345,7 +357,7 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   </div>
 </dialog>
 
-<script src="lang.js?v=d0459d3"></script>
+<script src="lang.js?v=0ccaf44"></script>
 <script>
 const intro = document.querySelector('.intro');
 if (document.documentElement.classList.contains('intro-on')) {
@@ -421,105 +433,103 @@ speed.forEach((el, i) => el.addEventListener('click', () => {
   speed.forEach(b => b.setAttribute('aria-pressed', b === el));
   document.getElementById('pricing').classList.toggle('boost', i === 1);
 }));
-// the contact popup, opened by the hero's button, the plans', the nav's Contact and Book a call. API is the Apps Script
-// web app of booking/ (free times, bookings, who signed in), GOOGLE_ID the OAuth client "Continue with Google" uses.
-// While one is empty its part falls back: Book a call to the Google Calendar page its link points to, sign-in to a note
-const API = '', GOOGLE_ID = '';
-const talk = document.querySelector('.talk'), panes = [...talk.querySelectorAll('.pane')], note = talk.querySelector('.talk-note');
-const hi = talk.querySelector('.hi'), state = talk.querySelector('.talk-state'), who = talk.querySelector('.who');
-const field = n => who.querySelector(`[name=${n}]`);
+// the contact popup, opened by the Let's get started buttons and the plans'. A kind and a length open Marius's free
+// times, which API, the Apps Script web app of booking/, gives and books; while it is empty a length opens his Google
+// Calendar booking page instead
+const API = '', CAL = 'https://calendar.app.google/a1ZZEqtDEEhwA8Tp7';
+const talk = document.querySelector('.talk'), panes = [...talk.querySelectorAll('.pane')];
+const state = talk.querySelector('[data-pane="book"] .talk-state'), wstate = talk.querySelector('[data-pane="who"] .talk-state');
+const picker = talk.querySelector('.picker'), grid = talk.querySelector('.cal-grid'), times = talk.querySelector('.times');
+const who = talk.querySelector('.who'), field = n => who.querySelector(`[name=${n}]`);
 const msg = (en, fr) => lang === 'fr' ? fr : en, loc = () => lang === 'fr' ? 'fr-FR' : 'en-GB';
 const post = body => fetch(API, { method: 'POST', body: JSON.stringify(body) }).then(r => r.json());
-const LENS = { voice: [5, 10, 15], video: [15, 30] };
-let plan = '', kind = 'voice', len = 5, day = '', at = 0, slots = {}, focus = null, gsi = null;
-const show = name => { for (const p of panes) p.hidden = p.dataset.pane !== name; if (name === 'book') load(); };
+const LENS = { voice: [5, 15], video: [5, 15, 30] };
+let plan = '', kind = 'voice', len = 0, day = '', at = 0, slots = {};
+const show = name => { for (const p of panes) p.hidden = p.dataset.pane !== name; };
+const kinds = () => {
+  for (const b of talk.querySelectorAll('[data-kind]')) b.setAttribute('aria-checked', b.dataset.kind === kind);
+  for (const b of talk.querySelectorAll('[data-len]')) b.disabled = !LENS[kind].includes(+b.dataset.len);
+};
 for (const el of document.querySelectorAll('[data-talk]')) el.addEventListener('click', e => {
-  const book = el.dataset.talk === 'book';
-  if (book && !API) return;
   e.preventDefault();
   if (el.dataset.plan) plan = el.dataset.plan;
-  note.hidden = true;
-  show(book ? 'book' : 'start');
+  show('start');
+  kinds();
   if (!talk.open) talk.showModal();
-  // Google's script comes in with the popup, so that the click on its button still counts as one for the sign-in window
-  if (GOOGLE_ID && API && !gsi) {
-    gsi = document.head.appendChild(Object.assign(document.createElement('script'), { src: 'https://accounts.google.com/gsi/client' }));
-    gsi.onload = () => gsi = google.accounts.oauth2.initTokenClient({ client_id: GOOGLE_ID, scope: 'openid email profile', callback: signedIn });
-  }
 });
 talk.querySelector('.talk-x').addEventListener('click', () => talk.close());
 talk.addEventListener('click', e => { if (e.target === talk) talk.close(); });
-const copy = talk.querySelector('.copy');
+for (const b of talk.querySelectorAll('[data-back]')) b.addEventListener('click', () => show(b.dataset.back));
+const copy = talk.querySelector('.copy'), [label, copied] = copy.querySelectorAll('span');
 copy.addEventListener('click', () => navigator.clipboard?.writeText('contact@m3labs.fr').then(() => {
-  copy.lastChild.textContent = msg('Copied', 'Copié');
-  setTimeout(() => copy.lastChild.textContent = 'contact@m3labs.fr', 1500);
+  label.hidden = !(copied.hidden = false);
+  setTimeout(() => label.hidden = !(copied.hidden = true), 1500);
 }));
-for (const b of talk.querySelectorAll('[data-sign]')) b.addEventListener('click', () => {
-  if (b.dataset.sign === 'google' && gsi?.requestAccessToken) gsi.requestAccessToken();
-  else note.hidden = false;
-});
-// the sign-in goes to the back end, which mails Marius who it is; the popup then offers a call, the form filled in
-const signedIn = async r => {
-  const u = r.access_token ? await post({ kind: 'lead', token: r.access_token, plan, lang }).catch(() => ({})) : {};
-  if (!u.email) return;
-  field('name').value = u.name; field('email').value = u.email;
-  const first = u.name.split(' ')[0] || u.email;
-  hi.textContent = msg(`Thanks, ${first}. I write back within a day at ${u.email}. Or pick a time for a call now.`,
-    `Merci, ${first}. Je vous réponds sous 24 h à ${u.email}. Ou choisissez dès maintenant un créneau d’appel.`);
-  hi.hidden = false;
-  show('book');
-};
-// the booking pane is drawn again from these few values on every pick; a radio row keeps the focus on its new pick
-const radio = (box, items, on, pick) => {
-  box.replaceChildren(...items.map(([v, html]) => {
-    const b = Object.assign(document.createElement('button'), { type: 'button', innerHTML: html });
-    b.setAttribute('role', 'radio');
-    b.setAttribute('aria-checked', v === on);
-    b.addEventListener('click', () => { focus = box; pick(v); });
-    return b;
-  }));
-  if (focus === box) box.querySelector('[aria-checked="true"]')?.focus();
-};
-for (const b of talk.querySelectorAll('[data-kind]')) b.addEventListener('click', () => {
-  kind = b.dataset.kind;
-  if (!LENS[kind].includes(len)) len = LENS[kind][0];
+for (const b of talk.querySelectorAll('[data-kind]')) b.addEventListener('click', () => { kind = b.dataset.kind; kinds(); });
+for (const b of talk.querySelectorAll('[data-len]')) b.addEventListener('click', () => {
+  if (!API) return void open(CAL, '_blank', 'noopener');
+  len = +b.dataset.len;
   at = 0;
+  show('book');
   load();
 });
+const callName = () => kind === 'voice' ? msg(`Audio call, ${len} min`, `Appel audio, ${len} min`) : msg(`Video call, ${len} min`, `Appel vidéo, ${len} min`);
+const dkey = d => d.toLocaleDateString('en-CA'), long = { weekday: 'long', day: 'numeric', month: 'long' };
 const load = async () => {
-  for (const b of talk.querySelectorAll('[data-kind]')) b.setAttribute('aria-checked', b.dataset.kind === kind);
-  radio(talk.querySelector('.lens'), LENS[kind].map(n => [n, n + ' min']), len, n => { len = n; at = 0; load(); });
-  field('phone').closest('label').hidden = field('phone').disabled = kind !== 'voice';
-  const want = len;
+  talk.querySelector('.call-name').textContent = callName();
+  const want = len + kind;
   if (!slots[len]) {
+    picker.hidden = true;
     state.textContent = msg('Loading the free times…', 'Chargement des créneaux libres…');
     slots[len] = await fetch(API + '?len=' + len).then(r => r.json()).then(r => r.slots).catch(() => null);
-    if (want !== len) return;
+    if (want !== len + kind) return;
   }
+  render();
+};
+// three weeks from this Monday hold the two weeks a call can be booked in; days with a free time are lit
+const render = keep => {
   const days = new Map();
-  for (const ms of slots[len] || []) { const k = new Date(ms).toLocaleDateString('en-CA'); days.set(k, [...days.get(k) || [], ms]); }
+  for (const ms of slots[len] || []) { const k = dkey(new Date(ms)); days.set(k, [...days.get(k) || [], ms]); }
+  if (!days.has(day)) day = days.keys().next().value || '';
+  const now = new Date(), cells = Array.from({ length: 21 }, (_, i) => new Date(now.getFullYear(), now.getMonth(), now.getDate() - (now.getDay() + 6) % 7 + i, 12));
+  talk.querySelector('.call-name').textContent = callName();
+  talk.querySelector('.cal-month').textContent = new Intl.DateTimeFormat(loc(), { month: 'long', year: 'numeric' }).formatRange(cells[0], cells[20]);
+  grid.replaceChildren(...cells.slice(0, 7).map(d => Object.assign(document.createElement('small'), { textContent: d.toLocaleDateString(loc(), { weekday: 'narrow' }) })),
+    ...cells.map(d => {
+      const k = dkey(d), b = Object.assign(document.createElement('button'), { type: 'button', disabled: !days.has(k) });
+      b.innerHTML = (d.getDate() === 1 ? `<small>${d.toLocaleDateString(loc(), { month: 'short' })}</small>` : '') + d.getDate();
+      b.classList.toggle('today', k === dkey(now));
+      b.setAttribute('aria-pressed', k === day);
+      b.setAttribute('aria-label', d.toLocaleDateString(loc(), long));
+      b.addEventListener('click', () => { day = k; render(true); });
+      return b;
+    }));
+  if (keep) grid.querySelector('[aria-pressed="true"]').focus();
+  talk.querySelector('.slots-day').textContent = day && new Date(day + 'T12:00').toLocaleDateString(loc(), { weekday: 'short', day: 'numeric', month: 'short' });
+  times.replaceChildren(...(days.get(day) || []).map(ms => {
+    const b = Object.assign(document.createElement('button'), { type: 'button', textContent: new Date(ms).toLocaleTimeString(loc(), { hour: '2-digit', minute: '2-digit' }) });
+    b.addEventListener('click', () => { at = ms; details(); show('who'); if (!field('name').value) field('name').focus(); });
+    return b;
+  }));
+  picker.hidden = !days.size;
   state.textContent = !slots[len] ? msg('The free times did not load. Write to me at contact@m3labs.fr.', 'Les créneaux n’ont pas pu charger. Écrivez-moi à contact@m3labs.fr.')
     : !days.size ? msg('No free time in the next two weeks. Write to me at contact@m3labs.fr.', 'Aucun créneau libre dans les deux semaines. Écrivez-moi à contact@m3labs.fr.') : '';
-  if (!days.has(day)) day = days.keys().next().value;
-  radio(talk.querySelector('.days'), [...days.keys()].map(k => {
-    const d = new Date(k + 'T12:00');
-    return [k, `<small>${d.toLocaleDateString(loc(), { weekday: 'short' })}</small>${d.toLocaleDateString(loc(), { day: 'numeric', month: 'short' })}`];
-  }), day, k => { day = k; at = 0; load(); });
-  radio(talk.querySelector('.times'), (days.get(day) || []).map(ms => [ms, new Date(ms).toLocaleTimeString(loc(), { hour: '2-digit', minute: '2-digit' })]),
-    at, ms => { at = ms; load(); });
-  who.hidden = !at;
-  focus = null;
+};
+const details = () => {
+  talk.querySelector('.when').textContent = `${callName()}, ${new Date(at).toLocaleString(loc(), { ...long, hour: '2-digit', minute: '2-digit' })}`;
+  field('phone').closest('label').hidden = field('phone').disabled = kind !== 'voice';
+  wstate.textContent = '';
 };
 who.addEventListener('submit', async e => {
   e.preventDefault();
   const f = Object.fromEntries(new FormData(who)), when = at, button = who.querySelector('[type=submit]');
   button.disabled = true;
-  state.textContent = msg('Booking…', 'Réservation…');
+  wstate.textContent = msg('Booking…', 'Réservation…');
   const r = await post({ ...f, kind, len, at, plan, lang }).catch(() => ({ error: 'network' }));
   button.disabled = false;
-  state.textContent = '';
+  wstate.textContent = '';
   if (r.ok) {
-    const w = new Date(when).toLocaleString(loc(), { weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' });
+    const w = new Date(when).toLocaleString(loc(), { ...long, hour: '2-digit', minute: '2-digit' });
     talk.querySelector('.done-text').textContent = kind === 'voice'
       ? msg(`${w}, ${len} minutes: I call you at ${f.phone}. The invite is on its way to ${f.email}.`, `${w}, ${len} minutes : je vous appelle au ${f.phone}. L’invitation part à ${f.email}.`)
       : msg(`${w}, ${len} minutes on Google Meet. The invite, with the link, is on its way to ${f.email}.`, `${w}, ${len} minutes sur Google Meet. L’invitation, avec le lien, part à ${f.email}.`);
@@ -527,13 +537,29 @@ who.addEventListener('submit', async e => {
     at = 0;
     return show('done');
   }
-  if (r.error === 'taken') { delete slots[len]; at = 0; await load(); }
-  state.textContent = r.error === 'taken' ? msg('That time was just taken. Pick another one.', 'Ce créneau vient d’être pris. Choisissez-en un autre.')
-    : r.error === 'fields' ? msg('Check the name, the email and the phone number.', 'Vérifiez le nom, l’email et le numéro.')
+  if (r.error === 'taken') {
+    delete slots[len];
+    at = 0;
+    show('book');
+    await load();
+    return state.textContent = msg('That time was just taken. Pick another one.', 'Ce créneau vient d’être pris. Choisissez-en un autre.');
+  }
+  wstate.textContent = r.error === 'fields' ? msg('Check the name, the email and the phone number.', 'Vérifiez le nom, l’email et le numéro.')
     : r.error === 'full' ? msg('My calendar is full for now. Write to me at contact@m3labs.fr.', 'Mon agenda est plein pour l’instant. Écrivez-moi à contact@m3labs.fr.')
     : msg('The booking did not go through. Write to me at contact@m3labs.fr.', 'La réservation n’a pas abouti. Écrivez-moi à contact@m3labs.fr.');
 });
-document.addEventListener('langchange', () => { if (talk.open && !talk.querySelector('[data-pane="book"]').hidden) load(); });
+document.addEventListener('langchange', () => {
+  if (!talk.open) return;
+  if (!talk.querySelector('[data-pane="book"]').hidden && slots[len] !== undefined) render();
+  if (!talk.querySelector('[data-pane="who"]').hidden) details();
+});
+// findmylead.fr's trial button: the header's button rings on load, and again after each jump to a part of the page
+const cta = document.querySelector('.nav .aura');
+for (const a of document.querySelectorAll('.nav a[href^="#"]')) a.addEventListener('click', () => {
+  cta.classList.remove('aura');
+  void cta.offsetWidth;
+  cta.classList.add('aura');
+});
 </script>
 </body>
 </html>
