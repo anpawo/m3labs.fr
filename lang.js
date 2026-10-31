@@ -196,6 +196,28 @@ const FR = {
   'Legal notice': 'Mentions légales',
   'Home': 'Retour',
 
+  // register.html
+  'Create an account | M3 Labs': 'Créer un compte | M3 Labs',
+  'Create an account': 'Créer un compte',
+  'Log in': 'Se connecter',
+  'Continue with Google': 'Continuer avec Google',
+  'or with email': 'ou avec un email',
+  'First name': 'Prénom',
+  'Last name': 'Nom',
+  'Jane': 'Jean',
+  'Smith': 'Dupont',
+  'jane.smith@company.com': 'jean.dupont@entreprise.fr',
+  'Password': 'Mot de passe',
+  'Show the password': 'Afficher le mot de passe',
+  '8 characters minimum.': '8 caractères minimum.',
+  'By creating an account, you accept our <a href="legal.html">legal notice</a> and <a href="legal.html#data">privacy policy</a>.':
+    'En créant un compte, vous acceptez nos <a href="legal.html">mentions légales</a> et notre <a href="legal.html#data">politique de confidentialité</a>.',
+  'Sign up': 'S’inscrire',
+  'Accounts open soon. Until then, write to <a href="mailto:contact@m3labs.fr">contact@m3labs.fr</a> or <a href="https://calendar.app.google/a1ZZEqtDEEhwA8Tp7" target="_blank" rel="noopener">book a call</a>.':
+    'Les comptes ouvrent bientôt. D’ici là, écrivez à <a href="mailto:contact@m3labs.fr">contact@m3labs.fr</a> ou <a href="https://calendar.app.google/a1ZZEqtDEEhwA8Tp7" target="_blank" rel="noopener">réservez un appel</a>.',
+  'Already have an account? <a href="#login">Log in</a>': 'Vous avez déjà un compte ? <a href="#login">Se connecter</a>',
+  'No account yet? <a href="#">Create one</a>': 'Pas encore de compte ? <a href="#">Créer un compte</a>',
+
   // legal.html
   'Publisher': 'Éditeur',
   ', entrepreneur individuel (EI). Trade name: M3 Labs.': ', entrepreneur individuel (EI), sous le nom M3 Labs.',
@@ -226,6 +248,7 @@ const t = s => lang === 'fr' && FR[s] || s;
     const f = FR[new URL(a.href).searchParams.get('subject')];
     if (f) swaps.push([a, 'href', a.href, a.href.replace(/subject=[^&]*/, 'subject=' + encodeURIComponent(f))]);
   }
+  for (const i of document.querySelectorAll('[placeholder]')) { const f = FR[i.placeholder]; if (f) swaps.push([i, 'placeholder', i.placeholder, f]); }
   swaps.push([document, 'title', document.title, FR[document.title] || document.title]);
   const buttons = document.querySelectorAll('.lang button');
   const set = l => {
