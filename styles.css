@@ -385,7 +385,6 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 .sched .when:not([hidden]) { display: grid; grid-template-columns: 292px minmax(0, 1fr); gap: 8px 28px; }
 .sched .when .talk-state { grid-column: 1 / -1; }
 .cal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
-.cal-title { display: flex; align-items: baseline; gap: 8px; }
 .cal-month { font-size: 15px; font-weight: 650; }
 .cal-head button { display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border: 0; border-radius: 50%; background: none; color: var(--foreground); cursor: pointer; }
 .cal-head button:hover:not(:disabled) { background: var(--background); }
@@ -401,7 +400,8 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 .cal-grid .today::after { content: ""; position: absolute; left: 50%; bottom: 5px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: currentColor; }
 /* the times are as tall as the month beside them, and scroll */
 .day { display: flex; flex-direction: column; min-width: 0; }
-.slots-day { padding-top: 6px; font-size: 15px; font-weight: 650; }
+.day-title { display: flex; align-items: baseline; gap: 8px; padding-top: 6px; }
+.slots-day { font-size: 15px; font-weight: 650; }
 .tz { font-size: 13px; color: var(--muted-foreground); }
 .times { display: grid; align-content: start; gap: 8px; height: 0; flex: 1 1 auto; margin-top: 12px; overflow-y: auto; padding: 2px 4px 2px 2px; }
 .opts { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 8px; }
@@ -414,6 +414,8 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 .opts span { display: grid; gap: 4px; text-align: left; }
 .opts small { font-size: 13px; font-weight: 500; color: var(--muted-foreground); }
 .opts [aria-pressed="true"], .times [aria-pressed="true"] { border-color: var(--primary); background: var(--brand-tint); color: var(--brand-tint-fg); }
+/* the fading copies of the blocks a change of pane or step leaves (morph() in index.html) */
+.ghosts { position: absolute; inset: 0; pointer-events: none; }
 .talk-state:empty { display: none; }
 .talk-state { color: var(--muted-foreground); }
 .two { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
