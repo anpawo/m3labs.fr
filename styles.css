@@ -247,7 +247,14 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 .speed svg { width: 16px; height: 16px; color: oklch(71.4% .16 65.2); }
 /* the toggle sits beside the title, so the longer plans still fit a screen */
 .price-top { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; column-gap: 24px; }
-.price-top + .cards { margin-top: 20px; }
+.price-top + .every { margin-top: 20px; }
+/* what every plan gives, said once above the cards rather than repeated in each */
+.every { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 32px; padding: 12px 24px; border-radius: 16px; background: var(--sheet); border: 1px solid var(--border); }
+.every h3 { font-size: 13px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--muted-foreground); }
+.every ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 28px; }
+.every li { display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; }
+.every svg { flex: none; width: 18px; height: 18px; stroke-width: 2.6; color: var(--primary); }
+.every + .cards { margin-top: 16px; }
 #pricing:not(.boost) .fast, #pricing.boost .std { display: none; }
 /* findmylead.fr/pricing's cards: the recommended one on a blue with a dot grid, the others white */
 .plan { display: flex; flex-direction: column; gap: 16px; padding: 24px; border-radius: 16px; background: var(--sheet); border: 1px solid var(--border); }
@@ -271,15 +278,13 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 .plan-hot .slogan { color: oklch(100% 0 0 / .8); }
 .plan-hot .price b { color: #fff; }
 .feats { flex: 1; display: grid; align-content: start; gap: 16px; padding-top: 16px; border-top: 1px solid var(--border); }
-.feats h4 { margin: 0; font-size: 13px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--muted-foreground); }
-.feats ul { list-style: none; margin: 8px 0 0; padding: 0; display: grid; gap: 6px; }
+.feats ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
 .feats li { display: flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 500; }
 .feats svg { flex: none; width: 18px; height: 18px; stroke-width: 2.6; }
 /* a dash for what the plan before already has, a plus for what this one adds */
 .i-has { color: oklch(70% .17 50); }
 .i-new { color: oklch(62% .17 150); }
 .plan-hot .feats { border-color: oklch(100% 0 0 / .18); }
-.plan-hot .feats h4 { color: #fff; }
 .plan-hot .i-has { color: oklch(83% .14 60); }
 .plan-hot .i-new { color: oklch(87% .17 150); }
 .steps { margin-top: 28px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
