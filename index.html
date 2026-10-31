@@ -28,7 +28,7 @@
 }
 </script>
 <link rel="preload" href="fonts/mona-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=c311ad1">
+<link rel="stylesheet" href="styles.css?v=b683ebd">
 <script>
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.documentElement.classList.add('intro-on');
@@ -334,14 +334,13 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
         <div class="cal">
           <div class="cal-head">
             <button class="cal-prev" type="button" aria-label="Previous month"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
-            <p class="cal-month"></p>
+            <p class="cal-title"><span class="cal-month"></span><small class="tz"></small></p>
             <button class="cal-next" type="button" aria-label="Next month"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
           </div>
           <div class="cal-grid"></div>
         </div>
         <div class="day">
           <p class="slots-day"></p>
-          <p class="tz"></p>
           <div class="times"></div>
         </div>
         <p class="talk-state" aria-live="polite"></p>
@@ -381,7 +380,7 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   </div>
 </dialog>
 
-<script src="lang.js?v=c311ad1"></script>
+<script src="lang.js?v=b683ebd"></script>
 <script>
 const intro = document.querySelector('.intro');
 if (document.documentElement.classList.contains('intro-on')) {
@@ -534,11 +533,8 @@ talk.querySelector('[data-book]').addEventListener('click', () => {
 for (const [s, r] of Object.entries(rows)) r.addEventListener('click', () => go(s));
 for (const b of sched.querySelectorAll('[data-kind]')) b.addEventListener('click', () => { kind = b.dataset.kind; go(); });
 for (const b of sched.querySelectorAll('[data-len]')) b.addEventListener('click', () => { len = +b.dataset.len; go(); });
-// the visitor's own time zone, which the times are shown in: "Central European Standard Time (GMT+1)"
-const zone = () => {
-  const name = style => new Intl.DateTimeFormat(loc(), { timeZoneName: style }).formatToParts(new Date(day + 'T12:00')).find(p => p.type === 'timeZoneName').value;
-  return `${name('long')} (${name('shortOffset')})`;
-};
+// the visitor's own time zone, which the times are shown in: "GMT+1", "UTC+1" in French
+const zone = () => new Intl.DateTimeFormat(loc(), { timeZoneName: 'shortOffset' }).formatToParts(new Date(day + 'T12:00')).find(p => p.type === 'timeZoneName').value;
 // the month of the picked day, its free days lit, and that day's times beside it; the arrows go to the first free day of
 // the month before or after. The 5-minute times hold every longer call's, whose lengths the next steps check
 const render = keep => {

@@ -381,10 +381,11 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 .pick svg { width: 18px; height: 18px; flex: none; color: var(--primary); }
 .pick span { flex: 1; }
 .pick .chev { color: var(--muted-foreground); }
-.pick span::first-letter, .cal-month::first-letter, .slots-day::first-letter, .tz::first-letter { text-transform: uppercase; }
+.pick span::first-letter, .cal-month::first-letter, .slots-day::first-letter { text-transform: uppercase; }
 .sched .when:not([hidden]) { display: grid; grid-template-columns: 292px minmax(0, 1fr); gap: 8px 28px; }
 .sched .when .talk-state { grid-column: 1 / -1; }
 .cal-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px; }
+.cal-title { display: flex; align-items: baseline; gap: 8px; }
 .cal-month { font-size: 15px; font-weight: 650; }
 .cal-head button { display: grid; place-items: center; width: 32px; height: 32px; padding: 0; border: 0; border-radius: 50%; background: none; color: var(--foreground); cursor: pointer; }
 .cal-head button:hover:not(:disabled) { background: var(--background); }
