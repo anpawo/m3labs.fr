@@ -28,7 +28,7 @@
 }
 </script>
 <link rel="preload" href="fonts/mona-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=f29ef7a">
+<link rel="stylesheet" href="styles.css?v=c311ad1">
 <script>
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.documentElement.classList.add('intro-on');
@@ -315,6 +315,7 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
           <span class="ico mail"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/></svg></span>
           <span><b>Email me at contact@m3labs.fr</b><b hidden>Address copied</b></span>
           <svg class="go" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          <svg class="go" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M20 6 9 17l-5-5"/></svg>
         </button>
         <button class="reach-row" type="button" data-book>
           <span class="ico"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M17 12h-5v5h5v-5zM16 1v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-1V1h-2zm3 18H5V8h14v11z"/></svg></span>
@@ -380,7 +381,7 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   </div>
 </dialog>
 
-<script src="lang.js?v=f29ef7a"></script>
+<script src="lang.js?v=c311ad1"></script>
 <script>
 const intro = document.querySelector('.intro');
 if (document.documentElement.classList.contains('intro-on')) {
@@ -517,10 +518,12 @@ for (const el of document.querySelectorAll('[data-talk]')) el.addEventListener('
 talk.querySelector('.talk-x').addEventListener('click', () => talk.close());
 talk.addEventListener('click', e => { if (e.target === talk) talk.close(); });
 sched.querySelector('.talk-back').addEventListener('click', () => show('start'));
-const copy = talk.querySelector('.copy'), [label, copied] = copy.querySelectorAll('b');
+// the svgs have no hidden property, so the attribute is toggled
+const copy = talk.querySelector('.copy'), [label, done, icon, tick] = copy.querySelectorAll('b, .go');
+const copied = on => { for (const el of [label, icon]) el.toggleAttribute('hidden', on); for (const el of [done, tick]) el.toggleAttribute('hidden', !on); };
 copy.addEventListener('click', () => navigator.clipboard?.writeText('contact@m3labs.fr').then(() => {
-  label.hidden = !(copied.hidden = false);
-  setTimeout(() => label.hidden = !(copied.hidden = true), 1500);
+  copied(true);
+  setTimeout(() => copied(false), 1500);
 }));
 talk.querySelector('[data-book]').addEventListener('click', () => {
   if (!API) return void open(CAL, '_blank', 'noopener');
