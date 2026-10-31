@@ -9,7 +9,6 @@ const FR = {
   'My work': 'Projets',
   'How we work': 'Méthode',
   'Pricing': 'Tarifs',
-  'Email me': 'Email',
   'Book a call': 'Réserver un appel',
 
   'Stop renting software.<br><span class="blue">Start owning it.</span>': 'Ne louez plus d’outils.<br><span class="blue">Possédez-les.</span>',
@@ -143,9 +142,9 @@ const FR = {
   'Bytecode VM': 'Bytecode',
 
   'Three steps, no surprises.': 'Trois étapes, zéro surprise.',
-  'A free 30-minute call': 'Appel gratuit de 30 min',
-  'You show me the task and where its data lives. I tell you whether software is the right fix, and what it would take.':
-    'Vous me montrez la tâche et ses données. Je vous dis si un logiciel est la solution, et ce que ça demande.',
+  'A free call': 'Un appel gratuit',
+  'By phone or by video, 30 minutes at most. You show me the task and where its data lives. I tell you whether software is the right fix, and what it would take.':
+    'Par téléphone ou en vidéo, 30 minutes au plus. Vous me montrez la tâche et ses données. Je vous dis si un logiciel est la solution, et ce que ça demande.',
   'A written quote': 'Un devis écrit',
   'Scope, price and delivery date agreed in writing before any work starts.': 'Périmètre, prix et date de livraison fixés par écrit avant tout démarrage.',
   'Weekly demos, code you own': 'Une démo hebdo, code à vous',
@@ -192,31 +191,24 @@ const FR = {
   '<b>1</b> dashboard over them all': '<b>1</b> tableau de bord commun',
 
   'Let\'s talk about your project.': 'Parlons de votre projet.',
-  'Write me, or book the free 30-minute call.': 'Écrivez-moi, ou réservez l’appel gratuit de 30 min.',
   'Legal notice': 'Mentions légales',
   'Home': 'Retour',
 
-  // register.html
-  'Create an account | M3 Labs': 'Créer un compte | M3 Labs',
-  'Create an account': 'Créer un compte',
-  'Log in': 'Se connecter',
+  // the contact popup
+  'Sign in and I write back within a day, or book a call now.': 'Connectez-vous et je vous réponds sous 24 h, ou réservez un appel.',
   'Continue with Google': 'Continuer avec Google',
-  'or with email': 'ou avec un email',
-  'First name': 'Prénom',
-  'Last name': 'Nom',
-  'Jane': 'Jean',
-  'Smith': 'Dupont',
-  'jane.smith@company.com': 'jean.dupont@entreprise.fr',
-  'Password': 'Mot de passe',
-  'Show the password': 'Afficher le mot de passe',
-  '8 characters minimum.': '8 caractères minimum.',
-  'By creating an account, you accept our <a href="legal.html">legal notice</a> and <a href="legal.html#data">privacy policy</a>.':
-    'En créant un compte, vous acceptez nos <a href="legal.html">mentions légales</a> et notre <a href="legal.html#data">politique de confidentialité</a>.',
-  'Sign up': 'S’inscrire',
-  'Accounts open soon. Until then, write to <a href="mailto:contact@m3labs.fr">contact@m3labs.fr</a> or <a href="https://calendar.app.google/a1ZZEqtDEEhwA8Tp7" target="_blank" rel="noopener">book a call</a>.':
-    'Les comptes ouvrent bientôt. D’ici là, écrivez à <a href="mailto:contact@m3labs.fr">contact@m3labs.fr</a> ou <a href="https://calendar.app.google/a1ZZEqtDEEhwA8Tp7" target="_blank" rel="noopener">réservez un appel</a>.',
-  'Already have an account? <a href="#login">Log in</a>': 'Vous avez déjà un compte ? <a href="#login">Se connecter</a>',
-  'No account yet? <a href="#">Create one</a>': 'Pas encore de compte ? <a href="#">Créer un compte</a>',
+  'Continue with Apple': 'Continuer avec Apple',
+  'Sign-in opens soon. Until then, book a call or write to me.': 'La connexion ouvre bientôt. D’ici là, réservez un appel ou écrivez-moi.',
+  'or': 'ou',
+  'Voice call': 'Appel vocal',
+  '5 to 15 min, I call you': '5 à 15 min, je vous appelle',
+  'Video call': 'Appel vidéo',
+  'Up to 30 min, on Google Meet': 'Jusqu’à 30 min, sur Google Meet',
+  'Name': 'Nom',
+  'Phone': 'Téléphone',
+  'What is it about? <small>Optional</small>': 'De quoi s’agit-il ? <small>Facultatif</small>',
+  'Book this call': 'Réserver cet appel',
+  'Booked.': 'C’est réservé.',
 
   // legal.html
   'Publisher': 'Éditeur',
@@ -244,10 +236,6 @@ const t = s => lang === 'fr' && FR[s] || s;
     }
   };
   collect(document.body);
-  for (const a of document.querySelectorAll('a[href^="mailto:"]')) {
-    const f = FR[new URL(a.href).searchParams.get('subject')];
-    if (f) swaps.push([a, 'href', a.href, a.href.replace(/subject=[^&]*/, 'subject=' + encodeURIComponent(f))]);
-  }
   for (const i of document.querySelectorAll('[placeholder]')) { const f = FR[i.placeholder]; if (f) swaps.push([i, 'placeholder', i.placeholder, f]); }
   swaps.push([document, 'title', document.title, FR[document.title] || document.title]);
   const buttons = document.querySelectorAll('.lang button');

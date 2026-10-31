@@ -285,18 +285,6 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 .steps { margin-top: 28px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
 .num { display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; border: 2px solid var(--primary); color: var(--primary); font-weight: 650; font-size: 18px; }
 
-/* CTA */
-.cta { min-height: calc(var(--screen) - var(--nav-h)); padding: clamp(24px, var(--screen) * .045, 72px) 0; display: grid; align-content: center; }
-.cta-inner { text-align: center; padding: 72px 32px; border-radius: 28px; color: #fff;
-  background-image: radial-gradient(oklch(100% 0 0 / .14) 1px, transparent 1.3px), linear-gradient(150deg, oklch(60% .2 268), var(--primary) 55%, oklch(46% .23 265));
-  background-size: 24px 24px, auto; }
-.cta h2 { margin: 0 auto; max-width: 24ch; }
-.cta p { margin-top: 16px; font-size: 20px; color: oklch(92% .04 272); }
-.cta-actions { margin-top: 34px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-.cta .btn-primary { background: #fff; color: var(--primary); box-shadow: 0 8px 20px -8px oklch(20% .1 265 / .5); }
-.cta .btn-primary:hover { background: var(--brand-tint); }
-.cta .btn-tint { background: oklch(100% 0 0 / .14); color: #fff; }
-.cta .btn-tint:hover { background: oklch(100% 0 0 / .22); }
 
 /* Footer */
 .foot { border-top: 1px solid var(--border); background: var(--sheet); }
@@ -312,37 +300,50 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 .legal p { margin-top: 12px; font-size: 17px; line-height: 1.7; color: var(--muted-foreground); }
 .legal p strong { color: var(--foreground); font-weight: 600; }
 
-/* Sign-up page, laid out as findmylead.fr/register: the form in the middle of the left half, the home page's app on a
-   blue panel in the right one, running off the panel's right edge and ending above its bottom */
-.reg { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); min-height: 100svh; background: var(--sheet); }
-.reg-main { position: relative; display: grid; place-items: center; padding: 96px 40px 48px; }
-.reg-main > .brand { position: absolute; left: 40px; top: 40px; }
-.reg-form { display: grid; gap: 24px; width: min(448px, 100%); font-size: 14px; font-weight: 500; line-height: 21px; }
-.reg-form h1 { font-size: 26px; font-weight: 600; font-stretch: 100%; letter-spacing: -.02em; line-height: 1.25; text-align: center; }
-.reg-form .btn { width: 100%; height: 40px; gap: 10px; font-size: 14px; }
+/* The contact popup: sign in, book a call in Marius's calendar, LinkedIn, and the address copied in one click */
+.talk { width: min(480px, calc(100% - 32px)); max-height: calc(100svh - 32px); margin: auto; padding: 0; border: 0; border-radius: 20px;
+  background: var(--sheet); color: var(--foreground); box-shadow: 0 24px 64px -16px oklch(20% .1 265 / .45); }
+.talk::backdrop { background: oklch(19.8% .041 265 / .45); }
+.talk-in { position: relative; padding: 32px; outline: 0; font-size: 14px; font-weight: 500; line-height: 21px; }
+.pane, .who { display: grid; gap: 16px; }
+.talk [hidden] { display: none; }
+.talk h2 { padding-right: 36px; font-size: 26px; font-weight: 600; letter-spacing: -.02em; line-height: 1.25; }
+.talk-sub { font-size: 15px; color: var(--muted-foreground); }
+.talk .btn { width: 100%; height: 44px; gap: 10px; font-size: 15px; }
+.talk .btn svg { width: 20px; height: 20px; flex: none; }
+.talk svg.fill { fill: currentColor; stroke: none; }
+.talk-x { position: absolute; right: 16px; top: 16px; display: grid; place-items: center; width: 36px; height: 36px; border: 0; border-radius: 10px;
+  background: none; color: var(--muted-foreground); cursor: pointer; }
+.talk-x:hover { background: var(--background); color: var(--foreground); }
+.talk-x svg { width: 20px; height: 20px; }
 .g-btn { color: var(--foreground); background: var(--sheet); border: 1px solid var(--input); }
 .g-btn:hover { background: var(--background); }
-.g-btn svg { width: 20px; height: 20px; stroke: none; }
+.g-btn svg { stroke: none; }
 .or { display: flex; align-items: center; gap: 8px; color: oklch(42% .04 265); }
 .or::before, .or::after { content: ""; flex: 1; height: 1px; background: var(--border); }
-.two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.reg-form label { display: grid; gap: 6px; font-weight: 600; line-height: 14px; }
-.reg-form input { width: 100%; height: 44px; padding: 8px 14px; border: 1px solid var(--input); border-radius: 10px; background: var(--sheet);
+.talk-note { padding: 10px 14px; border-radius: 10px; background: var(--brand-tint); color: var(--brand-tint-fg); text-align: center; }
+.talk-reach, .two, .kinds { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.kinds button { display: grid; gap: 2px; padding: 12px 14px; border: 1px solid var(--input); border-radius: 12px; background: var(--sheet);
+  font: inherit; text-align: left; color: var(--foreground); cursor: pointer; }
+.kinds b { font-size: 15px; font-weight: 600; }
+.kinds small, .days small, .talk label small { font-size: 13px; font-weight: 500; color: var(--muted-foreground); }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chips:empty { display: none; }
+.chips button { height: 36px; padding: 0 12px; border: 1px solid var(--input); border-radius: 9px; background: var(--sheet);
+  font: 600 14px/1 var(--font); font-variant-numeric: tabular-nums; color: var(--foreground); cursor: pointer; }
+/* more days than fit run off the right, faded there to say so */
+.days { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; mask-image: linear-gradient(90deg, #000 88%, transparent); }
+.days button { flex: none; display: grid; gap: 4px; height: auto; padding: 8px 12px; text-align: center; }
+.times { display: grid; grid-template-columns: repeat(auto-fill, minmax(72px, 1fr)); max-height: 128px; overflow-y: auto; }
+.kinds [aria-checked="true"], .chips [aria-checked="true"] { border-color: var(--primary); box-shadow: 0 0 0 3px oklch(52.5% .241 265.2 / .15); }
+.chips [aria-checked="true"] { background: var(--brand-tint); color: var(--brand-tint-fg); }
+.talk-state:empty { display: none; }
+.talk-state { color: var(--muted-foreground); }
+.talk label { display: grid; gap: 6px; font-weight: 600; line-height: 14px; }
+.talk input, .talk textarea { width: 100%; height: 44px; padding: 8px 14px; border: 1px solid var(--input); border-radius: 10px; background: var(--sheet);
   font: 400 14px/20px var(--font); color: var(--foreground); }
-.reg-form input::placeholder { color: var(--muted-foreground); }
-.reg-form input:focus { outline: 0; border-color: var(--primary); box-shadow: 0 0 0 3px oklch(52.5% .241 265.2 / .15); }
-.pw { position: relative; }
-.pw input { padding-right: 40px; }
-.eye { position: absolute; right: 0; top: 0; display: grid; place-items: center; width: 40px; height: 44px; border: 0; background: none; color: var(--foreground); cursor: pointer; }
-.eye svg { width: 18px; height: 18px; }
-.reg-form small { font-size: 14px; font-weight: 500; line-height: 21px; color: oklch(42% .04 265); }
-.terms, .swap, .reg-note { text-align: center; }
-.reg-form p a { text-decoration-thickness: 1px; text-underline-offset: 4px; }
-.reg-note { padding: 10px 14px; border-radius: 10px; background: var(--brand-tint); color: var(--brand-tint-fg); }
-.reg-form:not(.login) .li, .reg-form.login .su { display: none; }
-.reg-visual { position: sticky; top: 0; height: 100svh; padding: 24px; }
-.reg .panel { position: relative; inset: auto; display: flex; width: auto; height: 100%; border-radius: 28px; padding: 60px 0 60px 60px; overflow: hidden; }
-.reg .app { flex: none; width: 900px; height: auto; margin-right: 0; }
+.talk textarea { height: auto; resize: vertical; }
+.talk input:focus, .talk textarea:focus { outline: 0; border-color: var(--primary); box-shadow: 0 0 0 3px oklch(52.5% .241 265.2 / .15); }
 
 /* The nav logo is the blue tile holding a CSS cube whose M is four of its edges lit up. The intro plays that same
    cube large, turning the whole way while it flies into the nav's own tile, which shows through the fading overlay with
@@ -402,11 +403,9 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
   .hero-text { padding: 0; margin-bottom: 0; }
   .hero-visual { min-height: 560px; }
   .cards, .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .reg { grid-template-columns: 1fr; }
-  .reg-visual { display: none; }
 }
 @media (max-width: 640px) {
-  .actions .btn-tint, .lang span { display: none; }
+  .lang span { display: none; }
   .nav-inner, .actions { gap: 8px; }
   .lang button { padding: 0 5px; }
   .lang button[aria-pressed="true"] { display: none; }
@@ -420,6 +419,6 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
   .cards, .steps { grid-template-columns: 1fr; }
   .ink { padding: 16px; }
   .section { padding: 48px 0; }
-  .reg-main { padding: 96px 20px 40px; }
-  .reg-main > .brand { left: 20px; top: 24px; }
+  .talk-in { padding: 24px 20px; }
+  .two, .talk-reach { grid-template-columns: 1fr; }
 }

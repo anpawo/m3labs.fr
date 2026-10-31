@@ -28,7 +28,7 @@
 }
 </script>
 <link rel="preload" href="fonts/mona-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=aa59374">
+<link rel="stylesheet" href="styles.css?v=afee011">
 <script>
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.documentElement.classList.add('intro-on');
@@ -55,15 +55,14 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
       <a href="#work">My work</a>
       <a href="#process">How we work</a>
       <a href="#pricing">Pricing</a>
-      <a href="#contact">Contact</a>
+      <a href="#contact" data-talk>Contact</a>
     </nav>
     <div class="actions">
       <div class="lang" role="group" aria-label="Language">
         <button type="button" data-lang="fr" aria-pressed="false"><svg class="flag" viewBox="0 0 3 2" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path fill="#002395" d="M0 0h1v2H0z"/><path fill="#fff" d="M1 0h1v2H1z"/><path fill="#ed2939" d="M2 0h1v2H2z"/></svg><span>FR</span></button>
         <button type="button" data-lang="en" aria-pressed="true"><svg class="flag" viewBox="0 0 60 30" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><clipPath id="uk-x"><path d="M30 15h30v15zv15H0zH0V0zV0h30z"/></clipPath><path fill="#012169" d="M0 0h60v30H0z"/><path stroke="#fff" stroke-width="6" d="m0 0 60 30m0-30L0 30"/><path stroke="#c8102e" stroke-width="4" clip-path="url(#uk-x)" d="m0 0 60 30m0-30L0 30"/><path stroke="#fff" stroke-width="10" d="M30 0v30M0 15h60"/><path stroke="#c8102e" stroke-width="6" d="M30 0v30M0 15h60"/></svg><span>EN</span></button>
       </div>
-      <a class="btn btn-tint" href="mailto:contact@m3labs.fr">Email me</a>
-      <a class="btn btn-primary" href="https://calendar.app.google/a1ZZEqtDEEhwA8Tp7" target="_blank" rel="noopener">Book a call</a>
+      <a class="btn btn-primary" href="https://calendar.app.google/a1ZZEqtDEEhwA8Tp7" target="_blank" rel="noopener" data-talk="book">Book a call</a>
     </div>
   </div>
 </header>
@@ -78,7 +77,7 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
       <p class="lead">Tell me what your team does <strong>by hand</strong>. I build the <strong>software</strong> that does it for you, and you keep <strong>the code</strong>.</p>
 
       <div class="ask">
-        <a class="btn btn-primary btn-wide" href="register.html">Let's get started</a>
+        <button class="btn btn-primary btn-wide" type="button" data-talk>Let's get started</button>
         <p class="ask-eg" aria-hidden="true"><span>For example:</span><span class="ask-idea"></span></p>
       </div>
       </div>
@@ -234,8 +233,8 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
     <div class="steps">
       <article class="card step">
         <span class="num">1</span>
-        <h3>A free 30-minute call</h3>
-        <p>You show me the task and where its data lives. I tell you whether software is the right fix, and what it would take.</p>
+        <h3>A free call</h3>
+        <p>By phone or by video, 30 minutes at most. You show me the task and where its data lives. I tell you whether software is the right fix, and what it would take.</p>
       </article>
       <article class="card step">
         <span class="num">2</span>
@@ -265,7 +264,7 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
         <div class="plan-head"><h3>Task</h3></div>
         <p class="slogan"><span class="std">A matter of days.</span><span class="fast">A matter of hours.</span></p>
         <div class="price"><p><b><span class="std">€800–1,200</span><span class="fast">€1,200–1,800</span></b></p><p>Ready in <strong><span class="std">under a week</span><span class="fast">24 to 48 hours</span></strong></p></div>
-        <a class="btn btn-primary" href="mailto:contact@m3labs.fr?subject=Task">Choose Task</a>
+        <button class="btn btn-primary" type="button" data-talk data-plan="Task">Choose Task</button>
         <div class="feats">
           <div><h4>Build</h4><ul><li><svg class="i-new" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span><b>1</b> task your team does by hand</span></li><li><svg class="i-new" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Runs on <b>your own data</b></span></li><li><svg class="i-new" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span><b>1</b> demo before it goes live</span></li></ul></div>
           <div><h4>Own</h4><ul><li><svg class="i-new" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>The source code</span></li><li><svg class="i-new" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Its documentation</span></li><li><svg class="i-new" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Every access and account</span></li></ul></div>
@@ -275,7 +274,7 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
         <div class="plan-head"><h3>App</h3><span class="pick">Recommended</span></div>
         <p class="slogan"><span class="std">A matter of weeks.</span><span class="fast">A matter of days.</span></p>
         <div class="price"><p><b><span class="std">€3,000–6,000</span><span class="fast">€4,500–9,000</span></b></p><p>Ready in <strong><span class="std">2 to 4 weeks</span><span class="fast">5 to 10 days</span></strong></p></div>
-        <a class="btn" href="mailto:contact@m3labs.fr?subject=App">Choose App</a>
+        <button class="btn" type="button" data-talk data-plan="App">Choose App</button>
         <div class="feats">
           <div><h4>Build</h4><ul><li><svg class="i-new" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span><b>1</b> app built around your work</span></li><li><svg class="i-has" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span>Runs on <b>your own data</b></span></li><li><svg class="i-new" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>A demo <b>every week</b></span></li><li><svg class="i-new" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Logins and roles for <b>your team</b></span></li></ul></div>
           <div><h4>Own</h4><ul><li><svg class="i-has" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span>The source code</span></li><li><svg class="i-has" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span>Its documentation</span></li><li><svg class="i-has" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span>Every access and account</span></li><li><svg class="i-new" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Your team <b>trained</b> on it</span></li></ul></div>
@@ -285,25 +284,12 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
         <div class="plan-head"><h3>Ecosystem</h3></div>
         <p class="slogan">All you need.</p>
         <div class="price"><p><b>€8,000+</b></p><p><strong>App by app</strong>, each one quoted first</p></div>
-        <a class="btn btn-primary" href="mailto:contact@m3labs.fr?subject=Ecosystem">Choose Ecosystem</a>
+        <button class="btn btn-primary" type="button" data-talk data-plan="Ecosystem">Choose Ecosystem</button>
         <div class="feats">
           <div><h4>Build</h4><ul><li><svg class="i-new" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span>Apps that <b>feed each other</b></span></li><li><svg class="i-has" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span>Runs on <b>your own data</b></span></li><li><svg class="i-has" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span>A demo <b>every week</b></span></li><li><svg class="i-has" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span>Logins and roles for <b>your team</b></span></li><li><svg class="i-new" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg><span><b>1</b> dashboard over them all</span></li></ul></div>
           <div><h4>Own</h4><ul><li><svg class="i-has" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span>The source code</span></li><li><svg class="i-has" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span>Its documentation</span></li><li><svg class="i-has" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span>Every access and account</span></li><li><svg class="i-has" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg><span>Your team <b>trained</b> on it</span></li></ul></div>
         </div>
       </article>
-    </div>
-  </div>
-</section>
-
-<section class="cta" id="contact">
-  <div class="wrap cta-inner">
-    <h2>Let's talk about your project.</h2>
-    <p>Write me, or book the free 30-minute call.</p>
-    <div class="cta-actions">
-      <a class="btn btn-primary btn-lg" href="mailto:contact@m3labs.fr">contact@m3labs.fr</a>
-      <a class="btn btn-tint btn-lg" href="https://calendar.app.google/a1ZZEqtDEEhwA8Tp7" target="_blank" rel="noopener">Book a call</a>
-      <a class="btn btn-tint btn-lg" href="https://www.linkedin.com/in/mariusrousset">LinkedIn</a>
-      <a class="btn btn-tint btn-lg" href="https://github.com/anpawo">GitHub</a>
     </div>
   </div>
 </section>
@@ -317,7 +303,51 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   </div>
 </footer>
 
-<script src="lang.js?v=aa59374"></script>
+<dialog class="talk" aria-labelledby="talk-h">
+  <div class="talk-in" tabindex="-1" autofocus>
+    <button class="talk-x" type="button" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="pane" data-pane="start">
+      <h2 id="talk-h">Let's talk about your project.</h2>
+      <p class="talk-sub">Sign in and I write back within a day, or book a call now.</p>
+      <button class="btn g-btn" type="button" data-sign="google"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3c-1.6 4.7-6.1 8-11.3 8-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 8 3l5.7-5.7C34 6.1 29.3 4 24 4 13 4 4 13 4 24s9 20 20 20 20-9 20-20c0-1.3-.1-2.6-.4-3.9z"/><path fill="#FF3D00" d="m6.3 14.7 6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 8 3l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2c-2 1.5-4.5 2.4-7.2 2.4-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.6-.4-3.9z"/></svg>Continue with Google</button>
+      <button class="btn g-btn" type="button" data-sign="apple"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M16.37 12.6c-.02-2.2 1.8-3.26 1.88-3.31-1.03-1.5-2.62-1.7-3.19-1.73-1.36-.14-2.65.8-3.34.8-.69 0-1.75-.78-2.88-.76-1.48.02-2.85.86-3.61 2.19-1.54 2.67-.39 6.63 1.11 8.8.73 1.06 1.6 2.25 2.75 2.21 1.1-.04 1.52-.71 2.85-.71 1.33 0 1.71.71 2.88.69 1.19-.02 1.94-1.08 2.66-2.15.84-1.23 1.19-2.42 1.21-2.48-.03-.01-2.32-.89-2.34-3.54zM14.18 6.13c.61-.74 1.02-1.76.91-2.78-.88.04-1.94.59-2.57 1.32-.56.65-1.06 1.69-.93 2.69.98.08 1.98-.5 2.59-1.23z"/></svg>Continue with Apple</button>
+      <p class="talk-note" hidden>Sign-in opens soon. Until then, book a call or write to me.</p>
+      <p class="or">or</p>
+      <a class="btn btn-primary" href="https://calendar.app.google/a1ZZEqtDEEhwA8Tp7" target="_blank" rel="noopener" data-talk="book">Book a call</a>
+      <div class="talk-reach">
+        <a class="btn btn-tint" href="https://www.linkedin.com/in/mariusrousset" target="_blank" rel="noopener"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>LinkedIn</a>
+        <button class="btn btn-tint copy" type="button" title="Copy the address"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span>contact@m3labs.fr</span></button>
+      </div>
+    </div>
+    <div class="pane" data-pane="book" hidden>
+      <h2>Book a call</h2>
+      <p class="talk-sub hi" hidden></p>
+      <div class="kinds" role="radiogroup" aria-label="Kind of call">
+        <button type="button" role="radio" data-kind="voice" aria-checked="true"><b>Voice call</b><small>5 to 15 min, I call you</small></button>
+        <button type="button" role="radio" data-kind="video" aria-checked="false"><b>Video call</b><small>Up to 30 min, on Google Meet</small></button>
+      </div>
+      <div class="chips lens" role="radiogroup" aria-label="Length"></div>
+      <div class="chips days" role="radiogroup" aria-label="Day"></div>
+      <div class="chips times" role="radiogroup" aria-label="Time"></div>
+      <p class="talk-state" aria-live="polite"></p>
+      <form class="who" hidden>
+        <div class="two">
+          <label>Name<input name="name" autocomplete="name" required></label>
+          <label>Email<input name="email" type="email" autocomplete="email" required></label>
+        </div>
+        <label class="tel">Phone<input name="phone" type="tel" autocomplete="tel" required></label>
+        <label><span>What is it about? <small>Optional</small></span><textarea name="note" rows="2"></textarea></label>
+        <button class="btn btn-primary" type="submit">Book this call</button>
+      </form>
+    </div>
+    <div class="pane" data-pane="done" hidden>
+      <h2>Booked.</h2>
+      <p class="talk-sub done-text"></p>
+    </div>
+  </div>
+</dialog>
+
+<script src="lang.js?v=afee011"></script>
 <script>
 const intro = document.querySelector('.intro');
 if (document.documentElement.classList.contains('intro-on')) {
@@ -393,6 +423,119 @@ speed.forEach((el, i) => el.addEventListener('click', () => {
   speed.forEach(b => b.setAttribute('aria-pressed', b === el));
   document.getElementById('pricing').classList.toggle('boost', i === 1);
 }));
+// the contact popup, opened by the hero's button, the plans', the nav's Contact and Book a call. API is the Apps Script
+// web app of booking/ (free times, bookings, who signed in), GOOGLE_ID the OAuth client "Continue with Google" uses.
+// While one is empty its part falls back: Book a call to the Google Calendar page its link points to, sign-in to a note
+const API = '', GOOGLE_ID = '';
+const talk = document.querySelector('.talk'), panes = [...talk.querySelectorAll('.pane')], note = talk.querySelector('.talk-note');
+const hi = talk.querySelector('.hi'), state = talk.querySelector('.talk-state'), who = talk.querySelector('.who');
+const field = n => who.querySelector(`[name=${n}]`);
+const msg = (en, fr) => lang === 'fr' ? fr : en, loc = () => lang === 'fr' ? 'fr-FR' : 'en-GB';
+const post = body => fetch(API, { method: 'POST', body: JSON.stringify(body) }).then(r => r.json());
+const LENS = { voice: [5, 10, 15], video: [15, 30] };
+let plan = '', kind = 'voice', len = 5, day = '', at = 0, slots = {}, focus = null, gsi = null;
+const show = name => { for (const p of panes) p.hidden = p.dataset.pane !== name; if (name === 'book') load(); };
+for (const el of document.querySelectorAll('[data-talk]')) el.addEventListener('click', e => {
+  const book = el.dataset.talk === 'book';
+  if (book && !API) return;
+  e.preventDefault();
+  if (el.dataset.plan) plan = el.dataset.plan;
+  note.hidden = true;
+  show(book ? 'book' : 'start');
+  if (!talk.open) talk.showModal();
+  // Google's script comes in with the popup, so that the click on its button still counts as one for the sign-in window
+  if (GOOGLE_ID && API && !gsi) {
+    gsi = document.head.appendChild(Object.assign(document.createElement('script'), { src: 'https://accounts.google.com/gsi/client' }));
+    gsi.onload = () => gsi = google.accounts.oauth2.initTokenClient({ client_id: GOOGLE_ID, scope: 'openid email profile', callback: signedIn });
+  }
+});
+talk.querySelector('.talk-x').addEventListener('click', () => talk.close());
+talk.addEventListener('click', e => { if (e.target === talk) talk.close(); });
+const copy = talk.querySelector('.copy');
+copy.addEventListener('click', () => navigator.clipboard?.writeText('contact@m3labs.fr').then(() => {
+  copy.lastChild.textContent = msg('Copied', 'Copié');
+  setTimeout(() => copy.lastChild.textContent = 'contact@m3labs.fr', 1500);
+}));
+for (const b of talk.querySelectorAll('[data-sign]')) b.addEventListener('click', () => {
+  if (b.dataset.sign === 'google' && gsi?.requestAccessToken) gsi.requestAccessToken();
+  else note.hidden = false;
+});
+// the sign-in goes to the back end, which mails Marius who it is; the popup then offers a call, the form filled in
+const signedIn = async r => {
+  const u = r.access_token ? await post({ kind: 'lead', token: r.access_token, plan, lang }).catch(() => ({})) : {};
+  if (!u.email) return;
+  field('name').value = u.name; field('email').value = u.email;
+  const first = u.name.split(' ')[0] || u.email;
+  hi.textContent = msg(`Thanks, ${first}. I write back within a day at ${u.email}. Or pick a time for a call now.`,
+    `Merci, ${first}. Je vous réponds sous 24 h à ${u.email}. Ou choisissez dès maintenant un créneau d’appel.`);
+  hi.hidden = false;
+  show('book');
+};
+// the booking pane is drawn again from these few values on every pick; a radio row keeps the focus on its new pick
+const radio = (box, items, on, pick) => {
+  box.replaceChildren(...items.map(([v, html]) => {
+    const b = Object.assign(document.createElement('button'), { type: 'button', innerHTML: html });
+    b.setAttribute('role', 'radio');
+    b.setAttribute('aria-checked', v === on);
+    b.addEventListener('click', () => { focus = box; pick(v); });
+    return b;
+  }));
+  if (focus === box) box.querySelector('[aria-checked="true"]')?.focus();
+};
+for (const b of talk.querySelectorAll('[data-kind]')) b.addEventListener('click', () => {
+  kind = b.dataset.kind;
+  if (!LENS[kind].includes(len)) len = LENS[kind][0];
+  at = 0;
+  load();
+});
+const load = async () => {
+  for (const b of talk.querySelectorAll('[data-kind]')) b.setAttribute('aria-checked', b.dataset.kind === kind);
+  radio(talk.querySelector('.lens'), LENS[kind].map(n => [n, n + ' min']), len, n => { len = n; at = 0; load(); });
+  field('phone').closest('label').hidden = field('phone').disabled = kind !== 'voice';
+  const want = len;
+  if (!slots[len]) {
+    state.textContent = msg('Loading the free times…', 'Chargement des créneaux libres…');
+    slots[len] = await fetch(API + '?len=' + len).then(r => r.json()).then(r => r.slots).catch(() => null);
+    if (want !== len) return;
+  }
+  const days = new Map();
+  for (const ms of slots[len] || []) { const k = new Date(ms).toLocaleDateString('en-CA'); days.set(k, [...days.get(k) || [], ms]); }
+  state.textContent = !slots[len] ? msg('The free times did not load. Write to me at contact@m3labs.fr.', 'Les créneaux n’ont pas pu charger. Écrivez-moi à contact@m3labs.fr.')
+    : !days.size ? msg('No free time in the next two weeks. Write to me at contact@m3labs.fr.', 'Aucun créneau libre dans les deux semaines. Écrivez-moi à contact@m3labs.fr.') : '';
+  if (!days.has(day)) day = days.keys().next().value;
+  radio(talk.querySelector('.days'), [...days.keys()].map(k => {
+    const d = new Date(k + 'T12:00');
+    return [k, `<small>${d.toLocaleDateString(loc(), { weekday: 'short' })}</small>${d.toLocaleDateString(loc(), { day: 'numeric', month: 'short' })}`];
+  }), day, k => { day = k; at = 0; load(); });
+  radio(talk.querySelector('.times'), (days.get(day) || []).map(ms => [ms, new Date(ms).toLocaleTimeString(loc(), { hour: '2-digit', minute: '2-digit' })]),
+    at, ms => { at = ms; load(); });
+  who.hidden = !at;
+  focus = null;
+};
+who.addEventListener('submit', async e => {
+  e.preventDefault();
+  const f = Object.fromEntries(new FormData(who)), when = at, button = who.querySelector('[type=submit]');
+  button.disabled = true;
+  state.textContent = msg('Booking…', 'Réservation…');
+  const r = await post({ ...f, kind, len, at, plan, lang }).catch(() => ({ error: 'network' }));
+  button.disabled = false;
+  state.textContent = '';
+  if (r.ok) {
+    const w = new Date(when).toLocaleString(loc(), { weekday: 'long', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' });
+    talk.querySelector('.done-text').textContent = kind === 'voice'
+      ? msg(`${w}, ${len} minutes: I call you at ${f.phone}. The invite is on its way to ${f.email}.`, `${w}, ${len} minutes : je vous appelle au ${f.phone}. L’invitation part à ${f.email}.`)
+      : msg(`${w}, ${len} minutes on Google Meet. The invite, with the link, is on its way to ${f.email}.`, `${w}, ${len} minutes sur Google Meet. L’invitation, avec le lien, part à ${f.email}.`);
+    slots = {};
+    at = 0;
+    return show('done');
+  }
+  if (r.error === 'taken') { delete slots[len]; at = 0; await load(); }
+  state.textContent = r.error === 'taken' ? msg('That time was just taken. Pick another one.', 'Ce créneau vient d’être pris. Choisissez-en un autre.')
+    : r.error === 'fields' ? msg('Check the name, the email and the phone number.', 'Vérifiez le nom, l’email et le numéro.')
+    : r.error === 'full' ? msg('My calendar is full for now. Write to me at contact@m3labs.fr.', 'Mon agenda est plein pour l’instant. Écrivez-moi à contact@m3labs.fr.')
+    : msg('The booking did not go through. Write to me at contact@m3labs.fr.', 'La réservation n’a pas abouti. Écrivez-moi à contact@m3labs.fr.');
+});
+document.addEventListener('langchange', () => { if (talk.open && !talk.querySelector('[data-pane="book"]').hidden) load(); });
 </script>
 </body>
 </html>
