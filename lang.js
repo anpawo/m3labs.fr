@@ -174,7 +174,7 @@ const FR = {
   '<b>The code</b> and its docs': '<b>Le code</b> et sa doc',
   '<b>Every account</b>, in your name': '<b>Tous les comptes</b>, à votre nom',
   '<b>Your data</b>, under NDA': '<b>Vos données</b>, sous NDA',
-  '<b>3 months</b> of free fixes': '<b>3 mois</b> de correctifs offerts',
+  '<b>1 month</b> of free fixes': '<b>1 mois</b> de correctifs offerts',
   '<b>1</b> manual task, <b>automated</b>': '<b>1</b> tâche manuelle, <b>automatisée</b>',
   'A demo on <b>your data</b> before go-live': 'Démo sur <b>vos données</b> avant lancement',
   'Runs by itself, <b>alerts you</b> if it fails': 'Tourne seul, <b>vous alerte</b> en cas de panne',
