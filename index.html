@@ -28,7 +28,7 @@
 }
 </script>
 <link rel="preload" href="fonts/mona-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=d678963">
+<link rel="stylesheet" href="styles.css?v=a83e7c2">
 <script>
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.documentElement.classList.add('intro-on');
@@ -308,12 +308,12 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
       <div class="reach">
         <a class="reach-row" href="https://www.linkedin.com/in/mariusrousset" target="_blank" rel="noopener">
           <span class="ico in"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></span>
-          <span><b>Message me on LinkedIn</b><small>See my background, then write to me directly</small></span>
+          <span><b>Message me on <u>LinkedIn</u></b><small>See my background, then write to me directly</small></span>
           <svg class="go" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
         </a>
         <button class="reach-row copy" type="button" title="Copy the address">
           <span class="ico mail"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
-          <span><b>Send me your task by email</b><small>contact@m3labs.fr, I answer within a day</small><small hidden>Address copied, paste it in your mail</small></span>
+          <span><b>Send me your task by <u>email</u></b><small>contact@m3labs.fr, I answer within a day</small><small hidden>Address copied, paste it in your mail</small></span>
           <svg class="go" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
         </button>
       </div>
@@ -365,7 +365,7 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   </div>
 </dialog>
 
-<script src="lang.js?v=d678963"></script>
+<script src="lang.js?v=a83e7c2"></script>
 <script>
 const intro = document.querySelector('.intro');
 if (document.documentElement.classList.contains('intro-on')) {
@@ -444,7 +444,7 @@ speed.forEach((el, i) => el.addEventListener('click', () => {
 // the contact popup, opened by the Let's get started buttons and the plans'. A kind and a length open Marius's free
 // times, which API, the Apps Script web app of booking/, gives and books; while it is empty a length opens his Google
 // Calendar booking page instead
-const API = '', CAL = 'https://calendar.app.google/a1ZZEqtDEEhwA8Tp7';
+const API = 'https://script.google.com/macros/s/AKfycbyW7du4pNVJjG3nECt9Dj5oiOE5KbTq-iaqpHCTQD8r1KRCUfmWOF6qvkF_H2I9Q7o/exec', CAL = 'https://calendar.app.google/a1ZZEqtDEEhwA8Tp7';
 const talk = document.querySelector('.talk'), panes = [...talk.querySelectorAll('.pane')];
 const state = talk.querySelector('[data-pane="book"] .talk-state'), wstate = talk.querySelector('[data-pane="who"] .talk-state');
 const picker = talk.querySelector('.picker'), grid = talk.querySelector('.cal-grid'), times = talk.querySelector('.times');

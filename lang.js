@@ -199,9 +199,9 @@ const FR = {
   'Privacy': 'Confidentialité',
 
   // the contact popup
-  'Message me on LinkedIn': 'Écrivez-moi sur LinkedIn',
+  'Message me on <u>LinkedIn</u>': 'Écrivez-moi sur <u>LinkedIn</u>',
   'See my background, then write to me directly': 'Voyez mon parcours, puis contactez-moi directement',
-  'Send me your task by email': 'Envoyez-moi votre tâche par mail',
+  'Send me your task by <u>email</u>': 'Envoyez-moi votre tâche par <u>mail</u>',
   'contact@m3labs.fr, I answer within a day': 'contact@m3labs.fr, réponse sous 24 h',
   'Address copied, paste it in your mail': 'Adresse copiée, collez-la dans votre mail',
   'Video': 'Vidéo',
