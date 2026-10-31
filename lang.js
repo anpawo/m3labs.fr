@@ -7,7 +7,7 @@ const FR = {
   'Legal notice | M3 Labs': 'Mentions légales | M3 Labs',
   'What I build': 'Services',
   'My work': 'Projets',
-  'How we work': 'Méthode',
+  'How I work': 'Méthode',
   'Pricing': 'Tarifs',
   'Book a call': 'Réserver un appel',
 
@@ -26,7 +26,7 @@ const FR = {
 
   // the app drawn beside the title
   'Reconciliation': 'Réconciliation',
-  'General Ledger': 'Grand livre',
+  'General Ledger': 'Grand livre général',
   'Dashboard': 'Dashboard',
   'Mail automation': 'Mails automatisés',
   'Mac OS apps': 'Apps macOS',
@@ -199,9 +199,11 @@ const FR = {
   'Privacy': 'Confidentialité',
 
   // the contact popup
-  'Message me on LinkedIn': 'M’écrire sur LinkedIn',
-  'Email me at contact@m3labs.fr': 'M’écrire à contact@m3labs.fr',
-  'Address copied': 'Adresse copiée',
+  'Message me on LinkedIn': 'Écrivez-moi sur LinkedIn',
+  'See my background, then write to me directly': 'Voyez mon parcours, puis contactez-moi directement',
+  'Send me your task by email': 'Envoyez-moi votre tâche par mail',
+  'contact@m3labs.fr, I answer within a day': 'contact@m3labs.fr, réponse sous 24 h',
+  'Address copied, paste it in your mail': 'Adresse copiée, collez-la dans votre mail',
   'Video': 'Vidéo',
   'Your details': 'Vos coordonnées',
   'Name': 'Nom',

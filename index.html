@@ -28,7 +28,7 @@
 }
 </script>
 <link rel="preload" href="fonts/mona-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="styles.css?v=385ff43">
+<link rel="stylesheet" href="styles.css?v=d678963">
 <script>
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   document.documentElement.classList.add('intro-on');
@@ -53,7 +53,7 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
     <nav class="links" aria-label="Main">
       <a href="#build">What I build</a>
       <a href="#work">My work</a>
-      <a href="#process">How we work</a>
+      <a href="#process">How I work</a>
       <a href="#pricing">Pricing</a>
     </nav>
     <div class="actions">
@@ -306,8 +306,16 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
     <div class="pane" data-pane="start">
       <h2 id="talk-h">Let's talk about your project.</h2>
       <div class="reach">
-        <a class="btn btn-tint" href="https://www.linkedin.com/in/mariusrousset" target="_blank" rel="noopener"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>Message me on LinkedIn</a>
-        <button class="btn btn-tint copy" type="button" title="Copy the address"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><span>Email me at contact@m3labs.fr</span><span hidden>Address copied</span></button>
+        <a class="reach-row" href="https://www.linkedin.com/in/mariusrousset" target="_blank" rel="noopener">
+          <span class="ico in"><svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg></span>
+          <span><b>Message me on LinkedIn</b><small>See my background, then write to me directly</small></span>
+          <svg class="go" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+        </a>
+        <button class="reach-row copy" type="button" title="Copy the address">
+          <span class="ico mail"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span>
+          <span><b>Send me your task by email</b><small>contact@m3labs.fr, I answer within a day</small><small hidden>Address copied, paste it in your mail</small></span>
+          <svg class="go" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </button>
       </div>
       <div class="call">
         <h3>Book a call</h3>
@@ -357,7 +365,7 @@ if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
   </div>
 </dialog>
 
-<script src="lang.js?v=385ff43"></script>
+<script src="lang.js?v=d678963"></script>
 <script>
 const intro = document.querySelector('.intro');
 if (document.documentElement.classList.contains('intro-on')) {
@@ -443,12 +451,10 @@ const picker = talk.querySelector('.picker'), grid = talk.querySelector('.cal-gr
 const who = talk.querySelector('.who'), field = n => who.querySelector(`[name=${n}]`);
 const msg = (en, fr) => lang === 'fr' ? fr : en, loc = () => lang === 'fr' ? 'fr-FR' : 'en-GB';
 const post = body => fetch(API, { method: 'POST', body: JSON.stringify(body) }).then(r => r.json());
-const LENS = { voice: [5, 15], video: [5, 15, 30] };
 let plan = '', kind = 'voice', len = 0, day = '', at = 0, slots = {};
 const show = name => { for (const p of panes) p.hidden = p.dataset.pane !== name; };
 const kinds = () => {
   for (const b of talk.querySelectorAll('[data-kind]')) b.setAttribute('aria-checked', b.dataset.kind === kind);
-  for (const b of talk.querySelectorAll('[data-len]')) b.disabled = !LENS[kind].includes(+b.dataset.len);
 };
 for (const el of document.querySelectorAll('[data-talk]')) el.addEventListener('click', e => {
   e.preventDefault();
@@ -460,7 +466,7 @@ for (const el of document.querySelectorAll('[data-talk]')) el.addEventListener('
 talk.querySelector('.talk-x').addEventListener('click', () => talk.close());
 talk.addEventListener('click', e => { if (e.target === talk) talk.close(); });
 for (const b of talk.querySelectorAll('[data-back]')) b.addEventListener('click', () => show(b.dataset.back));
-const copy = talk.querySelector('.copy'), [label, copied] = copy.querySelectorAll('span');
+const copy = talk.querySelector('.copy'), [label, copied] = copy.querySelectorAll('small');
 copy.addEventListener('click', () => navigator.clipboard?.writeText('contact@m3labs.fr').then(() => {
   label.hidden = !(copied.hidden = false);
   setTimeout(() => label.hidden = !(copied.hidden = true), 1500);
