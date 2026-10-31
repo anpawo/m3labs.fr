@@ -192,7 +192,9 @@ const FR = {
 
   'Let\'s talk about your project.': 'Parlons de votre projet.',
   'Legal notice': 'Mentions légales',
-  'Home': 'Retour',
+  'Home': 'Accueil',
+  'Terms': 'Conditions',
+  'Privacy': 'Confidentialité',
 
   // the contact popup
   'Sign in and I write back within a day, or book a call now.': 'Connectez-vous et je vous réponds sous 24 h, ou réservez un appel.',
@@ -219,9 +221,12 @@ const FR = {
   'GitHub, Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States. Phone +1 415 857 5430. https://github.com':
     'GitHub, Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis. Téléphone +1 415 857 5430. https://github.com',
   'Personal data': 'Données personnelles',
-  'This site sets no cookies and runs no analytics. The host may log visitors\' IP addresses for security, as described in GitHub\'s privacy statement. A mail you send to contact@m3labs.fr is forwarded to Marius Rousset\'s Gmail mailbox, read by him only and used only to answer you. A call you book goes through Google Calendar, which passes your name and email to his calendar for that call only. To have either deleted, mail the same address.':
-    'Aucun cookie ni mesure d’audience sur ce site. L’hébergeur peut enregistrer l’IP des visiteurs par sécurité, selon la politique de confidentialité de GitHub. Un mail que vous envoyez à contact@m3labs.fr arrive dans la boîte Gmail de Marius Rousset, lu par lui seul, pour vous répondre. Un appel réservé passe par Google Agenda, qui transmet votre nom et votre mail à son agenda pour cet appel seulement. Pour effacer l’un ou l’autre, écrivez-lui.',
+  'How M3 Labs handles personal data (what it collects, why, for how long, and your rights) is set out in the <a href="privacy.html">privacy policy</a>.':
+    'La façon dont M3 Labs traite les données personnelles (ce qu’il recueille, pourquoi, combien de temps, et vos droits) est décrite dans la <a href="privacy.html">politique de confidentialité</a>.',
 };
+// terms.html and privacy.html carry their own French, too long to load on every page
+Object.assign(FR, self.FR_PAGE);
+
 let lang = 'en';
 const t = s => lang === 'fr' && FR[s] || s;
 {

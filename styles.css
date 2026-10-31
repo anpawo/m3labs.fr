@@ -288,7 +288,7 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 
 /* Footer */
 .foot { border-top: 1px solid var(--border); background: var(--sheet); }
-.foot-inner { display: flex; justify-content: space-between; padding: 28px 0; font-size: 15px; color: var(--muted-foreground); }
+.foot-inner { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 24px; padding: 28px 0; font-size: 15px; color: var(--muted-foreground); }
 /* Mona Sans draws a thick underline that the descenders cut into blocks */
 .foot a { color: var(--muted-foreground); text-decoration-thickness: 1px; text-underline-offset: 4px; }
 
@@ -299,6 +299,31 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
 .legal h2 { margin-top: 44px; font-size: 24px; letter-spacing: -.02em; }
 .legal p { margin-top: 12px; font-size: 17px; line-height: 1.7; color: var(--muted-foreground); }
 .legal p strong { color: var(--foreground); font-weight: 600; }
+.legal .legal-sub { margin-top: 16px; font-size: 20px; line-height: 1.5; color: var(--foreground); }
+.legal .legal-meta { margin-top: 8px; font-size: 15px; }
+.legal .legal-note { margin-top: 24px; font-size: 15px; }
+.legal .legal-box { padding: 16px 20px; border-radius: 12px; background: var(--brand-tint); color: var(--brand-tint-fg); }
+.legal .legal-box strong { color: inherit; }
+.legal h2 { scroll-margin-top: calc(var(--nav-h) + 16px); }
+.legal h3 { margin-top: 28px; font-size: 19px; font-weight: 600; letter-spacing: -.01em; }
+.legal ul { margin: 12px 0 0; padding-left: 22px; font-size: 17px; line-height: 1.7; color: var(--muted-foreground); }
+.legal li + li { margin-top: 6px; }
+.legal li strong, .legal td strong { color: var(--foreground); font-weight: 600; }
+.legal p a { color: var(--primary); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.toc { margin-top: 24px; padding: 20px 24px; border: 1px solid var(--border); border-radius: 14px; background: var(--sheet); }
+.toc p { margin: 0; font-size: 15px; font-weight: 600; color: var(--foreground); }
+.toc ol { list-style: none; margin: 8px 0 0; padding: 0; columns: 2; column-gap: 32px; font-size: 15px; line-height: 1.9; }
+.toc a { color: var(--muted-foreground); text-decoration: none; }
+.toc a:hover { color: var(--primary); }
+/* the tables of the terms and privacy pages wrap their words, unlike the hero app's */
+.legal-table { margin-top: 16px; overflow-x: auto; border: 1px solid var(--border); border-radius: 12px; background: var(--sheet); }
+.legal table { width: 100%; }
+.legal th, .legal td { padding: 12px 16px; white-space: normal; vertical-align: top; text-align: left; line-height: 1.5; }
+.legal th { font-size: 13px; background: oklch(97% .005 265); }
+.legal td { font-size: 15px; font-weight: 400; color: var(--muted-foreground); font-variant-numeric: normal; }
+.legal td:first-child { font-weight: 600; color: var(--foreground); }
+.legal tr:last-child td { border-bottom: 0; }
+.foot-links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
 
 /* The contact popup: sign in, book a call in Marius's calendar, LinkedIn, and the address copied in one click */
 .talk { width: min(480px, calc(100% - 32px)); max-height: calc(100svh - 32px); margin: auto; padding: 0; border: 0; border-radius: 20px;
@@ -420,5 +445,8 @@ h2 { margin-top: 12px; font-size: clamp(34px, 4vw, 54px); line-height: 1.05; fon
   .ink { padding: 16px; }
   .section { padding: 48px 0; }
   .talk-in { padding: 24px 20px; }
+  .toc ol { columns: 1; }
+  .legal th, .legal td { padding: 10px 12px; }
+  .legal td { font-size: 14px; -webkit-hyphens: auto; hyphens: auto; }
   .two, .talk-reach { grid-template-columns: 1fr; }
 }
